@@ -6,10 +6,10 @@
     --bg-white: #F2F2F2;
 }
 
-@font-face {
+/* @font-face {
     font-family: Questrial-Regular;
     src: url(/src/fonts/Questrial-Regular.ttf);
-}
+} */
 
 * {
     margin: 0;
@@ -19,29 +19,29 @@
 }
 
 body {
-    background-color: var(--secondary);
+    /* background-color: var(--secondary); */
     text-align: center;
 }
 
-main {
+/* main {
     background-color: var(--bg-white);
-}
+} */
 
-header {
+/* header {
     margin-bottom: 155px;
-}
+} */
 
-#botaoSair {
+/* #botaoSair {
     border: none;
     background: none;
-}
+} */
 
-nav,
+/* nav,
 footer {
     background-color: var(--primary);
-}
+} */
 
-label {
+/* label {
     display: block;
     margin-top: 10px;
     color: var(--black);
@@ -116,4 +116,4 @@ h1 span.teste {
     font-size: 1.3rem;
     font-weight: 500;
     color: var(--primary);
-}
+} */

@@ -1,18 +1,19 @@
 /* Reset some default styles */
-body, ul {
+/* body, ul {
     margin: 0;
     padding: 0;
-}
+    box-sizing: border-box;
+} */
 
 /* Style the header */
-header {
+/* header {
     background: #22577A;
     color: #fff;
     padding: 0px;
     border-radius: 0px 0px 5px 5px;
-}
+} */
 
-nav {
+/* nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -21,10 +22,10 @@ nav {
 .nav-links li {
     list-style: none;
     display: inline;
-    margin-right: 20px;
-}
+    /* margin-right: 20px; */
+} */
 
-main {
+/* main {
     height: 100vh;
     background-image: url('/img/fundo_landing.png');
     background-size: cover; 
@@ -35,23 +36,23 @@ main {
     align-items: center;
     color: #000;
     text-align: center;
-}
-main .landing-text button {
+} */
+/* main .landing-text button {
     background-color: var(--primary);
     color: var(--bg-white);
     border: none;
-}
+} */
 
-main .landing-text h1 {
+/* main .landing-text h1 {
     font-size: 2.5rem;
-}
+} */
 
-main .landing-text p {
+/* main .landing-text p {
     font-size: 1.25rem;
     margin: 20px 0;
-}
+} */
 
-.cta {
+/* .cta {
     background: var(--primary);
     color: var(--bg-white);
     border-radius: 5px;
@@ -60,10 +61,11 @@ main .landing-text p {
     font-size: 1.25rem;
     border: none;
     cursor: pointer;
-}
+} */
 
-a:not(.esqueceu-a-senha) {
+/* a:not(.esqueceu-a-senha) {
     text-decoration: none;
     color: var(--bg-white);
     font-size: 1.1em;
-}
+} */
+ 
