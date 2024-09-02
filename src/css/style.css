@@ -23,97 +23,45 @@ body {
     text-align: center;
 }
 
-/* main {
-    background-color: var(--bg-white);
-} */
-
-/* header {
-    margin-bottom: 155px;
-} */
-
-/* #botaoSair {
-    border: none;
-    background: none;
-} */
-
-/* nav,
-footer {
-    background-color: var(--primary);
-} */
-
-/* label {
-    display: block;
-    margin-top: 10px;
-    color: var(--black);
+/* FOOTER */
+.footerBgColor {
+    background-color: #694D35;
 }
 
-.input__faltas {
-    padding: 5px;
+.iconsSize {
+    width: 60px;
+    height: 60px;
+}
+
+.login {
+    background-color: #DFDACA;
+}
+
+.logo {
+    height: 181px;
+    width: 181px;
+    background-position: center;
+    background-image: url("/src/img/logo.jpeg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    border-radius: 50%;
+}
+
+.bg-color {
+    background-color: #F3EDDD;
+}
+
+/* HEADER */
+.headerBgColor {
+    background-color: #694D35;
+}
+
+.logoHeader {
+    height: 80px;
     width: 80px;
+    background-position: center;
+    background-image: url("/src/img/logo.jpeg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    border-radius: 50%;
 }
-
-.font-logo {
-    font-family: 'Questrial-Regular';
-}
-
-.class {
-    color: var(--third);
-}
-
-h1 span.teste {
-    background-color: var(--primary);
-}
-
-.capture {
-    color: var(--bg-white);
-}
-
-.titulo,
-.banner__paragrafo {
-    color: var(--primary);
-}
-
-.banner__paragrafo {
-    font-weight: 500;
-}
-
-.botao__abrir_album,
-.botao__assinatura {
-    color: var(--bg-white);
-    border-radius: 5px;
-    border: none;
-    background-color: var(--secondary);
-    padding: .5rem 1rem;
-}
-
-.botao__abrir_album:active,
-.botao__assinatura:active,
-.botao__abrir_album:hover,
-.botao__assinatura:hover {
-    color: var(--bg-white);
-    background-color: var(--primary);
-}
-
-.botao__calcular-faltas-restantes {
-    background-color: var(--secondary);
-    color: var(--bg-white);
-    padding: 10px 20px;
-    border: none;
-    margin-top: 10px;
-    cursor: pointer;
-}
-
-.header__faltas {
-    color: var(--primary);
-}
-
-#resultado {
-    margin-top: 10px;
-    color: var(--primary);
-}
-
-#logado {
-    font-size: 1.3rem;
-    font-weight: 500;
-    color: var(--primary);
-} */
