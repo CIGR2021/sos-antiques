@@ -65,3 +65,11 @@ body {
     background-size: contain;
     border-radius: 50%;
 }
+
+.bg-image {
+    height: 50%;
+    background-position: center;
+    background-image: url("/img/bg.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
