@@ -35,13 +35,14 @@ body {
 
 .login {
     background-color: #DFDACA;
+    width: 40%;
 }
 
 .logo {
     height: 181px;
     width: 181px;
     background-position: center;
-    background-image: url("/img/logo.jpeg");
+    background-image: url("/src/img/logo.jpeg");
     background-repeat: no-repeat;
     background-size: contain;
     border-radius: 50%;
@@ -60,16 +61,16 @@ body {
     height: 80px;
     width: 80px;
     background-position: center;
-    background-image: url("/img/logo.jpeg");
+    background-image: url("/src/img/logo.jpeg");
     background-repeat: no-repeat;
     background-size: contain;
     border-radius: 50%;
 }
 
 .bg-image {
-    height: 50%;
+    height: 100vh;
     background-position: center;
-    background-image: url("/img/bg.jpg");
+    background-image: url("/src/img/bg.jpg");
     background-repeat: no-repeat;
     background-size: cover;
 }
