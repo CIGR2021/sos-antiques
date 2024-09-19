@@ -1,9 +1,16 @@
 :root {
+    --white: #FFFFFF;
     --black: #000;
-    --primary: #22577A;
-    --secondary: #38A3A5;
-    --third: #57cc99;
-    --bg-white: #F2F2F2;
+    --gray: #D9D9D9;
+    --btn-main-green: #627368;
+    --btn-brown: #BF6734;
+    --btn-brown-select: #593414;
+    --bg-brown: #694D35;
+    --bg-bege: #F2EDDC;
+    --font-title: "Libre Baskerville";
+    --font-text: "Inter";
+    --font-color-brown: #593414;
+    --stroke-color: #A6A6A6
 }
 
 /* @font-face {
