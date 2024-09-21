@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
         const formData = new FormData(formulario);
         const data = Object.fromEntries(formData);
-        const anunciosURL = `http://localhost:3000/anuncios`;
+        const anunciosURL = `https://3bd58c72-f964-4b92-93e0-0271a7351617-00-dz66xwnwvvxl.janeway.replit.dev/anuncios`;
 
         fetch(`${anunciosURL}`, {
             method: 'POST',
