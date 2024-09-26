@@ -30,18 +30,20 @@ document.addEventListener('DOMContentLoaded', function() {
         const formData = new FormData(formulario);
         const data = Object.fromEntries(formData);
         const anunciosURL = `https://3bd58c72-f964-4b92-93e0-0271a7351617-00-dz66xwnwvvxl.janeway.replit.dev/anuncios`;
-
+        
+        console.log(data);
+        
         fetch(`${anunciosURL}`, {
             method: 'POST',
             body: JSON.stringify({
-                "titulo-produto": data['titulo-produto'],
-                "tipo-produto": data['tipo-produto'],
-                "categoria-produto": data['categoria-produto'],
-                "condicao-produto": data['condicao-produto'],
-                "preco-produto": data['preco-produto'],
-                "descricao-produto": data['descricao-produto'],
-                "foto-produto": data['foto-produto'],
-                "termo-contato": data['termo-contato']
+                "tituloProduto": data.tituloProduto,
+                "tipoProduto": data.tipoProduto,
+                "categoriaProduto": data.categoriaProduto,
+                "condicaoProduto": data.condicaoProduto,
+                "precoProduto": data.precoProduto,
+                "descricaoProduto": data.descricaoProduto,
+                "fotoProduto": data.fotoProduto,
+                "termoPontato": data.termoPontato
             }),
             headers: {
                 'Content-Type': 'application/json'
