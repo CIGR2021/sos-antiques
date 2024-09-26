@@ -1,12 +1,12 @@
 body {
     text-align: inherit;
     font-family: var(--font-text);
-    background-color: var(--bg-bege);
+    background-color: var(--color-beige);
 }
 
 .titulo {
     font-family: var(--font-title);
-    color: var(--font-color-brown);
+    color: var(--color-brown-dark);
     font-weight: 700;
 }
 
@@ -61,11 +61,11 @@ input[type='radio'] {
 
 
 .tipo-produto__item label {
-    background-color: var(--btn-brown);
+    background-color: var(--color-orange);
     border-radius: 50px;
     padding: 1rem;
     font-size: 1.1rem;
-    color: var(--bg-bege);
+    color: var(--color-beige);
     font-weight: 500;
     font-family: var(--font-title);
     box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
@@ -73,11 +73,11 @@ input[type='radio'] {
 }
 
 input[type="radio"]:checked + label {
-    background-color: var(--btn-brown-select);
+    background-color: var(--color-brown-dark);
 }
 
 .tipo-produto__item label:hover {
-    background-color: var(--btn-brown-select);  
+    background-color: var(--color-brown-dark);  
 }
 
 .produto__etiqueta {
@@ -110,7 +110,7 @@ input[type="radio"]:checked + label {
 
 .botao {
     color: var(--white);
-    background-color: var(--btn-main-green);
+    background-color: var(--color-green);
     border-radius: 50px;
     padding: 8px 24px;
     border: none;
@@ -135,11 +135,11 @@ input[type="radio"]:checked + label {
     height: 1rem;
     border: 2px solid #777;
     border-radius: 4px;
-    background-color: var(--btn-main-green);
+    background-color: var(--color-green);
 }
 
 .text-termo-contato {
-    color: var(--btn-main-green);
+    color: var(--color-green);
     font-weight: 600;
 }
 

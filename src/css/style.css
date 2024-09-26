@@ -2,14 +2,13 @@
     --white: #FFFFFF;
     --black: #000;
     --gray: #D9D9D9;
-    --btn-main-green: #627368;
-    --btn-brown: #BF6734;
-    --btn-brown-select: #593414;
-    --bg-brown: #694D35;
-    --bg-bege: #F2EDDC;
+    --color-green: #627368;
+    --color-orange: #BF6734;
+    --color-brown-dark: #593414;
+    --color-brown-light: #694D35;
+    --color-beige: #F2EDDC;
     --font-title: "Libre Baskerville";
     --font-text: "Inter";
-    --font-color-brown: #593414;
     --stroke-color: #A6A6A6
 }
 
@@ -80,4 +79,12 @@ body {
     background-image: url("/src/img/bg.jpg");
     background-repeat: no-repeat;
     background-size: cover;
+}
+
+.nav-btn__anunciar {
+    color: var(--color-beige);
+    padding: .5rem 1rem;
+    background-color: var(--color-green);
+    border-radius: 4rem;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
 }
