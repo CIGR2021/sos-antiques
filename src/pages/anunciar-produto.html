@@ -7,7 +7,7 @@
     <meta name="description" content="Trabalho TIAPN">
     <meta name="author"
         content="Carlos Henrique Pereira Vieira, Guilherme Augusto Lopes Campos, João Victor Silva Thomazi, Kelvin">
-    <link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="/src/img/favicon.ico" type="image/x-icon">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -17,18 +17,18 @@
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="/css/normalize.css">
-    <link rel="stylesheet" href="/css/style.css">
-    <link rel="stylesheet" href="/css/anunciar-produto.css">
+    <link rel="stylesheet" href="/src/css/normalize.css">
+    <link rel="stylesheet" href="/src/css/style.css">
+    <link rel="stylesheet" href="/src/css/anunciar-produto.css">
     <title>Anunciar Produto</title>
 </head>
 
 <body>
     <header class="headerBgColor header">
-        <img src="/img/favicon.ico" class="logoHeader" alt="Logo da SOS Antiques">
+        <img src="/src/img/favicon.ico" class="logoHeader" alt="Logo da SOS Antiques">
         <div class="header-icons">
-            <img src="/img/icon-support.png" alt="Ícone para central de suporte">
-            <img src="/img/icon-user.png" alt="ícone para ir para o perfil">
+            <img src="/src/img/icon-support.png" alt="Ícone para central de suporte">
+            <img src="/src/img/icon-user.png" alt="ícone para ir para o perfil">
         </div>
     </header>
     <main class="main container">
@@ -38,15 +38,15 @@
                 <h1 class="main__titulo-principal titulo">Olá! O que você quer anunciar?</h1>
                 <ul class="lista__tipo-produto">
                     <li class="tipo-produto__item">
-                        <input type="radio" name="tipo-produto" value="venda" id="tipo-produto--venda" checked>
+                        <input type="radio" name="tipoProduto" value="Venda" id="tipo-produto--venda" checked>
                         <label for="tipo-produto--venda">Item para venda</label>
                     </li>
                     <li class="tipo-produto__item">
-                        <input type="radio" name="tipo-produto" value="troca" id="tipo-produto--troca">
+                        <input type="radio" name="tipoProduto" value="Troca" id="tipo-produto--troca">
                         <label for="tipo-produto--troca">Item para troca</label>
                     </li>
                     <li class="tipo-produto__item">
-                        <input type="radio" name="tipo-produto" value="doacao" id="tipo-produto--doacao">
+                        <input type="radio" name="tipoProduto" value="Doação" id="tipo-produto--doacao">
                         <label for="tipo-produto--doacao">Item para doação</label>
                     </li>
                 </ul>
@@ -55,7 +55,7 @@
                     <div class="d-flex gap-3 div-categoria-condicao">
                         <div class="flex-grow-1">
                             <label for="select-categoria" class="d-block produto__etiqueta">Categoria*</label>
-                            <select name="categoria-produto" id="select-categoria" class="produto__input" required>
+                            <select name="categoriaProduto" id="select-categoria" class="produto__input" required>
                                 <option value="" disabled selected>Selecione uma categoria</option>
                                 <option value="arte">Arte</option>
                                 <option value="brinquedos">Brinquedos</option>
@@ -75,7 +75,7 @@
                         </div>
                         <div class="flex-grow-1">
                             <label for="select-condicao" class="d-block produto__etiqueta">Condição*</label>
-                            <select name="condicao-produto" id="select-condicao" class="produto__input" required>
+                            <select name="condicaoProduto" id="select-condicao" class="produto__input" required>
                                 <option disabled selected>Selecione a condição</option>
                                 <option value="usado">Usado</option>
                                 <option value="novo">Novo</option>
@@ -84,7 +84,7 @@
                     </div>
                     <div class="d-flex flex-column">
                         <label for="input__titulo-produto" class="produto__etiqueta">Título*</label>
-                        <input name="titulo-produto" type="text" id="input__titulo-produto" class="produto__input" maxlength="90"
+                        <input name="tituloProduto" type="text" id="input__titulo-produto" class="produto__input" maxlength="90"
                             placeholder="Exemplo: Câmera fotográfica analógica" required>
                         <div class="d-flex justify-content-between">
                             <span class="produto__info">Coloque um breve resumo do que você está anunciando</span>
@@ -94,7 +94,7 @@
                     <div class="d-flex flex-column">
                         <label for="input__descricao-produto" class="produto__etiqueta">Informações
                             adicionais</label>
-                        <textarea name="descricao-produto" id="input__descricao-produto"
+                        <textarea name="descricaoProduto" id="input__descricao-produto"
                             class="produto__input  produto__input-descricao" maxlength="6000"
                             placeholder="Escreva aqui por quê você está anunciando esse item e informações adicionais que podem ajudar na venda."></textarea>
                         <span class="produto__info text-end">0/6000</span>
@@ -102,11 +102,11 @@
                     <div class="d-flex flex-column">
                         <label for="botao-trocar-telefone" class="produto__etiqueta">Contato</label>
                         <div class="my-3 d-flex justify-content-between w-75">
-                            <span class="text-telefone-contato"><img src="/img/icon-phone.png"
+                            <span class="text-telefone-contato"><img src="/src/img/icon-phone.png"
                                     class="icon-phone me-2" alt="Ícone de telefone">(31) 99123-1234</span>
                             <button id="botao-trocar-telefone" class="botao">Trocar</button>
                         </div>
-                        <label for="termo-contato" class="mt-1"><input type="checkbox" value="aceita" name="termo-contato" id="termo-contato" class="checkbox-termo-contato"> Você aceita o <a href="" class="text-termo-contato" data-bs-toggle="modal" data-bs-target="#exampleModal">termo de compartilhamento de contato?</a></label>
+                        <label for="termo-contato" class="mt-1"><input type="checkbox" value="aceita" name="termoContato" id="termo-contato" class="checkbox-termo-contato"> Você aceita o <a href="" class="text-termo-contato" data-bs-toggle="modal" data-bs-target="#exampleModal">termo de compartilhamento de contato?</a></label>
                         <!-- Modal -->
                         <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
                             aria-hidden="true">
@@ -134,18 +134,18 @@
             </section>
             <section class="main__secao col main__secao-right">
                 <div class="div-text__itens-obrigatorio">
-                    <span><img src="/img/icon-info.png" alt=""></span><p class="text-itens-obrigatorio">Os itens com (*) são obrigatórios</p>
+                    <span><img src="/src/img/icon-info.png" alt=""></span><p class="text-itens-obrigatorio">Os itens com (*) são obrigatórios</p>
                 </div>
                 <div>
                     <h2 class="titulo titulo-info-produto">Anexe a URL da foto de seu produto para tornar o anúncio mais atrativo!</h2>
                 </div>
                 <div>
                     <label for="foto-produto" class="produto__etiqueta">Insira o endereço aqui:</label>
-                    <input type="text" id="foto-produto" class="produto__input" name="foto-produto" accept="image/png, image/jpeg"/>
+                    <input type="text" id="foto-produto" class="produto__input" name="fotoProduto" accept="image/png, image/jpeg"/>
                 </div>
                 <div class="div-preco-produto">
                     <label for="input__preco-produto" class="produto__etiqueta">Preço (R$)*</label>
-                    <input type="number" name="preco-produto" class="produto__input" id="input__preco-produto" placeholder="0,00">
+                    <input type="number" name="precoProduto" class="produto__input" id="input__preco-produto" placeholder="0,00">
                 </div>
                 <div>
                     <button type="submit" class="botao botao--anunciar">Anunciar</button>
@@ -156,7 +156,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
-    <script src="/js/anunciar.js"></script>
+    <script src="/src/js/anunciar.js"></script>
 </body>
 
 </html>
