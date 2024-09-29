@@ -29,44 +29,26 @@ document.addEventListener('DOMContentLoaded', function() {
 
         const formData = new FormData(formulario);
         const data = Object.fromEntries(formData);
-        const anunciosURL = `https://3bd58c72-f964-4b92-93e0-0271a7351617-00-dz66xwnwvvxl.janeway.replit.dev/anuncios`;
+        const anuncios = JSON.parse(localStorage.getItem('anuncios')) || [];
         
         console.log(data);
         
-        fetch(`${anunciosURL}`, {
-            method: 'POST',
-            body: JSON.stringify({
-                "tituloProduto": data.tituloProduto,
-                "tipoProduto": data.tipoProduto,
-                "categoriaProduto": data.categoriaProduto,
-                "condicaoProduto": data.condicaoProduto,
-                "precoProduto": data.precoProduto,
-                "descricaoProduto": data.descricaoProduto,
-                "fotoProduto": data.fotoProduto,
-                "termoPontato": data.termoPontato
-            }),
-            headers: {
-                'Content-Type': 'application/json'
-            }
+        anuncios.push({
+            tituloProduto: data.tituloProduto,
+            tipoProduto: data.tipoProduto,
+            categoriaProduto: data.categoriaProduto,
+            condicaoProduto: data.condicaoProduto,
+            precoProduto: data.precoProduto,
+            descricaoProduto: data.descricaoProduto,
+            fotoProduto: data.fotoProduto,
+            termoPontato: data.termoPontato
         })
-        .then(response => {
-            if (response.ok) {
-                notificacao.textContent = "Anúncio feito com sucesso!";
-                notificacao.classList.remove('alert-danger');
-                notificacao.classList.add('alert-success');
-            } else {
-                return response.json().then(err => { 
-                    throw new Error(err.message);
-                });
-            }
-        })
-        .catch(error => {
-            notificacao.textContent = `Erro ao fazer o anúncio: ${error.message}`;
-            notificacao.classList.remove('alert-success');
-            notificacao.classList.add('alert-danger');
-        })
-        .finally(() => {
-            notificacao.style.display = 'block';
-        });
+
+        localStorage.setItem('anuncios', JSON.stringify(anuncios));
+
+        notificacao.textContent = "Anúncio feito com sucesso!";
+        notificacao.classList.remove('alert-danger');
+        notificacao.classList.add('alert-success');
+        notificacao.style.display = 'block';
     });
 });
