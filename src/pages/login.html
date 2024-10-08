@@ -28,12 +28,12 @@
                     <a class="fs-5 nav-link text-white" aria-current="page" href="/about">
                         Sobre Nós
                     </a>
-                </li> |
+                </li>
                 <li class="nav-item">
                     <a class="fs-5 nav-link text-white" aria-current="page" href="#">
                         Produtos
                     </a>
-                </li> |
+                </li>
                 <li class="nav-item">
                     <a class="fs-5 nav-link text-white" aria-current="page" href="#">
                         Doação
@@ -47,16 +47,23 @@
         <section class="login shadow p-4 rounded d-flex flex-column align-items-center border border-secondary">
             <image class="logo m-3" />
             <h1 class="fs-2 fw-bold">Login</h1>
+            <label id="msgError" class="fs-5 p-2"></label>
             <form class="w-75">
                 <section class="mb-3">
-                    <label class="form-label fw-bold">E-mail:</label>
-                    <input type='email' class="bg-color form-control p-3" placeholder='@mail.com'
-                        title="Informe o E-mail" id='inputEmail' aria-describedby='emailHelp' />
+                    <label class="form-label fw-bold" id="labelEmail">E-mail:</label>
+                    <fieldset class="input-group-text d-flex justify-content-center align-items-center">
+                        <input type='email' class="bg-color form-control p-3" placeholder='@mail.com'
+                            title="Informe o E-mail" id='inputEmail' aria-describedby='emailHelp' />
+                        <ion-icon class="fs-2 p-2 text-center" name="person-sharp"></ion-icon>
+                    </fieldset>
                 </section>
                 <section class="mb-3">
-                    <label class="form-label fw-bold">Senha:</label>
-                    <input type='password' class="bg-color form-control p-3" placeholder="**********"
-                        title="Informe a Senha" id='inputPassword' />
+                    <label class="form-label fw-bold" id="labelPassword">Senha:</label>
+                    <fieldset class="input-group-text d-flex justify-content-center align-items-center">
+                        <input type='password' class="bg-color form-control p-3" placeholder="**********"
+                            title="Informe a Senha" id='inputPassword' />
+                        <ion-icon class="fs-2 p-2 text-center" name="lock-closed-sharp"></ion-icon>
+                    </fieldset>
                 </section>
                 <a href="/src/pages/redefinir-senha.html"
                     class="d-flex justify-content-center list-group-item list-group-item-action active"
@@ -65,8 +72,8 @@
                         Esqueceu a senha?
                     </label>
                 </a>
-                <button class="btn btn-secondary w-50 mb-2">
-                    <a href="/src/pages/login.html" class="d-flex justify-content-center list-group-item list-group-item-action active"
+                <button id="entrar" class="btn btn-secondary w-50 mb-2">
+                    <a href="#" class="d-flex justify-content-center list-group-item list-group-item-action active"
                         aria-current="true">
                         <label title="Clique para redefinir sua senha" class="fs-5 form-check-label btn mb-2">
                             Entrar
@@ -74,7 +81,7 @@
                     </a>
                 </button>
                 <button class="btn btn-light border border-dark w-50">
-                    <a href="/src/pages/cadastro.html"
+                    <a href="./cadastro.html"
                         class="d-flex justify-content-center list-group-item list-group-item-action active"
                         aria-current="true">
                         <label title="Clique para redefinir sua senha" class="fs-5 form-check-label btn mb-2">

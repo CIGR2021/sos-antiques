@@ -1,48 +1,50 @@
-let button = document.querySelector('#entrar')
+const button = document.querySelector('#entrar')
 
 button.addEventListener('click', entrar)
 
 
 function entrar(event) {
     event.preventDefault();
-    let username = document.querySelector('#username');
-    let userLabel = document.querySelector('#userLabel');
+    const username = document.querySelector('#inputEmail');
+    const userLabel = document.querySelector('#labelEmail');
     
-    let password = document.querySelector('#password');
-    let passLabel = document.querySelector('#senhaLabel');
+    const password = document.querySelector('#inputPassword');
+    const passLabel = document.querySelector('#labelPassword');
 
-    let msgError = document.querySelector('#msgError');
+    const msgError = document.querySelector('#msgError');
 
     if (!username.value || !password.value) {
         msgError.setAttribute('style', 'display: block')
         msgError.innerHTML = 'Por favor, preencha todos os campos.';
+        msgError.setAttribute('style', 'color: red')
         return;
     }
 
-    let listaUser = JSON.parse(localStorage.getItem('listaUser')) || []
-
+    const usuarios = JSON.parse(localStorage.getItem('Usuarios')) || []
+    
     let userValid = {
         nome: '',
         user: '',
         senha: ''
     }
     
-    listaUser.forEach((item) => {
-        if(username.value == item.userCad && password.value == item.senhaCad) {
+    usuarios.forEach((item) => {
+        console.log(item);
+        if(username.value === item.Email && password.value === item.Senha) {
             userValid = {
-                nome: item.nomeCad,
-                user: item.userCad,
-                senha: item.senhaCad
+                nome: item.NomeCompleto,
+                user: item.Email,
+                senha: item.Senha
             }
         }
     })
 
-    if(username.value == userValid.user && password.value == userValid.senha) {
+    if(username.value === userValid.user && password.value === userValid.senha) {
         setTimeout(() => {
-            window.location.href = '/pages/home.html';
+            window.location.href = '/src/pages/home.html';
         })
 
-        let token = Math.random().toString(16).substring(2)
+        const token = Math.random().toString(16).substring(2)
         localStorage.setItem('token', token)
 
         localStorage.setItem('userLogado', JSON.stringify(userValid))

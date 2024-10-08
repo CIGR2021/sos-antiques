@@ -4,6 +4,8 @@
     --secondary: #38A3A5;
     --third: #57cc99;
     --bg-white: #F2F2F2;
+    --bg-color: #694D35;
+    --bg-color-login: #DFDACA;
 }
 
 /* @font-face {
@@ -25,7 +27,7 @@ body {
 
 /* FOOTER */
 .footerBgColor {
-    background-color: #694D35;
+    background-color: var(--bg-color);
 }
 
 .iconsSize {
@@ -34,13 +36,13 @@ body {
 }
 
 .login {
-    background-color: #DFDACA;
+    background-color: var(--bg-color-login);
     width: 40%;
 }
 
 .logo {
-    height: 181px;
-    width: 181px;
+    height: 160px;
+    width: 160px;
     background-position: center;
     background-image: url("/src/img/logo.jpeg");
     background-repeat: no-repeat;
@@ -49,12 +51,12 @@ body {
 }
 
 .bg-color {
-    background-color: #F3EDDD;
+    background-color: var(--bg-color-login);
 }
 
 /* HEADER */
 .headerBgColor {
-    background-color: #694D35;
+    background-color: var(--bg-color);
 }
 
 .logoHeader {
