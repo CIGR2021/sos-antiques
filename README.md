@@ -1,4 +1,4 @@
-# S.O.S Antiques
+# SOS Antiques
 # Instruções de utilização
 
 ## Instalação do Site
