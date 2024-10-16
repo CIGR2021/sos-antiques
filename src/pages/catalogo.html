@@ -1,108 +1,115 @@
-<!doctype html>
 <html lang="pt-br">
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Trabalho TIAPN">
     <meta name="author"
         content="Carlos Henrique Pereira Vieira, Guilherme Augusto Lopes Campos, João Victor Silva Thomazi, Kelvin">
-    <title>SOS Antiques - Login</title>
-    <link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="/src/img/favicon.ico" type="image/x-icon">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Exo:wght@500&display=swap" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <link rel="stylesheet" href="/src/assets/bootstrap-5.3.2-dist/css/bootstrap.min.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+        rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="/src/css/normalize.css">
     <link rel="stylesheet" href="/src/css/style.css">
+    <link rel="stylesheet" href="/src/css/catalogo.css">
+    <title>Catálogo SOS Antiques</title>
 </head>
 
-<body class="container-fluid w-100 h-100">
-    <!-- Cabeçalho -->
+<body>
     <header class="headerBgColor rounded">
-        <nav class="container w-75 fs-5 nav navbar navbar-dark d-flex text-light p-2">
+        <nav class="container w-auto fs-5 navbar navbar-dark d-flex text-light p-2 align-items-center">
             <image class="logoHeader" />
-            <ul class="container w-75 fs-5 nav nav-tabs navbar navbar-dark d-flex text-light p-4">
-                <li class="nav-item">
-                    <a class="fs-5 nav-link text-white" aria-current="page" href="/about">
-                        Sobre Nós
+            <form class="container w-75 h-auto d-flex text-light">
+                <section class="d-flex flex-row w-50 h-auto">
+                    <input type='search' class="bg-color form-control p-3 w-100 rounded text-dark"
+                        placeholder='Busque por nome, categoria ou marca' title="Busque por nome, categoria ou marca"
+                        id='inputSearch' aria-describedby='searchHelp' />
+                </section>
+                <section class="w-auto d-flex flex-row">
+                    <button class="header__btn-anunciar fs-5 m-auto rounded btn btn-secondary w-auto me-3">
+                        <a href="/src/pages/anunciar-produto.html"
+                            class="d-flex justify-content-center list-group-item list-group-item-action active me-3">
+                            Anunciar
+                        </a>
+                    </button>
+                    <!-- Headset -->
+                    <a class="align-items-center m-2" href="https://www.linkedin.com/" target="_blank"
+                        title="Contate o Suporte">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="2.5em"
+                            viewBox="0 0 512 512"><!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+                            <style>
+                                svg {
+                                    fill: #DFDACA
+                                }
+                            </style>
+                            <path
+                                d="M256 48C141.1 48 48 141.1 48 256l0 40c0 13.3-10.7 24-24 24s-24-10.7-24-24l0-40C0 114.6 114.6 0 256 0S512 114.6 512 256l0 144.1c0 48.6-39.4 88-88.1 88L313.6 488c-8.3 14.3-23.8 24-41.6 24l-32 0c-26.5 0-48-21.5-48-48s21.5-48 48-48l32 0c17.8 0 33.3 9.7 41.6 24l110.4 .1c22.1 0 40-17.9 40-40L464 256c0-114.9-93.1-208-208-208zM144 208l16 0c17.7 0 32 14.3 32 32l0 112c0 17.7-14.3 32-32 32l-16 0c-35.3 0-64-28.7-64-64l0-48c0-35.3 28.7-64 64-64zm224 0c35.3 0 64 28.7 64 64l0 48c0 35.3-28.7 64-64 64l-16 0c-17.7 0-32-14.3-32-32l0-112c0-17.7 14.3-32 32-32l16 0z" />
+                        </svg>
                     </a>
-                </li>
-                <li class="nav-item">
-                    <a class="fs-5 nav-link text-white" aria-current="page" href="#">
-                        Produtos
+                    <a class="align-items-center m-2 w-auto" href="https://www.linkedin.com/" target="_blank"
+                        title="Contate o Suporte">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="2.5em"
+                            viewBox="0 0 512 512"><!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+                            <style>
+                                svg {
+                                    fill: #DFDACA
+                                }
+                            </style>
+                            <path
+                                d="M399 384.2C376.9 345.8 335.4 320 288 320l-64 0c-47.4 0-88.9 25.8-111 64.2c35.2 39.2 86.2 63.8 143 63.8s107.8-24.7 143-63.8zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256zm256 16a72 72 0 1 0 0-144 72 72 0 1 0 0 144z" />
+                        </svg>
                     </a>
-                </li>
-                <li class="nav-item">
-                    <a class="fs-5 nav-link text-white" aria-current="page" href="#">
-                        Doação
-                    </a>
-                </li>
-            </ul>
+                </section>
+            </form>
         </nav>
     </header>
-    <!-- Conteúdo -->
-    <main class="m-2 w-100 rounded d-flex flex-column justify-content-center align-items-center">
-        <section class="login shadow p-4 rounded d-flex flex-column align-items-center border border-secondary">
-            <image class="logo m-3" />
-            <h1 class="fs-2 fw-bold">Login</h1>
-            <label id="msgError" class="fs-5 p-2"></label>
-            <form class="w-75">
-                <section class="mb-3">
-                    <label class="form-label fw-bold" id="labelEmail">E-mail:</label>
-                    <fieldset class="input-group-text d-flex justify-content-center align-items-center">
-                        <input type='email' class="bg-color form-control p-3" placeholder='@mail.com'
-                            title="Informe o E-mail" id='inputEmail' aria-describedby='emailHelp' />
-                        <ion-icon class="fs-2 p-2 text-center" name="person-sharp"></ion-icon>
-                    </fieldset>
-                </section>
-                <section class="mb-3">
-                    <label class="form-label fw-bold" id="labelPassword">Senha:</label>
-                    <fieldset class="input-group-text d-flex justify-content-center align-items-center">
-                        <input type='password' class="bg-color form-control p-3" placeholder="**********"
-                            title="Informe a Senha" id='inputPassword' />
-                        <ion-icon class="fs-2 p-2 text-center" name="lock-closed-sharp"></ion-icon>
-                    </fieldset>
-                </section>
-                <a href="/src/pages/redefinir-senha.html"
-                    class="d-flex justify-content-center list-group-item list-group-item-action active"
-                    aria-current="true">
-                    <label title="Clique para redefinir sua senha" class="form-check-label btn mb-2">
-                        Esqueceu a senha?
-                    </label>
-                </a>
-                <button id="entrar" class="btn btn-secondary w-50 mb-2">
-                    <a href="#" class="d-flex justify-content-center list-group-item list-group-item-action active"
-                        aria-current="true">
-                        <label title="Clique para redefinir sua senha" class="fs-5 form-check-label btn mb-2">
-                            Entrar
-                        </label>
-                    </a>
-                </button>
-                <button class="btn btn-light border border-dark w-50">
-                    <a href="./cadastro.html"
-                        class="d-flex justify-content-center list-group-item list-group-item-action active"
-                        aria-current="true">
-                        <label title="Clique para redefinir sua senha" class="fs-5 form-check-label btn mb-2">
-                            Registrar
-                        </label>
-                    </a>
-                </button>
-            </form>
-        </section>
+    <main class="container-fluid main-content">
+        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3">
+            <aside class="menu-lateral col col-md-2 col-lg-2">
+                <ul class="menu-lateral__lista">
+                    <li class="menu-lateral__item">
+                        <button class="btn-item" id="btn-item__novidades">Novidades</button>
+                    </li>
+                    <li class="menu-lateral__item">
+                        <button class="btn-item" id="btn-item__venda">Itens de Venda</button>
+                    </li>
+                    <li class="menu-lateral__item">
+                        <button class="btn-item" id="btn-item__troca">Itens de Troca</button>
+                    </li>
+                    <li class="menu-lateral__item">
+                        <button class="btn-item" id="btn-item__doacoes">Doações</button>
+                    </li>
+                    <li class="menu-lateral__item">
+                        <a href="/src/pages/sobre-nos.html" class="ancora-item" id="ancora-item__novidades">Sobre
+                            Nós</a>
+                    </li>
+                </ul>
+            </aside>
+            <section class="col col-md-10 col-lg-8 container-fluid">
+                <h1 class="secao-principal__titulo">Novidades</h1>
+                <div
+                    class="card-container row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 justify-content-center align-content-center">
+                </div>
+            </section>
+            <aside class="menu-propaganda col col-lg-2">
+                <h4 class="propaganda-titulo">Propaganda</h4>
+            </aside>
+        </div>
     </main>
-    <!-- Rodapé -->
-    <footer class="footerBgColor w-auto h-auto fs-5 text-light rounded">
-        <main class="container navbar navbar-dark d-flex p-2">
+    <footer class="footerBgColor w-auto h-auto fs-5 text-light rounded page-rodape">
+        <section class="container navbar navbar-dark d-flex p-2">
             <!-- sessão Sobre Nós -->
             <section class="w-25 align-self-start text-center p-2">
-                <h1 class="fs-4 text-sm">Sobre Nós</h1>
-                <hr />
-                <p class="fs-6 text-sm text-wrap text-break">
-                    Buscamos oferecer para amigos e clientes: objetos antigos, colecionáveis
-                    e decorativos singulares e excêntricos, para sua casa, coleção ou
-                    cenário.
+                <h3>SOBRE NÓS</h3>
+                <p>Buscamos oferecer para amigos e clientes, objetos antigos, colecionáveis e decorativos, buscando
+                    sempre itens singulares e excêntricos para sua casa, coleção ou cenário.
                 </p>
             </section>
             <!-- sessão Acompanhe a SOS Antiques -->
@@ -220,12 +227,9 @@
                     contato@sosantiques.com.br
                 </p>
             </section>
-        </main>
+        </section>
     </footer>
-    
-    <script src="/src/assets/bootstrap-5.3.2-dist/js/bootstrap.bundle.min.js"></script>
-    <script src="/src/assets/bootstrap-5.3.2-dist/js/bootstrap.min.js"></script>
-    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-    <script src="/src/js/login.js"></script>
+    <script src="/src/js/catalogo.js"></script>
 </body>
+
+</html>
