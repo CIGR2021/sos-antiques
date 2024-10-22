@@ -7,7 +7,7 @@
     <meta name="description" content="Atividade TIAW">
     <meta name="author"
         content="Carlos Henrique Pereira Vieira, Guilherme Augusto Lopes Campos, João Victor Silva Thomazi, Kelvin">
-    <title>SOS Antiques - Login</title>
+    <title>SOS Antiques - Cadastro</title>
     <link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -47,23 +47,26 @@
         <section class="pb-2 w-auto login p-auto rounded d-flex flex-column justify-content-center align-items-center">
             <image class="logo m-3" />
             <h1 class="fs-2 fw-bold">Cadastrar Usuário</h1>
-            <div class="row container bg-white shadow p-4 rounded d-flex flex-row align-items-center border border-secondary">
+            <div
+                class="row container bg-white shadow p-4 rounded d-flex flex-row align-items-center border border-secondary">
                 <section class="col-lg container d-flex flex-column align-items-start">
                     <label class="p-3 fs-5 fw-normal">Preencha os campos com seus dados</label>
                     <form id="cadastro-form" class="w-auto p-3 text-start m-auto">
                         <section class="mb-3">
-                            <label class="form-label fw-bold">Nome completo:</label>
+                            <label class="form-label fw-bold">Nome completo<span class="fw-bolder text-danger"> *</span></label>
                             <fieldset class="input-group-text d-flex justify-content-center align-items-center">
-                                <input type='text' class="bg-color bg-gradient form-control p-3" placeholder="Nome completo"
-                                    title="Informe o Nome Completo" id='inputNome' aria-describedby='nomeHelp' />
+                                <input type='text' class="bg-color bg-gradient form-control p-3" required minlength="3"
+                                    placeholder="Nome completo" title="Informe o Nome Completo" id='inputNome'
+                                    aria-describedby='nomeHelp' />
                                 <ion-icon class="fs-2 p-2 text-center" name="person"></ion-icon>
                             </fieldset>
                         </section>
                         <section class="mb-3">
                             <label class="form-label fw-bold">Telefone celular:</label>
                             <fieldset class="input-group-text d-flex justify-content-center align-items-center">
-                                <input type='tel' class="bg-color form-control p-3" placeholder="+55"
-                                    title="Informe o Telefone Celular" id='inputTelefone' aria-describedby='telefoneHelp' />
+                                <input type='tel' class="bg-color form-control p-3" minlength="11" maxlength="11"
+                                    placeholder="+55" title="Informe o Telefone Celular" id='inputTelefone'
+                                    aria-describedby='telefoneHelp' />
                                 <ion-icon class="fs-2 p-2 text-center" name="call"></ion-icon>
                             </fieldset>
                         </section>
@@ -71,41 +74,43 @@
                             <label class="form-label fw-bold">CPF/CNPJ</label>
                             <fieldset class="input-group-text d-flex justify-content-center align-items-center">
                                 <input type='text' class="bg-color form-control p-3" placeholder="CPF/CNPJ"
-                                    title="Informe o CPF ou CNPJ" id='inputCPF_CNPJ' aria-describedby='cpf_cnpjHelp' />
+                                    title="Informe o CPF ou CNPJ" id='inputCPF_CNPJ' minlength="11" maxlength="14"
+                                    aria-describedby='cpf_cnpjHelp' />
                                 <ion-icon class="fs-2 p-2 text-center" name="card"></ion-icon>
                             </fieldset>
                         </section>
                         <section class="mb-3">
-                            <label class="form-label fw-bold">Data de Nascimento:</label>
+                            <label class="form-label fw-bold">Data de Nascimento</label>
                             <fieldset class="input-group-text d-flex justify-content-center align-items-center">
-                                <input type='date' class="bg-color form-control p-3" placeholder='Data de Nascimento'
-                                    title="Informe a Data de Nascimento" id='inputDataNascimento'
-                                    aria-describedby='dataNascimentoHelp' />
+                                <input type='date' class="bg-color form-control p-3" minlength="8" maxlength="8"
+                                    placeholder='Data de Nascimento' title="Informe a Data de Nascimento"
+                                    id='inputDataNascimento' aria-describedby='dataNascimentoHelp' />
                                 <ion-icon class="fs-2 p-2 text-center" name="calendar"></ion-icon>
                             </fieldset>
                         </section>
                         <section class="mb-3">
-                            <label class="form-label fw-bold">E-mail:</label>
+                            <label class="form-label fw-bold">E-mail<span class="fw-bolder text-danger"> *</span></label>
                             <fieldset class="input-group-text d-flex justify-content-center align-items-center">
-                                <input type='email' class="bg-color form-control p-3" placeholder='@mail.com'
-                                    title="Informe o E-mail" id='inputEmail' aria-describedby='emailHelp' />
+                                <input type='email' class="bg-color form-control p-3" required minlength="3"
+                                    placeholder='@mail.com' title="Informe o E-mail" id='inputEmail'
+                                    aria-describedby='emailHelp' />
                                 <ion-icon class="fs-2 p-2 text-center" name="mail"></ion-icon>
                             </fieldset>
                         </section>
                         <section class="mb-3">
-                            <label class="form-label fw-bold" id="labelPassword">Senha:</label>
+                            <label class="form-label fw-bold" id="labelPassword">Senha<span class="fw-bolder text-danger"> *</span></label>
                             <fieldset class="input-group-text d-flex justify-content-center align-items-center">
-                                <input type='password' class="bg-color form-control p-3" placeholder="**********"
-                                    title="Informe a Senha" id='inputPassword' />
+                                <input type='password' class="bg-color form-control p-3" required minlength="6"
+                                    placeholder="**********" title="Informe a Senha" id='inputPassword' />
                                 <ion-icon class="fs-2 p-2 text-center" name="lock-closed-sharp"></ion-icon>
                             </fieldset>
                         </section>
-                        <label class="fw-normal text-dark mb-2 badge">(*)campos obrigatórios</label>
-                    
+                        <label class="fw-normal text-dark mb-2 badge">(*) campo obrigatório</label>
+
                         <div class="input-group mb-3">
                             <div class="input-group-text m-auto">
-                                <input class="text-white-50 bg-dark form-check-input fs-5" type='checkbox' value='' id='inputCheckBoxNews'
-                                    aria-describedby='checkBoxHelp' />
+                                <input class="text-white-50 bg-dark form-check-input fs-5" required type='checkbox'
+                                    value='' id='inputCheckBoxNews' aria-describedby='checkBoxHelp' />
                             </div>
                             <label class="form-control badge fw-normal text-dark pt-2" for="inputCheckBox">
                                 Quero receber novidades por e-mail, SMS, Whatsapp
@@ -113,8 +118,8 @@
                         </div>
                         <div class="input-group mb-3">
                             <div class="input-group-text m-auto">
-                                <input class="text-white-50 bg-dark form-check-input fs-5" type='checkbox' value='' id='inputCheckBoxAgree'
-                                    aria-describedby='checkBoxHelp' />
+                                <input class="text-white-50 bg-dark form-check-input fs-5" required type='checkbox'
+                                    value='' id='inputCheckBoxAgree' aria-describedby='checkBoxHelp' />
                             </div>
                             <label class="form-control badge fw-normal text-dark pt-2" for="inputCheckBox">
                                 Declaro que li e aceito os termos e condições do site
@@ -125,7 +130,8 @@
                                 <a href="#"
                                     class="d-flex justify-content-center list-group-item list-group-item-action active"
                                     aria-current="true">
-                                    <label title="Clique para registrar" class="fs-5 form-check-label btn mb-2 text-light">
+                                    <label title="Clique para registrar"
+                                        class="fs-5 form-check-label btn mb-2 text-light">
                                         Registrar
                                     </label>
                                     <ion-icon class="fs-2 p-2 text-center" name="save"></ion-icon>
@@ -134,7 +140,8 @@
                         </fieldset>
                     </form>
                 </section>
-                <section class="col-md container d-flex flex-column align-self-start text-start border border-secondary mb-4 p-5">
+                <section
+                    class="col-md container d-flex flex-column align-self-start text-start border border-secondary mb-4 p-5">
                     <p class="text-justified">
                         Para Manter sua conta segura, recomendamos evitar criar senhas que
                         usam:
@@ -150,7 +157,7 @@
                             abcdefg, ou letras adjacentes no teclado (qwerty)
                         </li>
                     </ul>
-            </section>
+                </section>
             </div>
         </section>
     </main>
@@ -171,8 +178,7 @@
                 <hr class="mb-5" />
                 <image class="d-flex justify-content-center">
                     <a class="m-2" href="https://www.linkedin.com/" target="_blank" title="Linkedin">
-                        <svg xmlns="http://www.w3.org/2000/svg" height="2.5em"
-                            viewBox="0 0 448 512">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="2.5em" viewBox="0 0 448 512">
                             <style>
                                 svg {
                                     fill: #DFDACA
@@ -183,8 +189,7 @@
                         </svg>
                     </a>
                     <a href="https://www.github.com/" target="_blank" title="Git Hub">
-                        <svg xmlns="http://www.w3.org/2000/svg" height="2.5em"
-                            viewBox="0 0 496 512">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="2.5em" viewBox="0 0 496 512">
                             <style>
                                 svg {
                                     fill: #DFDACA
@@ -195,8 +200,7 @@
                         </svg>
                     </a>
                     <a class="m-2" href="https://www.instagram.com/" target="_blank" title="Instagram">
-                        <svg xmlns="http://www.w3.org/2000/svg" height="2.5em"
-                            viewBox="0 0 448 512">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="2.5em" viewBox="0 0 448 512">
                             <style>
                                 svg {
                                     fill: #DFDACA
@@ -207,8 +211,7 @@
                         </svg>
                     </a>
                     <a href="https://www.facebook.com/" target="_blank" title="Facebook">
-                        <svg xmlns="http://www.w3.org/2000/svg" height="2.5em"
-                            viewBox="0 0 512 512">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="2.5em" viewBox="0 0 512 512">
                             <style>
                                 svg {
                                     fill: #DFDACA
@@ -219,8 +222,7 @@
                         </svg>
                     </a>
                     <a href="https://twitter.com/" target="_blank" title="Twitter">
-                        <svg xmlns="http://www.w3.org/2000/svg" height="2.5em"
-                            viewBox="0 0 512 512">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="2.5em" viewBox="0 0 512 512">
                             <style>
                                 svg {
                                     fill: #DFDACA
@@ -240,8 +242,7 @@
                 <hr />
                 <image class="d-flex justify-content-center">
                     <a href="https://web.whatsapp.com/" target="_blank" title="WhatsApp">
-                        <svg xmlns="http://www.w3.org/2000/svg" height="2.5em"
-                            viewBox="0 0 448 512">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="2.5em" viewBox="0 0 448 512">
                             <style>
                                 svg {
                                     fill: #DFDACA
@@ -255,8 +256,7 @@
                 <p class="fs-6 text-sm text-wrap text-break">(31) 9 1234-1234</p>
                 <image class="d-flex justify-content-center">
                     <a href="https://mail.google.com/" target="_blank" title="Gmail">
-                        <svg xmlns="http://www.w3.org/2000/svg" height="2.5em"
-                            viewBox="0 0 512 512">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="2.5em" viewBox="0 0 512 512">
                             <style>
                                 svg {
                                     fill: #DFDACA
