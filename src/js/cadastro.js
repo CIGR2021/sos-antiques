@@ -18,9 +18,9 @@ cadastrar.addEventListener("submit", (event) => {
 
   const regex = /(.)\1{1,}|012|123|234|345|456|567|678|789|890|098|987|876|765|654|543|432|321|210|abc|bcd|cde|def|efg|fgh|ghi|hij|ijk|jkl|klm|lmn|mno|nop|opq|pqr|qrs|rst|stu|tuv|uvw|vwx|wxy|xyz|zyx|yxw|xwv|wvu|vut|uts|tsr|srq|rqp|qpo|pon|onm|nml|mlk|lkj|kji|jih|ihg|hgf|gfe|fed|edc|dcb|cba|qwerty|asdf|zxcv|ytrewq|fdsa|vcxz/;
   
-  const validarSenha = () => {
+  const validarSenha = (senha) => {
     // Verificar se a senha contém padrões não aceitos
-    if (regex.test(Senha)) {
+    if (regex.test(senha)) {
       return false;
     }
     return true;
