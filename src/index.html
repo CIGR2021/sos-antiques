@@ -8,43 +8,37 @@
     <meta name="author"
         content="Carlos Henrique Pereira Vieira, Guilherme Augusto Lopes Campos, João Victor Silva Thomazi, Kelvin">
     <title>SOS Antiques - Landing Page</title>
-    <link rel="shortcut icon" href="/src/img/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Exo:wght@500&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+        rel="stylesheet">  
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <link rel="stylesheet" href="/src/css/style.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body class="container-fluid w-100 h-100">
     <!-- Conteúdo -->
-    <main class="bg-image text-center p-5 rounded">
-        <image class="logo m-3" />
-        <h1 class="display-4">Bem Vindo à SOS Antiques</h1>
-        <p class="lead mb-3">Site de Produtos Víntages</p>
-        <button class="btn btn-secondary">
-            <a href="/src/pages/login.html"
-                class="d-flex justify-content-center list-group-item list-group-item-action active" aria-current="true">
-                <label title="Abrir tela de login" class="fs-5 form-check-label btn mb-2 text-light fw-bold">
+    <main class="bg-image text-center p-5 d-flex flex-column justify-content-center align-content-center align-items-center rounded">
+        <figure class="logo mb-3"></figure>
+        <h1 class="titulo display-4 mb-2">Bem Vindo(a) ao SOS Antiques</h1>
+        <p class="lead mt-3 mb-4">Site de Produtos Víntages</p>
+        <div class="d-flex justify-content-center align-content-center gap-4">
+            <a href="pages/login.html" aria-current="true">
+                <button class="botao btn-principal" title="Abrir tela de login">
                     Entrar
-                </label>
+                </button>
             </a>
-        </button>
-        <button class="btn btn-light border border-dark">
-            <a href="/src/pages/cadastro.html"
-                class="d-flex justify-content-center list-group-item list-group-item-action active" aria-current="true">
-                <label title="Abrir tela de cadastro" class="fs-5 form-check-label btn mb-2 fw-bold">
+            <a href="pages/cadastro.html" aria-current="true">
+                <button class="botao btn-secundario" title="Abrir tela de cadastro">
                     Registrar
-                </label>
+                </button>
             </a>
-        </button>
+        </div>
     </main>
-    <!-- Rodapé -->
-
-    <script src="/src/assets/bootstrap-5.3.2-dist/js/bootstrap.bundle.min.js"></script>
-    <script src="/src/assets/bootstrap-5.3.2-dist/js/bootstrap.min.js"></script>
+    <script src="assets/bootstrap-5.3.2-dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/bootstrap-5.3.2-dist/js/bootstrap.min.js"></script>
 </body>
-
-
 </html>

@@ -1,35 +1,10 @@
-body {
-    text-align: inherit;
-    font-family: var(--font-text);
-    background-color: var(--color-beige);
+.main__secao {
+    margin-top: 2rem;
+    margin-bottom: 3rem;
 }
 
 .titulo {
-    font-family: var(--font-title);
-    color: var(--color-brown-dark);
     font-weight: 700;
-}
-
-.header {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    align-items: center;
-    padding: 1rem 3.5rem;
-}
-
-.logoHeader {
-    margin-left: 3rem;
-}
-
-.header-icons {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1.5rem;
-}
-
-.main__secao {
-    margin-top: 2rem;
 }
 
 .main__titulo-principal {

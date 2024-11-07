@@ -1,6 +1,32 @@
-// Cadastro
+//formulario
 const cadastrar = document.getElementById("cadastro-form");
 
+const aplicarMascaraCPF = (cpf) => {
+  cpf = cpf.replace(/\D/g, '');
+  cpf = cpf.replace(/(\d{3})(\d)/, '$1.$2');
+  cpf = cpf.replace(/(\d{3})(\d)/, '$1.$2');
+  cpf = cpf.replace(/(\d{3})(\d{1,2})$/, '$1-$2');
+  return cpf;
+};
+//inicio máscara
+const aplicarMascaraTelefone = (telefone) => {
+  telefone = telefone.replace(/\D/g, '');
+  telefone = telefone.replace(/(\d{2})(\d)/, '($1) $2');
+  telefone = telefone.replace(/(\d)(\d{4})$/, '$1-$2');
+  return telefone;
+};
+
+const cpfInput = document.getElementById('inputCPF_CNPJ');
+const telefoneInput = document.getElementById('inputTelefone');
+
+cpfInput.addEventListener('input', (e) => {
+  e.target.value = aplicarMascaraCPF(e.target.value);
+});
+
+telefoneInput.addEventListener('input', (e) => {
+  e.target.value = aplicarMascaraTelefone(e.target.value);
+});
+//fim mascara
 cadastrar.addEventListener("submit", (event) => {
   event.preventDefault();
 
@@ -10,24 +36,43 @@ cadastrar.addEventListener("submit", (event) => {
   const DataNascimento = document.getElementById("inputDataNascimento").value;
   const Email = document.getElementById("inputEmail").value;
   const Senha = document.getElementById("inputPassword").value;
-  const AceitarTermo = document.getElementById("inputCheckBoxAgree").checked;
-  const Novidades = document.getElementById("inputCheckBoxNews").checked;
 
-  // Recupera os usuários já cadastrados
+  const senhaErro = document.getElementById('senhaErro');
+  senhaErro.textContent = ''; //limpa mensagens de erro anteriores
+
+  //recupera os usuários já cadastrados
   const usuarios = JSON.parse(localStorage.getItem("Usuarios")) || [];
+  //verifica se já existe um usuário com o mesmo email
+  const usuarioExistente = usuarios.find(usuario => usuario.Email === Email);
+  if (usuarioExistente) {
+    senhaErro.textContent = 'Já existe um usuário cadastrado com este e-mail.';
+    senhaErro.classList.add('error-message-show');
+    return; //se sim interrompe o cadastro
+  }
 
-  const regex = /(.)\1{1,}|012|123|234|345|456|567|678|789|890|098|987|876|765|654|543|432|321|210|abc|bcd|cde|def|efg|fgh|ghi|hij|ijk|jkl|klm|lmn|mno|nop|opq|pqr|qrs|rst|stu|tuv|uvw|vwx|wxy|xyz|zyx|yxw|xwv|wvu|vut|uts|tsr|srq|rqp|qpo|pon|onm|nml|mlk|lkj|kji|jih|ihg|hgf|gfe|fed|edc|dcb|cba|qwerty|asdf|zxcv|ytrewq|fdsa|vcxz/;
-  
+  //expressões regulares para validação de senha
+  const regex = /(.)\1{1,}|qwerty|asdf|zxcv|ytrewq|fdsa|vcxz/;
+  const senhaForte = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+
+  //função de validação da senha
   const validarSenha = (senha) => {
-    // Verificar se a senha contém padrões não aceitos
+    senhaErro.classList.remove('error-message-show');
+    if (!senhaForte.test(senha)) {
+      senhaErro.textContent = 'A senha deve ter pelo menos 8 caracteres, incluindo uma letra maiúscula, uma letra minúscula, um número e um caractere especial.';
+      senhaErro.classList.add('error-message-show');
+      return false;
+    }
     if (regex.test(senha)) {
+      senhaErro.textContent = 'Senha inválida. Contém padrões não aceitos.';
+      senhaErro.classList.add('error-message-show');
       return false;
     }
     return true;
   };
 
+  //validação da senha
   if (validarSenha(Senha)) {
-    // Adiciona o novo usuário {
+    //adiciona o novo usuário
     usuarios.push({
       NomeCompleto,
       Telefone,
@@ -35,16 +80,23 @@ cadastrar.addEventListener("submit", (event) => {
       DataNascimento,
       Email,
       Senha,
-      AceitarTermo,
-      Novidades,
     });
 
-    // Armazena o array atualizado no localStorage
+    //armazena o usuário no array atualizado no localStorage
     localStorage.setItem("Usuarios", JSON.stringify(usuarios));
     alert("Cadastro realizado com sucesso!");
 
-    window.location.href = "/src/pages/login.html";
-  } else {
-    alert("Senha inválida. Contém padrões não aceitos.");
+    window.location.href = "/pages/login.html";
   }
+});
+
+const togglePassword = document.getElementById('togglePassword');
+const passwordInput = document.getElementById('inputPassword');
+
+togglePassword.addEventListener('click', () => {
+  const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+  passwordInput.setAttribute('type', type);
+  
+  //troca o ícone do botão de visualizar/ocultar senha
+  togglePassword.textContent = type === 'password' ? '👁️' : '🙈';
 });

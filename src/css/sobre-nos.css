@@ -9,6 +9,8 @@ main {
     font-weight: 500;
     font-size: 3rem;
     margin-left: 6rem;
+    font-family: var(--font-title);
+    color: var(--color-brown-dark);
 }
 
 .paragrafo-texto {
@@ -20,6 +22,8 @@ main {
 .titulo-secundario {
     font-size: 1.3rem;
     font-weight: 700;
+    font-family: var(--font-title);
+    color: var(--color-brown-dark);
 }
 
 .secao {

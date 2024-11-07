@@ -41,7 +41,7 @@ document.addEventListener('DOMContentLoaded', function() {
             precoProduto: data.precoProduto,
             descricaoProduto: data.descricaoProduto,
             fotoProduto: data.fotoProduto,
-            termoPontato: data.termoPontato
+            termoContato: data.termoContato
         })
 
         localStorage.setItem('anuncios', JSON.stringify(anuncios));

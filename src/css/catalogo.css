@@ -45,8 +45,6 @@ body {
 }
 
 .secao-principal__titulo {
-    font-family: var(--font-title);
-    color: var(--color-brown-dark);
     font-weight: 700;
     font-size: 1.5rem;
     text-align: start;
