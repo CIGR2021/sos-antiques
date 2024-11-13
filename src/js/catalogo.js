@@ -1,7 +1,8 @@
 document.addEventListener('DOMContentLoaded', function () {
     const cardContainer = document.querySelector('.card-container');
     const produtos = JSON.parse(localStorage.getItem('anuncios')) || [];
-     
+
+/*  Produtos pré-criados para entrega 1    
     produtos.push({
         tituloProduto: "Jaqueta Retro Masculina - Planet Hollywood",
         tipoProduto: "Troca",
@@ -23,7 +24,7 @@ document.addEventListener('DOMContentLoaded', function () {
         fotoProduto: `https://lh3.googleusercontent.com/pw/AP1GczOK2EVWACts4pIWMj5DAyzlQC_goBXWvK68APHcCEz2eM5WfMaT2Oe_ghdMcI29KyDpDprly9vlXQwalUzZX5Fr0-mov8jL4p8xNVMmdYI-jjwYxG-B3Xnk273MGowbjJNj2ObruOrInhfbePmAsIyE=w651-h880-s-no-gm?authuser=0`,
         termoContato: true
     })
-
+ */
 
     function renderizarProdutos(filtrados) {
         cardContainer.innerHTML = ''; // Limpa o container antes de renderizar os produtos filtrados
@@ -40,10 +41,10 @@ document.addEventListener('DOMContentLoaded', function () {
                         <img src="${produto.fotoProduto}" class="card-img-top card-imagem" alt="...">
                     </div>
                     <div class="card-content">
-                        <h5 class="card-titulo">${produto.tituloProduto}</h5>
+                        <h5 class="card-titulo text-capitalize">${produto.tituloProduto}</h5>
                         <div class="d-flex justify-content-between align-content-center align-items-center">
                             <p class="card-preco">${precoDoProduto}</p>
-                            <a href="/src/pages/produto.html" class="card-btn">Visualizar</a>
+                            <a href="/pages/produto.html?id=${produto.id}" class="card-btn">Visualizar</a>
                         </div>
                     </div>
                 </div>
