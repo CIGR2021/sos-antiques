@@ -75,7 +75,7 @@ body {
 
 .btn-secundario:hover {
     color: var(--color-beige);
-    border: none;
+    border: 1.5px solid transparent;
 }
 
 /* FOOTER */
