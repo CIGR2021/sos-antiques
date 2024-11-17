@@ -161,6 +161,13 @@ body {
     min-width: 25%;
 }
 
+.dropdown-toggle {
+    color: var(--color-green);
+}
+
+.dropdown-item:active {
+    background-color: var(--color-green);
+}
 
 
 @media (max-width: 375px) {
