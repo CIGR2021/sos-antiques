@@ -48,6 +48,9 @@ document.addEventListener('DOMContentLoaded', function() {
         
         const produtoId = Date.now();
         const telefoneSomenteNumeros = userLogado.telefone.replace(/\D/g, '');
+        if(data.fotoProduto == "" || data.fotoProduto == null) {
+            data.fotoProduto = "/img/default-product.png"
+        }
 
         anuncios.push({
             id: produtoId,

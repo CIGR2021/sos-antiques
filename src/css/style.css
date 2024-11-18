@@ -169,6 +169,24 @@ body {
     background-color: var(--color-green);
 }
 
+.btn-primary {
+    background-color: var(--color-green);
+    border: none;
+}
+
+.btn-primary:hover {
+    background-color: var(--color-orange);
+}
+
+.btn-primary:active, 
+.btn-primary.active {
+    background-color: var(--color-brown-dark); 
+    border: none;
+}
+
+.btn-primary:focus {
+    box-shadow: none; 
+}
 
 @media (max-width: 375px) {
     .container-fluid {
