@@ -35,7 +35,11 @@ function entrar(event) {
                 nome: item.NomeCompleto,
                 user: item.Email,
                 senha: item.Senha,
-                telefone: item.Telefone
+                telefone: item.Telefone,
+                foto: item.foto,
+                cpf: item.CPF_CNPJ,
+                nascimento: item.DataNascimento,
+                senha: item.Senha
             }
         }
     })
