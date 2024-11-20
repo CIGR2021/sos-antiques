@@ -1,9 +1,23 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.main-content {
+    flex: 1;
+}
+
 *,
 *::before,
 *::after {
     box-sizing: border-box;
 }
 
+.row {
+    margin: 0;
+}
 
 .menu-lateral__item {
     list-style: none;
@@ -48,13 +62,13 @@
     align-items: center;
 }
 
-.card__foto-perfil {
+.foto-container {
     width: 200px;
     height: 200px;
     overflow: hidden;
     box-sizing: border-box;
-    margin-bottom: 1rem;
     border-radius: 4px;
+    margin-bottom: 1rem;
 }
 
 .card__info {
@@ -98,7 +112,7 @@
 }
 
 .container-meus-anuncios {
-    margin-top: 2rem;
+    margin: 2rem 0;
 }
 
 .titulo {
@@ -114,6 +128,11 @@
 .card-content {
     margin-top: .5rem;
     padding: .5rem .7rem;
+}
+
+.card-imagem-container {
+    max-height: 230px;
+    overflow: hidden;
 }
 
 .card-imagem {
