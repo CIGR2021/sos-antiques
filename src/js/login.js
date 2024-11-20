@@ -39,7 +39,8 @@ function entrar(event) {
                 foto: item.foto,
                 cpf: item.CPF_CNPJ,
                 nascimento: item.DataNascimento,
-                senha: item.Senha
+                local: item.local,
+                saldo: item.saldo
             }
         }
     })

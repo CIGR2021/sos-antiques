@@ -36,6 +36,9 @@ cadastrar.addEventListener("submit", (event) => {
   const DataNascimento = document.getElementById("inputDataNascimento").value;
   const Email = document.getElementById("inputEmail").value;
   const Senha = document.getElementById("inputPassword").value;
+  const foto = '';
+  const local = '';
+  const saldo = '0.00';
 
   const senhaErro = document.getElementById('senhaErro');
   senhaErro.textContent = ''; //limpa mensagens de erro anteriores
@@ -80,6 +83,9 @@ cadastrar.addEventListener("submit", (event) => {
       DataNascimento,
       Email,
       Senha,
+      foto,
+      local,
+      saldo
     });
 
     //armazena o usuário no array atualizado no localStorage
