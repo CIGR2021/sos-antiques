@@ -6,148 +6,138 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Atividade TIAW">
     <meta name="author"
-        content="Carlos Henrique Pereira Vieira, Guilherme Augusto Lopes Campos, João Victor Silva Thomazi, Kelvin">
-    <title>SOS Antiques - Login</title>
-    <link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon">
+        content="Carlos Henrique Pereira Vieira, Guilherme Augusto Lopes Campos">
+    <title>SOS Antiques - Cadastro</title>
+    <link rel="shortcut icon" href="../img/favicon.ico" type="image/x-icon">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Exo:wght@500&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+        rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <link rel="stylesheet" href="/src/assets/bootstrap-5.3.2-dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="/src/css/style.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/cadastro.css">
 </head>
 
-<body class="container-fluid w-100 h-100">
-    <!-- Cabeçalho -->
-    <header class="headerBgColor rounded">
-        <nav class="container w-75 fs-5 nav navbar navbar-dark d-flex text-light p-4">
-            <image class="logoHeader" />
-            <ul class="container w-75 fs-5 nav nav-tabs navbar navbar-dark d-flex text-light p-4">
-                <li class="nav-item">
-                    <a class="fs-5 nav-link text-white" aria-current="page" href="/about">
-                        Sobre Nós
-                    </a>
-                </li> |
-                <li class="nav-item">
-                    <a class="fs-5 nav-link text-white" aria-current="page" href="#">
-                        Produtos
-                    </a>
-                </li> |
-                <li class="nav-item">
-                    <a class="fs-5 nav-link text-white" aria-current="page" href="#">
-                        Doação
-                    </a>
-                </li>
-            </ul>
-        </nav>
-    </header>
+<body>
     <!-- Conteúdo -->
-    <main class="container-fluid w-100 h-100">
+    <main class="container-fluid">
         <section class="pb-2 w-auto login p-auto rounded d-flex flex-column justify-content-center align-items-center">
-            <image class="logo m-3" />
-            <h1 class="fs-2 fw-bold">Cadastrar Usuário</h1>
-            <div class="w-75 bg-white shadow p-4 rounded d-flex flex-row align-items-center border border-secondary">
-                <section class="w-50 d-flex flex-column align-items-start">
-                    <label class="p-3 fs-4 fw-normal">
-                        Preencher os campos com seus dados
-                    </label>
-                    <form class="w-100 p-3">
-                        <section class="mb-3">
-                            <label class="form-label fw-bold">Nome completo:</label>
-                            <input type='text' class="bg-color bg-gradient form-control p-3" placeholder="Nome completo"
-                                title="Informe o Nome Completo" id='inputNome' aria-describedby='nomeHelp' />
-                        </section>
-                        <section class="mb-3">
-                            <label class="form-label fw-bold">Telefone celular:</label>
-                            <input type='tel' class="bg-color form-control p-3" placeholder="+55"
-                                title="Informe o Telefone Celular" id='inputTelefone' aria-describedby='telefoneHelp' />
-                        </section>
-                        <section class="mb-3">
-                            <label class="form-label fw-bold">CPF/CNPJ</label>
-                            <input type='text' class="bg-color form-control p-3" placeholder="CPF/CNPJ"
-                                title="Informe o CPF ou CNPJ" id=`inputCPF_CNPJ` aria-describedby='cpf_cnpjHelp' />
-                        </section>
-                        <section class="mb-3">
-                            <label class="form-label fw-bold">Data de Nascimento:</label>
-                            <input type='date' class="bg-color form-control p-3" placeholder='Data de Nascimento'
-                                title="Informe a Data de Nascimento" id='inputDataNascimento'
-                                aria-describedby='dataNascimentoHelp' />
-                        </section>
-                        <section class="mb-3">
-                            <label class="form-label fw-bold">E-mail:</label>
-                            <input type='email' class="bg-color form-control p-3" placeholder='@mail.com'
-                                title="Informe o E-mail" id='inputEmail' aria-describedby='emailHelp' />
-                        </section>
-                        <section class="mb-3">
-                            <label class="form-label fw-bold">Senha:</label>
-                            <input type='password' class="bg-color form-control p-3" placeholder="**********"
-                                title="Informe a Senha" id='inputPassword' />
-                        </section>
-                        <label class="fw-normal text-dark mb-2 badge">
-                            (*)campos obrigatórios
-                        </label>
-                        <section class="mb-3">
-                            <input type='checkbox' value='novidades' id='inputCheckBox'
-                                aria-describedby='checkBoxHelp' /><span class="badge fw-normal text-dark">Quero receber
-                                novidades por e-mail, SMS, Whatsapp</span>
-                        </section>
-                        <section class="mb-3">
-                            <input type='checkbox' value='aceite os termos' id='inputCheckBox'
-                                aria-describedby='checkBoxHelp' /><span class="badge fw-normal text-dark">Declaro que li
-                                e aceito os termos e condições do site</span>
-                        </section>
-                    </form>
-                </section>
-                <section class="w-50 d-flex flex-column align-self-start mt-4">
-                    <form class="w-100 p-3 mt-5">
-                        <p class="text-justified">
-                            Para Manter sua conta segura, recomendamos evitar criar senhas que
-                            usam:
-                        </p>
-                        <ul>
-                            <li>Palavras de dicionário em qualquer idioma</li>
-                            <li>
-                                Palavras escritas ao contrário, erros comuns de ortografia e
-                                abreviações
-                            </li>
-                            <li>
-                                Sequências ou caracteres repetidos. Exemplos: 12345678, 222222,
-                                abcdefg, ou letras adjacentes no teclado (qwerty)
-                            </li>
-                        </ul>
-                    </form>
-                </section>
-                <section class="align-self-end">
-                    <button class="btn btn-light border border-dark w-auto p-3">
-                        <a href="/src/pages/login.html"
-                            class="d-flex justify-content-center list-group-item list-group-item-action active"
-                            aria-current="true">
-                            <label title="Clique para registrar" class="fs-5 form-check-label btn mb-2">
-                                Registrar
-                            </label>
+            <a href="login.html"><figure class="logo m-3"></figure></a>
+            <div class="div-cadastro row p-4 rounded d-flex justify-content-between flex-row align-items-center">
+                <section class="col-lg-6 col-md-6 col-12 d-flex flex-column align-items-start">
+                    <div class="d-flex justify-content-center align-content-center gap-4">
+                        <a href="login.html" aria-current="true">
+                            <button title="Clique para cancelar"
+                                class="botao btn-secundario btn-menor d-flex align-items-center fs-5">
+                                <ion-icon class="fs-4 p-2 text-center" name="arrow-back"></ion-icon>
+                            </button>
                         </a>
-                    </button>
+                    </div>
+                    <h1 class="p-3 titulo fw-medium fs-3">Preencha os campos com seus dados</h1>
+                    <form id="cadastro-form" class="w-100 p-3 text-start m-auto">
+                        <section class="mb-3">
+                            <label class="form-label fw-bold" for="inputNome"><span
+                                    class="fw-bolder text-danger">*</span>Nome completo</label>
+                            <fieldset class="input-group-text d-flex justify-content-center align-items-center">
+                                <input type='text' class="bg-gradient form-control p-3" required minlength="3"
+                                    placeholder="Nome completo" title="Informe o Nome Completo" id='inputNome'
+                                    aria-describedby='nomeHelp' />
+                                <ion-icon class="fs-4 p-2 text-center" name="person"></ion-icon>
+                            </fieldset>
+                        </section>
+                        <section class="mb-3">
+                            <label class="form-label fw-bold" for="inputTelefone"><span
+                                    class="fw-bolder text-danger">*</span>Telefone celular:</label>
+                            <fieldset class="input-group-text d-flex justify-content-center align-items-center">
+                                <input type='tel' class="form-control p-3" placeholder="Digite somente números"
+                                    title="Informe o Telefone Celular" id='inputTelefone'
+                                    aria-describedby='telefoneHelp' minlength="14" maxlength="15" required />
+                                <ion-icon class="fs-4 p-2 text-center" name="call"></ion-icon>
+                                <div id="telefoneErro" class="error-message"></div>
+                            </fieldset>
+                        </section>
+                        <section class="mb-3">
+                            <label class="form-label fw-bold" for="inputCPF_CNPJ">CPF</label>
+                            <fieldset class="input-group-text d-flex justify-content-center align-items-center">
+                                <input type='text' class="form-control p-3" placeholder="Digite somente números"
+                                    title="Informe o CPF ou CNPJ" id='inputCPF_CNPJ' minlength="11" maxlength="14"
+                                    aria-describedby='cpf_cnpjHelp' />
+                                <ion-icon class="fs-4 p-2 text-center" name="card"></ion-icon>
+                            </fieldset>
+                        </section>
+                        <section class="mb-3">
+                            <label class="form-label fw-bold" for="inputDataNascimento">Data de Nascimento</label>
+                            <fieldset class="input-group-text d-flex justify-content-center align-items-center">
+                                <input type='date' class="form-control p-3" placeholder='Data de Nascimento'
+                                    title="Informe a Data de Nascimento" id='inputDataNascimento'
+                                    aria-describedby='dataNascimentoHelp' />
+                                <ion-icon class="fs-4 p-2 text-center" name="calendar"></ion-icon>
+                            </fieldset>
+                        </section>
+                        <section class="mb-3">
+                            <label class="form-label fw-bold" for="inputEmail"><span
+                                    class="fw-bolder text-danger">*</span>E-mail</label>
+                            <fieldset class="input-group-text d-flex justify-content-center align-items-center">
+                                <input type='email' class="form-control p-3" required minlength="3"
+                                    placeholder='@mail.com' title="Informe o E-mail" id='inputEmail'
+                                    aria-describedby='emailHelp' />
+                                <ion-icon class="fs-4 p-2 text-center" name="mail"></ion-icon>
+                            </fieldset>
+                        </section>
+                        <section class="mb-3">
+                            <label class="form-label fw-bold" id="labelPassword" for="inputPassword"><span
+                                    class="fw-bolder text-danger">*</span>Senha</label>
+                            <fieldset class="input-group-text d-flex justify-content-center align-items-center">
+                                <input type='password' class="form-control p-3" required minlength="8"
+                                    placeholder="**********" title="Informe a Senha" id='inputPassword' />
+                                <button class="botao-ver-senha" type="button" id="togglePassword">👁️</button>
+                                <ion-icon class="fs-4 p-2 text-center" name="lock-closed-sharp"></ion-icon>
+                            </fieldset>
+                            <p id="senhaErro" class="error-message error-message-show"></p>
+                        </section>
+                        <label class="fw-normal text-dark mb-4 text-wrap badge">Campos com (*) são obrigatório</label>
+                        <div class="d-flex justify-content-center align-content-center gap-4">
+                            <button title="Clique para registrar" type="submit"
+                                class="botao btn-principal btn-menor d-flex align-items-center fs-5">
+                                Cadastrar
+                                <ion-icon class="fs-4 p-2 text-center" name="save"></ion-icon>
+                            </button>
+                        </div>
+                    </form>
+                </section>
+                <section class="secao-orientacoes col-lg-6 col-md-6 col-12 align-self-start text-start">
+                    <p class="text-justified">
+                        Para Manter sua conta segura, recomendamos evitar criar senhas que
+                        usam:
+                    </p>
+                    <div class="d-flex flex-column">
+                        <ul class="w-100">
+                            <li>Palavras de dicionário em qualquer idioma</li>
+                            <li>Palavras escritas ao contrário, erros comuns de ortografia e abreviações</li>
+                            <li>Sequências ou caracteres repetidos, como 12345678, 222222, abcdefg, ou letras adjacentes
+                                (qwerty)</li>
+                        </ul>
+                    </div>
                 </section>
             </div>
         </section>
     </main>
     <!-- Rodapé -->
-    <footer class="footerBgColor w-auto h-auto fs-5 text-light rounded">
-        <main class="container navbar navbar-dark d-flex p-2">
+    <footer class="footerBgColor w-auto h-auto fs-5 text-light rounded page-rodape">
+        <section class="rodape__container d-flex justify-content-center flex-wrap p-2">
             <!-- sessão Sobre Nós -->
-            <section class="w-25 align-self-start text-center p-2">
-                <h1 class="fs-4 text-sm">Sobre Nós</h1>
+            <section class="rodape__sobre-nos align-self-start text-center p-2">
+                <h3 class="fs-4">SOBRE NÓS</h3>
                 <hr />
-                <p class="fs-6 text-sm text-wrap text-break">
-                    Buscamos oferecer para amigos e clientes: objetos antigos, colecionáveis
-                    e decorativos singulares e excêntricos, para sua casa, coleção ou
-                    cenário.
+                <p>Buscamos oferecer para amigos e clientes, objetos antigos, colecionáveis e decorativos, buscando
+                    sempre itens singulares e excêntricos para sua casa, coleção ou cenário.
                 </p>
             </section>
             <!-- sessão Acompanhe a SOS Antiques -->
-            <section class="w-50 align-self-start text-center p-2 bg-gradient rounded">
-                <h1 class="fs-4 text-auto">Acompanhe a SOS Antiques</h1>
+            <section class="rodape__redes align-self-start text-center p-2 bg-gradient rounded">
+                <h3 class="fs-4 text-auto">Acompanhe a SOS Antiques</h3>
                 <hr class="mb-5" />
                 <image class="d-flex justify-content-center">
                     <!-- Linkedin -->
@@ -221,8 +211,8 @@
                 <hr />
             </section>
             <!-- sessão Fale Conosco -->
-            <section class="w-25 align-self-start text-center p-2">
-                <h1 class="fs-4 text-sm">Fale Conosco</h1>
+            <section class="rodape__fale-conosco align-self-start text-center p-2">
+                <h3 class="fs-4 text-sm">Fale Conosco</h3>
                 <hr />
                 <image class="d-flex justify-content-center">
                     <!-- Whatsapp -->
@@ -260,12 +250,13 @@
                     contato@sosantiques.com.br
                 </p>
             </section>
-        </main>
+        </section>
     </footer>
 
-    <script src="/src/assets/bootstrap-5.3.2-dist/js/bootstrap.bundle.min.js"></script>
-    <script src="/src/assets/bootstrap-5.3.2-dist/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-    <script src="/src/js/login.js"></script>
+    <script src="../js/cadastro.js"></script>
 </body>

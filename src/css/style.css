@@ -1,9 +1,21 @@
 :root {
+    --white: #FFFFFF;
     --black: #000;
     --primary: #22577A;
     --secondary: #38A3A5;
     --third: #57cc99;
     --bg-white: #F2F2F2;
+    --bg-color: #694D35;
+    --bg-color-login: #DFDACA;
+    --gray: #D9D9D9;
+    --color-green: #627368;
+    --color-orange: #BF6734;
+    --color-brown-dark: #593414;
+    --color-brown-light: #694D35;
+    --color-beige: #F2EDDC;
+    --font-title: "Libre Baskerville";
+    --font-text: "Inter";
+    --stroke-color: #A6A6A6
 }
 
 /* @font-face {
@@ -18,14 +30,57 @@
     font-size: 14px;
 }
 
+a {
+    text-decoration: none;
+    font-family: var(--font-text);
+}
+
 body {
-    /* background-color: var(--secondary); */
-    text-align: center;
+    text-align: inherit;
+    font-family: var(--font-text);
+    background-color: var(--color-beige);
+}
+
+.titulo {
+    font-family: var(--font-title);
+    color: var(--color-brown-dark);
+}
+
+.botao {
+    font-size: 18px;
+    font-weight: 600;
+    padding: 1rem 2.5rem;
+    border-radius: 4rem;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+    border: none;
+}
+
+.botao:hover {
+    background-color: var(--color-orange);
+}
+
+.botao:active {
+    background-color: var(--color-brown-light);
+}
+
+.btn-principal {
+    color: var(--color-beige);
+    background-color: var(--color-green);
+}
+
+.btn-secundario {
+    color: var(--color-green);
+    border: 1.5px solid var(--color-green);
+}
+
+.btn-secundario:hover {
+    color: var(--color-beige);
+    border: 1.5px solid transparent;
 }
 
 /* FOOTER */
 .footerBgColor {
-    background-color: #694D35;
+    background-color: var(--bg-color);
 }
 
 .iconsSize {
@@ -34,34 +89,34 @@ body {
 }
 
 .login {
-    background-color: #DFDACA;
+    background-color: var(--bg-color-login);
     width: 40%;
 }
 
 .logo {
-    height: 181px;
-    width: 181px;
+    height: 160px;
+    width: 160px;
     background-position: center;
-    background-image: url("/src/img/logo.jpeg");
-    background-repeat: no-repeat;
+    background-image: url("../img/logo.JPG");
     background-size: contain;
     border-radius: 50%;
+    border: none;
 }
 
 .bg-color {
-    background-color: #F3EDDD;
+    background-color: var(--bg-color-login);
 }
 
 /* HEADER */
 .headerBgColor {
-    background-color: #694D35;
+    background-color: var(--bg-color);
 }
 
 .logoHeader {
     height: 80px;
     width: 80px;
     background-position: center;
-    background-image: url("/src/img/logo.jpeg");
+    background-image: url("../img/logo.jpeg");
     background-repeat: no-repeat;
     background-size: contain;
     border-radius: 50%;
@@ -70,7 +125,102 @@ body {
 .bg-image {
     height: 100vh;
     background-position: center;
-    background-image: url("/src/img/bg.jpg");
+    background-image: url("../img/bg.jpg");
     background-repeat: no-repeat;
     background-size: cover;
+}
+
+.cabecalho__botoes {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.nav-btn__anunciar {
+    color: var(--color-beige);
+    padding: 1rem 2.5rem;
+    background-color: var(--color-green);
+    border-radius: 4rem;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+    border: none;
+}
+
+.rodape__sobre-nos {
+    max-width: 25%;
+    min-width: 25%;
+}
+
+.rodape__redes {
+    max-width: 50%;
+    min-width: 50%;
+}
+
+.rodape__fale-conosco {
+    max-width: 25%;
+    min-width: 25%;
+}
+
+.dropdown-toggle {
+    color: var(--color-green);
+}
+
+.dropdown-item:active {
+    background-color: var(--color-green);
+}
+
+.btn-primary {
+    background-color: var(--color-green);
+    border: none;
+}
+
+.btn-primary:hover {
+    background-color: var(--color-orange);
+}
+
+.btn-primary:active, 
+.btn-primary.active {
+    background-color: var(--color-brown-dark); 
+    border: none;
+}
+
+.btn-primary:focus {
+    box-shadow: none; 
+}
+
+@media (max-width: 375px) {
+    .container-fluid {
+        padding: 0 0 0 0;
+    }
+
+    .logo {
+        height: 120px;
+        width: 120px;
+    }
+}
+
+@media screen and (max-width: 675px) {
+    .rodape__sobre-nos {
+        max-width: 100%;
+        min-width: 100%;
+        order: 1;
+    }
+    .rodape__redes {
+        max-width: 100%;
+        min-width: 100%;
+        order: 3;
+    }
+    
+    .rodape__fale-conosco {
+        max-width: 100%;
+        min-width: 100%;
+        order: 2;
+    }
+}
+
+@media screen and (min-width: 1300px) {
+    .rodape__container {
+        margin: 0 auto;
+        max-width: 80%;
+    }
 }

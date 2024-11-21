@@ -1,0 +1,53 @@
+main {
+    text-align: start;
+    padding: 3rem;
+    background-color: var(--color-beige);
+    font-family: var(--font-text);
+}
+
+.titulo-principal {
+    font-weight: 500;
+    font-size: 3rem;
+    margin-left: 6rem;
+    font-family: var(--font-title);
+    color: var(--color-brown-dark);
+}
+
+.paragrafo-texto {
+    font-weight: 500;
+    font-size: 1.1rem;
+    max-width: 1200px;
+}
+
+.titulo-secundario {
+    font-size: 1.3rem;
+    font-weight: 700;
+    font-family: var(--font-title);
+    color: var(--color-brown-dark);
+}
+
+.secao {
+    max-width: 1250px;
+    margin: 0 auto;
+}
+
+@media screen and (max-width: 767px) {
+    .navbar {
+        justify-content: center;
+        gap: 1.5rem;
+    }    
+    
+    .cabecalho__botoes {
+        justify-content: center;
+    }
+}
+
+@media screen and (max-width:465px) {
+    .titulo-principal {
+        margin-left: 0;
+    }
+
+    main {
+        padding: 1.5rem;
+    }
+}

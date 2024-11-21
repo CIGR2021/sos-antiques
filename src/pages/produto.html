@@ -1,0 +1,407 @@
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Trabalho TIAPN">
+    <meta name="author"
+        content="Carlos Henrique Pereira Vieira, Guilherme Augusto Lopes Campos">
+    <link rel="shortcut icon" href="../img/logo.jpeg" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+        rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../css/normalize.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/produto.css">
+    <title>Produto</title>
+</head>
+
+<body>
+    <header class="headerBgColor rounded">
+        <nav class="container w-auto fs-5 navbar navbar-dark d-flex text-light p-2 align-items-center">
+            <a href="catalogo.html"><img class="logoHeader" /></a>
+            <section class="cabecalho__botoes">
+                <a href="catalogo.html">
+                    <button class="nav-btn__anunciar">
+                        Catálogo
+                    </button>
+                </a>
+                <a href="anunciar-produto.html">
+                    <button class="nav-btn__anunciar">
+                        Anunciar
+                    </button>
+                </a>
+                <!-- Headset -->
+                <a class="align-items-center m-2" href="central-ajuda.html" title="Contate o Suporte">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="2.5em"
+                        viewBox="0 0 512 512"><!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+                        <style>
+                            svg {
+                                fill: #DFDACA
+                            }
+                        </style>
+                        <path
+                            d="M256 48C141.1 48 48 141.1 48 256l0 40c0 13.3-10.7 24-24 24s-24-10.7-24-24l0-40C0 114.6 114.6 0 256 0S512 114.6 512 256l0 144.1c0 48.6-39.4 88-88.1 88L313.6 488c-8.3 14.3-23.8 24-41.6 24l-32 0c-26.5 0-48-21.5-48-48s21.5-48 48-48l32 0c17.8 0 33.3 9.7 41.6 24l110.4 .1c22.1 0 40-17.9 40-40L464 256c0-114.9-93.1-208-208-208zM144 208l16 0c17.7 0 32 14.3 32 32l0 112c0 17.7-14.3 32-32 32l-16 0c-35.3 0-64-28.7-64-64l0-48c0-35.3 28.7-64 64-64zm224 0c35.3 0 64 28.7 64 64l0 48c0 35.3-28.7 64-64 64l-16 0c-17.7 0-32-14.3-32-32l0-112c0-17.7 14.3-32 32-32l16 0z" />
+                    </svg>
+                </a>
+                <div class="dropdown">
+                    <a class="align-items-center m-2 w-auto dropdown-toggle" href="#" title="Acessar Perfil"
+                        role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="2.5em"
+                            viewBox="0 0 512 512"><!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+                            <style>
+                                svg {
+                                    fill: #DFDACA
+                                }
+                            </style>
+                            <path
+                                d="M399 384.2C376.9 345.8 335.4 320 288 320l-64 0c-47.4 0-88.9 25.8-111 64.2c35.2 39.2 86.2 63.8 143 63.8s107.8-24.7 143-63.8zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256zm256 16a72 72 0 1 0 0-144 72 72 0 1 0 0 144z" />
+                        </svg>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="perfil.html">Meu perfil</a></li>
+                        <li><a class="dropdown-item" href="meus-pedidos.html">Meus pedidos</a></li>
+                        <li><a class="dropdown-item" href="#" id="btn-desconectar">Sair da conta</a></li>
+                    </ul>
+                </div>
+            </section>
+        </nav>
+    </header>
+    <main class="main container">
+        <div class="row row-cols-1 row-cols-md-2">
+            <div class="container-imagem col">
+                <img src="" class="produto-foto" id="fotoProduto" alt="">
+            </div>
+            <div class="container-info col">
+                <h1 class="titulo produto-titulo text-capitalize" id="tituloProduto"></h1>
+                <p class="produto-preco" id="precoProduto"></p>
+                <p class="condicao" class="condicao-produto"><b>Condição:</b> <span id="condicaoProduto"
+                        class="text-capitalize"></span></p>
+                <p class="categoria" class="categoria-produto"><b>Categoria:</b> <span id="categoriaProduto"
+                        class="text-capitalize"></span></p>
+                <p class="produto-descricao" id="descricaoProduto"></p>
+                <p class="produto-email fst-italic" id="email"></p>
+                <div class="div-botoes-anunciante">
+                    <button type="button" class="botao btn-principal" id="btnEditarProduto" style="display: none;"
+                        data-bs-toggle="modal" data-bs-target="#modalEditar">Editar Informações</button>
+                    <!-- Modal -->
+                    <div class="modal fade" id="modalEditar" tabindex="-1" aria-labelledby="exampleModalLabel"
+                        aria-hidden="true">
+                        <div class="modal-dialog modal-lg modal-dialog-scrollable">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h1 class="modal-title fs-5" id="exampleModalLabel">Editar anúncio</h1>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <h2 class="titulo titulo-info-produto">Selecione o tipo de anúncio</h2>
+                                    <ul class="lista__tipo-produto">
+                                        <li class="tipo-produto__item">
+                                            <input type="radio" name="tipoProduto" value="Venda"
+                                                id="tipo-produto--venda" class="input-produto">
+                                            <label for="tipo-produto--venda">Item para venda</label>
+                                        </li>
+                                        <li class="tipo-produto__item">
+                                            <input type="radio" name="tipoProduto" value="Troca"
+                                                id="tipo-produto--troca" class="input-produto">
+                                            <label for="tipo-produto--troca">Item para troca</label>
+                                        </li>
+                                        <li class="tipo-produto__item">
+                                            <input type="radio" name="tipoProduto" value="Doação"
+                                                id="tipo-produto--doacao" class="input-produto">
+                                            <label for="tipo-produto--doacao">Item para doação</label>
+                                        </li>
+                                    </ul>
+                                    <h2 class="titulo titulo-info-produto">Informe as características do
+                                        seu produto</h2>
+                                    <div class="div-info-produto d-flex flex-column flex-wrap gap-3">
+                                        <div class="d-flex gap-3 div-categoria-condicao">
+                                            <div class="flex-grow-1">
+                                                <label for="select-categoria"
+                                                    class="d-block produto__etiqueta">Categoria*</label>
+                                                <select name="categoriaProduto" id="select-categoria"
+                                                    class="produto__input" required>
+                                                    <option value="" disabled selected>Selecione uma categoria</option>
+                                                    <option value="arte">Arte</option>
+                                                    <option value="brinquedos">Brinquedos</option>
+                                                    <option value="cartazes">Cartazes</option>
+                                                    <option value="eletronicos">Eletrônicos</option>
+                                                    <option value="ferramentas">Ferramentas</option>
+                                                    <option value="instrumentos">Instrumentos</option>
+                                                    <option value="joias">Joias e Bijuterias</option>
+                                                    <option value="livros">Livros</option>
+                                                    <option value="moveis">Móveis</option>
+                                                    <option value="porcelanas">Porcelanas e Cerâmicas</option>
+                                                    <option value="prataria">Prataria e Metalurgia</option>
+                                                    <option value="relogios">Relógios</option>
+                                                    <option value="vestuario">Vestuário</option>
+                                                    <option value="outros">Outros</option>
+                                                </select>
+                                            </div>
+                                            <div class="flex-grow-1">
+                                                <label for="select-condicao"
+                                                    class="d-block produto__etiqueta">Condição*</label>
+                                                <select name="condicaoProduto" id="select-condicao"
+                                                    class="produto__input" required>
+                                                    <option disabled selected>Selecione a condição</option>
+                                                    <option value="usado">Usado</option>
+                                                    <option value="novo">Novo</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="d-flex flex-column">
+                                            <label for="input__titulo-produto" class="produto__etiqueta">Título*</label>
+                                            <input name="tituloProduto" type="text" id="input__tituloproduto"
+                                                class="produto__input" maxlength="90"
+                                                placeholder="Exemplo: Câmera fotográfica analógica" required>
+                                            <div class="d-flex justify-content-between">
+                                                <span class="produto__info">Coloque um breve resumo do que você está
+                                                    anunciando</span>
+                                                <span class="produto__info">0/90</span>
+                                            </div>
+                                        </div>
+                                        <div class="d-flex flex-column">
+                                            <label for="input__descricao-produto" class="produto__etiqueta">Informações
+                                                adicionais</label>
+                                            <textarea name="descricaoProduto" id="input__descricao-produto"
+                                                class="produto__input  produto__input-descricao" maxlength="6000"
+                                                placeholder="Escreva aqui por quê você está anunciando esse item e informações adicionais que podem ajudar na venda."></textarea>
+                                            <span class="produto__info text-end">0/6000</span>
+                                        </div>
+                                        <div class="div-preco-produto d-flex flex-column">
+                                            <label for="input__preco-produto" class="produto__etiqueta">Preço
+                                                (R$)*</label>
+                                            <input type="number" step="0.01" name="precoProduto" class="produto__input"
+                                                id="input__preco-produto" placeholder="0,00">
+                                        </div>
+                                        <div class="d-flex flex-column">
+                                            <h2 class="titulo titulo-info-produto">Insira a URL da foto de seu produto
+                                            </h2>
+                                            <label for="foto-produto" class="produto__etiqueta">Insira o endereço
+                                                aqui:</label>
+                                            <input type="text" id="foto-produto" class="produto__input"
+                                                name="fotoProduto" accept="image/png, image/jpeg"
+                                                placeholder="Copie o link da imagem e insira aqui" />
+                                        </div>
+                                        <div class="d-flex flex-column">
+                                            <label for="termo-contato"
+                                                class="mt-1 d-flex align-items-center gap-1"><input type="checkbox"
+                                                    value="aceita" name="termoContato" id="termo-contato"
+                                                    class="checkbox-termo-contato">Compartilhar informações de contato
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="botao btn-secundario btn-secundario--modal"
+                                        data-bs-dismiss="modal">Cancelar</button>
+                                    <button type="button" class="botao btn-principal btn-principal--modal"
+                                        id="confirmacaoAlteracaoProduto">Salvar alterações</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <button type="button" class="botao btn-secundario" id="btnApagarProduto" style="display: none;"
+                        data-bs-toggle="modal" data-bs-target="#exampleModal">Apagar anúncio</button>
+                    <!-- Modal -->
+                    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                        aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h1 class="modal-title fs-5" id="exampleModalLabel">Excluir anúncio</h1>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    Tem certeza que gostaria de cancelar o anúncio? Após clicar em "Sim" não será mais
+                                    possível desfazer a ação.
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="botao btn-secundario btn-secundario--modal"
+                                        data-bs-dismiss="modal">Cancelar</button>
+                                    <button type="button" class="botao btn-principal btn-principal--modal"
+                                        id="confirmacaoApagarProduto">Sim</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="div-botoes">
+                    <button type="button" class="botao btn-principal" id="btnComprarProduto" data-bs-toggle="modal"
+                        data-bs-target="#modalComprar">Comprar</button>
+                    <!-- Modal -->
+                    <div class="modal fade" id="modalComprar" tabindex="-1" aria-labelledby="exampleModalLabel"
+                        aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h1 class="modal-title fs-4 titulo" id="exampleModalLabel">Finalize sua compra!</h1>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <h3 class="titulo fs-4" >O seu saldo atual é: <span id="saldoAtual">R$ </span></h3>
+                                    <div class="d-flex flex-column gap-2 container-input">
+                                        <label for="inputAdicionarSaldo" class="produto__etiqueta fs-5">Adicionar Saldo</label>
+                                        <input type="number" name="saldo" id="inputAdicionarSaldo" class="produto__input" placeholder="0,00">
+                                    </div>
+                                    <div>
+                                        <p id="valorDoProduto">Este produto custa: R$ </p>
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary"
+                                        data-bs-dismiss="modal">Cancelar</button>
+                                    <button type="button" class="btn btn-primary" id="btnFinalizarCompra">Finalizar Compra</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="wa.me" target="_blank" id="telefone"><img src="../img/botao-chat.png"
+                            alt="ícone de bate papo"></a>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer class="footerBgColor w-auto h-auto fs-5 text-light rounded page-rodape">
+        <section class="rodape__container d-flex justify-content-center flex-wrap p-2">
+            <!-- sessão Sobre Nós -->
+            <section class="rodape__sobre-nos align-self-start text-center p-2">
+                <h3 class="fs-4">SOBRE NÓS</h3>
+                <hr />
+                <p>Buscamos oferecer para amigos e clientes, objetos antigos, colecionáveis e decorativos, buscando
+                    sempre itens singulares e excêntricos para sua casa, coleção ou cenário.
+                </p>
+            </section>
+            <!-- sessão Acompanhe a SOS Antiques -->
+            <section class="rodape__redes align-self-start text-center p-2 bg-gradient rounded">
+                <h3 class="fs-4 text-auto">ACOMPANHE A SOS ANTIQUES</h3>
+                <hr class="mb-5" />
+                <image class="d-flex justify-content-center">
+                    <!-- Linkedin -->
+                    <a class="m-2" href="https://www.linkedin.com/" target="_blank" title="Linkedin">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="2.5em"
+                            viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+                            <style>
+                                svg {
+                                    fill: #DFDACA
+                                }
+                            </style>
+                            <path
+                                d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z" />
+                        </svg>
+                    </a>
+                    <!-- Git Hub -->
+                    <a href="https://www.github.com/" target="_blank" title="Git Hub">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="2.5em"
+                            viewBox="0 0 496 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+                            <style>
+                                svg {
+                                    fill: #DFDACA
+                                }
+                            </style>
+                            <path
+                                d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z" />
+                        </svg>
+                    </a>
+                    <!-- Instagram -->
+                    <a class="m-2" href="https://www.instagram.com/" target="_blank" title="Instagram">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="2.5em"
+                            viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+                            <style>
+                                svg {
+                                    fill: #DFDACA
+                                }
+                            </style>
+                            <path
+                                d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z" />
+                        </svg>
+                    </a>
+                    <!-- Facebook -->
+                    <a href="https://www.facebook.com/" target="_blank" title="Facebook">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="2.5em"
+                            viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+                            <style>
+                                svg {
+                                    fill: #DFDACA
+                                }
+                            </style>
+                            <path
+                                d="M504 256C504 119 393 8 256 8S8 119 8 256c0 123.78 90.69 226.38 209.25 245V327.69h-63V256h63v-54.64c0-62.15 37-96.48 93.67-96.48 27.14 0 55.52 4.84 55.52 4.84v61h-31.28c-30.8 0-40.41 19.12-40.41 38.73V256h68.78l-11 71.69h-57.78V501C413.31 482.38 504 379.78 504 256z" />
+                        </svg>
+                    </a>
+                    <!-- Twitter -->
+                    <a href="https://twitter.com/" target="_blank" title="Twitter">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="2.5em"
+                            viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+                            <style>
+                                svg {
+                                    fill: #DFDACA
+                                }
+                            </style>
+                            <path
+                                d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8L200.7 275.5 26.8 48H172.4L272.9 180.9 389.2 48zM364.4 421.8h39.1L151.1 88h-42L364.4 421.8z" />
+                        </svg>
+                    </a>
+                </image>
+                <hr class="mt-5" />
+                <span class="fs-6 text-sm">Todos os direitos reservados &copy;</span>
+                <hr />
+            </section>
+            <!-- sessão Fale Conosco -->
+            <section class="rodape__fale-conosco align-self-start text-center p-2">
+                <h3 class="fs-4 text-sm">FALE CONOSCO</h3>
+                <hr />
+                <image class="d-flex justify-content-center">
+                    <!-- Whatsapp -->
+                    <a href="https://web.whatsapp.com/" target="_blank" title="WhatsApp">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="2.5em"
+                            viewBox="0 0 448 512"><!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+                            <style>
+                                svg {
+                                    fill: #DFDACA
+                                }
+                            </style>
+                            <path
+                                d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7 .9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z" />
+                        </svg>
+                    </a>
+                </image>
+                <p class="fs-6 text-sm text-wrap text-break">(31) 9 1234-1234</p>
+                <image class="d-flex justify-content-center">
+                    <!-- Email -->
+                    <a href="https://mail.google.com/" target="_blank" title="Gmail">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="2.5em"
+                            viewBox="0 0 512 512"><!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+                            <style>
+                                svg {
+                                    fill: #DFDACA
+                                }
+                            </style>
+                            <path
+                                d="M256 64C150 64 64 150 64 256s86 192 192 192c17.7 0 32 14.3 32 32s-14.3 32-32 32C114.6 512 0 397.4 0 256S114.6 0 256 0S512 114.6 512 256l0 32c0 53-43 96-96 96c-29.3 0-55.6-13.2-73.2-33.9C320 371.1 289.5 384 256 384c-70.7 0-128-57.3-128-128s57.3-128 128-128c27.9 0 53.7 8.9 74.7 24.1c5.7-5 13.1-8.1 21.3-8.1c17.7 0 32 14.3 32 32l0 80 0 32c0 17.7 14.3 32 32 32s32-14.3 32-32l0-32c0-106-86-192-192-192zm64 192a64 64 0 1 0 -128 0 64 64 0 1 0 128 0z" />
+                        </svg>
+                    </a>
+                    <!-- <FontAwesomeIcon class="iconsSize" color="#DFDACA" icon={faEnvelope} /> -->
+                </image>
+                <p class="fs-6 text-sm text-wrap text-break">
+                    contato@sosantiques.com.br
+                </p>
+            </section>
+        </section>
+    </footer>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+    <script src="../js/produto.js"></script>
+    <script src="../js/main.js"></script>
+</body>
