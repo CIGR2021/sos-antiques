@@ -51,8 +51,8 @@
                     </svg>
                 </a>
                 <div class="dropdown">
-                    <a class="align-items-center m-2 w-auto dropdown-toggle" href="#" title="Acessar Perfil" role="button"
-                        data-bs-toggle="dropdown" aria-expanded="false">
+                    <a class="align-items-center m-2 w-auto dropdown-toggle" href="#" title="Acessar Perfil"
+                        role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         <svg xmlns="http://www.w3.org/2000/svg" height="2.5em"
                             viewBox="0 0 512 512"><!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
                             <style>
@@ -66,7 +66,7 @@
                     </a>
                     <ul class="dropdown-menu">
                         <li><a class="dropdown-item" href="perfil.html">Meu perfil</a></li>
-                        <li><a class="dropdown-item" href="#">Meus pedidos</a></li>
+                        <li><a class="dropdown-item" href="meus-pedidos.html">Meus pedidos</a></li>
                         <li><a class="dropdown-item" href="#" id="btn-desconectar">Sair da conta</a></li>
                     </ul>
                 </div>
@@ -86,10 +86,128 @@
                 <p class="categoria" class="categoria-produto"><b>Categoria:</b> <span id="categoriaProduto"
                         class="text-capitalize"></span></p>
                 <p class="produto-descricao" id="descricaoProduto"></p>
-                <p class="produto-email" id="email"></p>
+                <p class="produto-email fst-italic" id="email"></p>
                 <div class="div-botoes-anunciante">
-                    <button type="button" class="botao btn-principal" id="btnEditarProduto"
-                        style="display: none;">Editar Informações</button>
+                    <button type="button" class="botao btn-principal" id="btnEditarProduto" style="display: none;"
+                        data-bs-toggle="modal" data-bs-target="#modalEditar">Editar Informações</button>
+                    <!-- Modal -->
+                    <div class="modal fade" id="modalEditar" tabindex="-1" aria-labelledby="exampleModalLabel"
+                        aria-hidden="true">
+                        <div class="modal-dialog modal-lg modal-dialog-scrollable">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h1 class="modal-title fs-5" id="exampleModalLabel">Editar anúncio</h1>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <h2 class="titulo titulo-info-produto">Selecione o tipo de anúncio</h2>
+                                    <ul class="lista__tipo-produto">
+                                        <li class="tipo-produto__item">
+                                            <input type="radio" name="tipoProduto" value="Venda"
+                                                id="tipo-produto--venda" class="input-produto">
+                                            <label for="tipo-produto--venda">Item para venda</label>
+                                        </li>
+                                        <li class="tipo-produto__item">
+                                            <input type="radio" name="tipoProduto" value="Troca"
+                                                id="tipo-produto--troca" class="input-produto">
+                                            <label for="tipo-produto--troca">Item para troca</label>
+                                        </li>
+                                        <li class="tipo-produto__item">
+                                            <input type="radio" name="tipoProduto" value="Doação"
+                                                id="tipo-produto--doacao" class="input-produto">
+                                            <label for="tipo-produto--doacao">Item para doação</label>
+                                        </li>
+                                    </ul>
+                                    <h2 class="titulo titulo-info-produto">Informe as características do
+                                        seu produto</h2>
+                                    <div class="div-info-produto d-flex flex-column flex-wrap gap-3">
+                                        <div class="d-flex gap-3 div-categoria-condicao">
+                                            <div class="flex-grow-1">
+                                                <label for="select-categoria"
+                                                    class="d-block produto__etiqueta">Categoria*</label>
+                                                <select name="categoriaProduto" id="select-categoria"
+                                                    class="produto__input" required>
+                                                    <option value="" disabled selected>Selecione uma categoria</option>
+                                                    <option value="arte">Arte</option>
+                                                    <option value="brinquedos">Brinquedos</option>
+                                                    <option value="cartazes">Cartazes</option>
+                                                    <option value="eletronicos">Eletrônicos</option>
+                                                    <option value="ferramentas">Ferramentas</option>
+                                                    <option value="instrumentos">Instrumentos</option>
+                                                    <option value="joias">Joias e Bijuterias</option>
+                                                    <option value="livros">Livros</option>
+                                                    <option value="moveis">Móveis</option>
+                                                    <option value="porcelanas">Porcelanas e Cerâmicas</option>
+                                                    <option value="prataria">Prataria e Metalurgia</option>
+                                                    <option value="relogios">Relógios</option>
+                                                    <option value="vestuario">Vestuário</option>
+                                                    <option value="outros">Outros</option>
+                                                </select>
+                                            </div>
+                                            <div class="flex-grow-1">
+                                                <label for="select-condicao"
+                                                    class="d-block produto__etiqueta">Condição*</label>
+                                                <select name="condicaoProduto" id="select-condicao"
+                                                    class="produto__input" required>
+                                                    <option disabled selected>Selecione a condição</option>
+                                                    <option value="usado">Usado</option>
+                                                    <option value="novo">Novo</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="d-flex flex-column">
+                                            <label for="input__titulo-produto" class="produto__etiqueta">Título*</label>
+                                            <input name="tituloProduto" type="text" id="input__tituloproduto"
+                                                class="produto__input" maxlength="90"
+                                                placeholder="Exemplo: Câmera fotográfica analógica" required>
+                                            <div class="d-flex justify-content-between">
+                                                <span class="produto__info">Coloque um breve resumo do que você está
+                                                    anunciando</span>
+                                                <span class="produto__info">0/90</span>
+                                            </div>
+                                        </div>
+                                        <div class="d-flex flex-column">
+                                            <label for="input__descricao-produto" class="produto__etiqueta">Informações
+                                                adicionais</label>
+                                            <textarea name="descricaoProduto" id="input__descricao-produto"
+                                                class="produto__input  produto__input-descricao" maxlength="6000"
+                                                placeholder="Escreva aqui por quê você está anunciando esse item e informações adicionais que podem ajudar na venda."></textarea>
+                                            <span class="produto__info text-end">0/6000</span>
+                                        </div>
+                                        <div class="div-preco-produto d-flex flex-column">
+                                            <label for="input__preco-produto" class="produto__etiqueta">Preço
+                                                (R$)*</label>
+                                            <input type="number" step="0.01" name="precoProduto" class="produto__input"
+                                                id="input__preco-produto" placeholder="0,00">
+                                        </div>
+                                        <div class="d-flex flex-column">
+                                            <h2 class="titulo titulo-info-produto">Insira a URL da foto de seu produto
+                                            </h2>
+                                            <label for="foto-produto" class="produto__etiqueta">Insira o endereço
+                                                aqui:</label>
+                                            <input type="text" id="foto-produto" class="produto__input"
+                                                name="fotoProduto" accept="image/png, image/jpeg"
+                                                placeholder="Copie o link da imagem e insira aqui" />
+                                        </div>
+                                        <div class="d-flex flex-column">
+                                            <label for="termo-contato"
+                                                class="mt-1 d-flex align-items-center gap-1"><input type="checkbox"
+                                                    value="aceita" name="termoContato" id="termo-contato"
+                                                    class="checkbox-termo-contato">Compartilhar informações de contato
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="botao btn-secundario btn-secundario--modal"
+                                        data-bs-dismiss="modal">Cancelar</button>
+                                    <button type="button" class="botao btn-principal btn-principal--modal"
+                                        id="confirmacaoAlteracaoProduto">Salvar alterações</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                     <button type="button" class="botao btn-secundario" id="btnApagarProduto" style="display: none;"
                         data-bs-toggle="modal" data-bs-target="#exampleModal">Apagar anúncio</button>
                     <!-- Modal -->
@@ -103,19 +221,50 @@
                                         aria-label="Close"></button>
                                 </div>
                                 <div class="modal-body">
-                                    Tem certeza que gostaria de cancelar o anúncio? Após clicar em "Sim" não será mais possível desfazer a ação.
+                                    Tem certeza que gostaria de cancelar o anúncio? Após clicar em "Sim" não será mais
+                                    possível desfazer a ação.
                                 </div>
                                 <div class="modal-footer">
                                     <button type="button" class="botao btn-secundario btn-secundario--modal"
                                         data-bs-dismiss="modal">Cancelar</button>
-                                    <button type="button" class="botao btn-principal btn-principal--modal" id="confirmacaoApagarProduto">Sim</button>
+                                    <button type="button" class="botao btn-principal btn-principal--modal"
+                                        id="confirmacaoApagarProduto">Sim</button>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="div-botoes">
-                    <button type="button" class="botao btn-principal" id="btnComprarProduto">Comprar</button>
+                    <button type="button" class="botao btn-principal" id="btnComprarProduto" data-bs-toggle="modal"
+                        data-bs-target="#modalComprar">Comprar</button>
+                    <!-- Modal -->
+                    <div class="modal fade" id="modalComprar" tabindex="-1" aria-labelledby="exampleModalLabel"
+                        aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h1 class="modal-title fs-4 titulo" id="exampleModalLabel">Finalize sua compra!</h1>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <h3 class="titulo fs-4" >O seu saldo atual é: <span id="saldoAtual">R$ </span></h3>
+                                    <div class="d-flex flex-column gap-2 container-input">
+                                        <label for="inputAdicionarSaldo" class="produto__etiqueta fs-5">Adicionar Saldo</label>
+                                        <input type="number" name="saldo" id="inputAdicionarSaldo" class="produto__input" placeholder="0,00">
+                                    </div>
+                                    <div>
+                                        <p id="valorDoProduto">Este produto custa: R$ </p>
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary"
+                                        data-bs-dismiss="modal">Cancelar</button>
+                                    <button type="button" class="btn btn-primary" id="btnFinalizarCompra">Finalizar Compra</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                     <a href="wa.me" target="_blank" id="telefone"><img src="../img/botao-chat.png"
                             alt="ícone de bate papo"></a>
                 </div>

@@ -8,8 +8,10 @@ document.addEventListener('DOMContentLoaded', function() {
         if (radioTroca.checked || radioDoacao.checked) {
             inputPreco.disabled = true;
             inputPreco.value = '';
+            inputPreco.removeAttribute('required');
         } else {
             inputPreco.disabled = false;
+            inputPreco.setAttribute('required', 'required');
         }
     }
 

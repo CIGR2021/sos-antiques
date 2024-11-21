@@ -66,14 +66,14 @@
                     </a>
                     <ul class="dropdown-menu">
                         <li><a class="dropdown-item" href="perfil.html">Meu perfil</a></li>
-                        <li><a class="dropdown-item" href="#">Meus pedidos</a></li>
+                        <li><a class="dropdown-item" href="meus-pedidos.html">Meus pedidos</a></li>
                         <li><a class="dropdown-item" href="#" id="btn-desconectar">Sair da conta</a></li>
                     </ul>
                 </div>
             </section>
         </nav>
     </header>
-    <main>
+    <main class="main-content">
         <div class="container-fluid">
             <div class="row">
                 <!-- Menu Lateral -->
@@ -95,7 +95,9 @@
                 <section class="col-12 col-md-10">
                     <div class="card-container">
                         <div class="card__foto-container">
-                            <img src="../img/perfil.png" id="fotoPerfil" class="card__foto-perfil" alt="Foto de perfil">
+                            <div class="foto-container">
+                                <img src="../img/perfil.png" id="fotoPerfil" class="card__foto-perfil" alt="Foto de perfil">
+                            </div>
                             <button type="button" class="botao-simples" data-bs-toggle="modal"
                                 data-bs-target="#modalAlterarFoto">Alterar foto de perfil</button>
                             <!-- Modal -->
@@ -112,7 +114,7 @@
                                         <div class="modal-body d-flex flex-column">
                                             <label for="input-fotoPerfil" class="label-input">Insira a URL da
                                                 foto de perfil</label>
-                                            <input type="text" id="input-fotoPerfil" class="campo-input">
+                                            <input type="text" id="input-fotoPerfil" class="campo-input" placeholder="Copie o link da imagem e insira aqui">
                                         </div>
                                         <div class="modal-footer">
                                             <button type="button" class="btn btn-secondary"
@@ -147,19 +149,23 @@
                                         <div class="modal-body d-flex flex-column gap-3">
                                             <div>
                                                 <label for="nomeUsuario" class="label-input">Nome:</label>
-                                                <input type="text" id="nomeUsuario" class="campo-input">
+                                                <input type="text" id="nameUsuario" class="campo-input" placeholder="Insira seu nome">
                                             </div>
                                             <div>                                                
                                                 <label for="cpfUsuario" class="label-input">CPF:</label>
-                                                <input type="text" id="cpfUsuario" class="campo-input">
+                                                <input type="text" id="cpfUsuario" class="campo-input" placeholder="XXX.XXX.XXX-XX">
                                             </div>
                                             <div>
                                                 <label for="telefoneUsuario" class="label-input">Telefone:</label>
-                                                <input type="email" id="telefoneUsuario" class="campo-input">
+                                                <input type="tel" id="telUsuario" class="campo-input" placeholder="(DD) 9 XXXX-XXXX">
+                                            </div>
+                                            <div>
+                                                <label for="cidadeUsuario" class="label-input">Cidade:</label>
+                                                <input type="text" id="cidadeUsuario" class="campo-input" placeholder="Informe o nome da sua cidade">
                                             </div>
                                             <div>
                                                 <label for="senhaUsuario" class="label-input">Nova Senha:</label>
-                                                <input type="password" id="senhaUsuario" class="campo-input">
+                                                <input type="password" id="senhaUsuario" class="campo-input" placeholder="Deixe em branco para não alterar">
                                             </div>
                                         </div>
                                         <div class="modal-footer">
@@ -187,8 +193,6 @@
                 </section>
             </div>
         </div>
-
-
     </main>
     <footer class="footerBgColor w-auto h-auto fs-5 text-light rounded page-rodape">
         <section class="rodape__container d-flex justify-content-center flex-wrap p-2">

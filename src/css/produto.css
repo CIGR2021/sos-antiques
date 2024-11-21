@@ -59,6 +59,88 @@ main {
     text-transform: uppercase;
 }
 
+
+/* Modal */
+.lista__tipo-produto {
+    padding-left: 0;
+    display: flex;
+}
+
+.tipo-produto__item {
+    list-style: none;
+    margin-right: 2rem;
+}
+
+.produto__etiqueta {
+    font-weight: 600;
+    font-size: 1.2rem;
+    margin-bottom: .4rem;
+}
+
+.produto__input {
+    padding: 1rem;
+    border-radius: .6rem;
+    border: 1px solid var(--stroke-color);
+    box-shadow: rgba(0, 0, 0, 0.138) 0px 2px 4px;
+    outline: none;
+    width: 100%;
+}
+
+.produto__input-descricao {
+    overflow-y: auto;
+    overflow-x: hidden;
+    word-wrap: break-word;
+    resize: none;
+    white-space: normal;
+}
+
+.produto__info {
+    margin-top: .3rem;
+    color: #00000086;
+}
+
+.checkbox-termo-contato {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 1rem;
+    height: 1rem;
+    border: 2px solid #777;
+    border-radius: 4px;
+    background-color: var(--white);
+}
+
+.checkbox-termo-contato:checked {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 1rem;
+    height: 1rem;
+    border: 2px solid #777;
+    border-radius: 4px;
+    background-color: var(--color-green);
+}
+
+.text-termo-contato {
+    color: var(--color-green);
+    font-weight: 600;
+    text-decoration: underline;
+}
+
+.container-input {
+    max-width: 75%;
+}
+
+#saldoAtual, #valorDoProduto {
+    font-weight: 400;
+    color: var(--black);
+    font-family: var(--font-text);
+    font-size: 1.3rem;
+}
+
+#valorDoProduto {
+    margin-top: 1rem;
+}
+
+
 @media screen and (max-width: 767px) {
     .navbar {
         justify-content: center;
