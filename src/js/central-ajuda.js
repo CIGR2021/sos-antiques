@@ -2,7 +2,7 @@
 const centralAjuda = document.getElementById("central-ajuda-form");
 
 // Função para exibir o modal
-const exibirModal = (mensagem) => {
+const exibirModal = mensagem => {
   const modal = document.createElement('div');
   modal.id = 'modalSucesso';
   modal.style.position = 'fixed';

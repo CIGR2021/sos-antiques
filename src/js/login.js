@@ -28,9 +28,9 @@ function entrar(event) {
         senha: ''
     }
     
-    usuarios.forEach((item) => {
-        console.log(item);
-        if(username.value === item.Email && password.value === item.Senha) {
+    usuarios.map(item => {
+        
+        if(username.value === item.Email && password.value === item.Senha)
             userValid = {
                 nome: item.NomeCompleto,
                 user: item.Email,
@@ -42,7 +42,6 @@ function entrar(event) {
                 local: item.local,
                 saldo: item.saldo
             }
-        }
     })
 
     if(username.value === userValid.user && password.value === userValid.senha) {
