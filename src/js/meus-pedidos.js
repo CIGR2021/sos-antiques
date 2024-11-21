@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', () => {
     const userLogado = JSON.parse(localStorage.getItem('userLogado'));
     const anunciosComprados = JSON.parse(localStorage.getItem('anunciosComprados')) || [];
     const containerProdutos = document.getElementById("containerProdutos");
@@ -14,7 +14,7 @@ function exibirProdutosUsuario(anunciosComprados, emailUsuario, container) {
     const meusProdutos = anunciosComprados.filter(produto => produto.comprador === emailUsuario);
 
     container.innerHTML = ''; // Limpa o container antes de adicionar produtos
-    meusProdutos.forEach(produto => {
+    meusProdutos.map(produto => {
         const precoDoProduto = produto.tipoProduto === 'Venda' 
             ? `R$ ${produto.precoProduto}` 
             : produto.tipoProduto;

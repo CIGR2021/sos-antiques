@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener('DOMContentLoaded', () => {
     const cardContainer = document.querySelector('.card-container');
     const produtos = JSON.parse(localStorage.getItem('anuncios')) || [];
 
@@ -26,9 +26,9 @@ document.addEventListener('DOMContentLoaded', function () {
     })
  */
 
-    function renderizarProdutos(filtrados) {
+    const renderizarProdutos = filtrados => {
         cardContainer.innerHTML = ''; // Limpa o container antes de renderizar os produtos filtrados
-        filtrados.forEach(function (produto) {
+        filtrados.map(produto => {
             let precoDoProduto = '';
             if (produto.tipoProduto === 'Venda') {
                 precoDoProduto = `R$ ${produto.precoProduto}`;
@@ -61,24 +61,24 @@ document.addEventListener('DOMContentLoaded', function () {
     const btnDoacoes = document.getElementById('btn-item__doacoes');
 
     // carregar todos produtos
-    btnNovidades.addEventListener('click', function () {
+    btnNovidades.addEventListener('click', () => {
         renderizarProdutos(produtos);
     });
 
     // filtro produtos de venda
-    btnVenda.addEventListener('click', function () {
+    btnVenda.addEventListener('click', () => {
         const produtosVenda = produtos.filter(produto => produto.tipoProduto === 'Venda');
         renderizarProdutos(produtosVenda);
     });
 
     // filtro produtos de troca
-    btnTroca.addEventListener('click', function () {
+    btnTroca.addEventListener('click', () => {
         const produtosTroca = produtos.filter(produto => produto.tipoProduto === 'Troca');
         renderizarProdutos(produtosTroca);
     });
 
     // filtro produtos de doação
-    btnDoacoes.addEventListener('click', function () {
+    btnDoacoes.addEventListener('click', () => {
         const produtosDoacao = produtos.filter(produto => produto.tipoProduto === 'Doação');
         renderizarProdutos(produtosDoacao);
     });
