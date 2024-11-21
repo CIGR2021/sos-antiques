@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', () => {
     const radioTroca = document.getElementById('tipo-produto--troca');
     const radioVenda = document.getElementById('tipo-produto--venda');
     const radioDoacao = document.getElementById('tipo-produto--doacao');
@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', function() {
     radioDoacao.addEventListener('change', alternarInputPreco);
 });
 
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', () => {
     const formulario = document.getElementById("form");
     const notificacao = document.getElementById("notificacao");
 
@@ -50,8 +50,8 @@ document.addEventListener('DOMContentLoaded', function() {
         
         const produtoId = Date.now();
         const telefoneSomenteNumeros = userLogado.telefone.replace(/\D/g, '');
-        if(data.fotoProduto == "" || data.fotoProduto == null) {
-            data.fotoProduto = "/img/default-product.png"
+        if(data.fotoProduto === "" || data.fotoProduto == null) {
+            data.fotoProduto = "../img/default-product.png"
         }
 
         anuncios.push({
@@ -75,6 +75,6 @@ document.addEventListener('DOMContentLoaded', function() {
         notificacao.classList.add('alert-success');
         notificacao.style.display = 'block';
 
-        window.location.href = `/pages/produto.html?id=${produtoId}`;
+        window.location.href = `../pages/produto.html?id=${produtoId}`;
     });
 });

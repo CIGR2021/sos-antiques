@@ -1,3 +1,48 @@
+const exibirModal = (mensagem, link) => {
+    const modal = document.createElement('div');
+    modal.id = 'modalSucesso';
+    modal.style.position = 'fixed';
+    modal.style.top = '0';
+    modal.style.left = '0';
+    modal.style.width = '100%';
+    modal.style.height = '100%';
+    modal.style.backgroundColor = 'rgba(0, 0, 0, 0.3)';
+    modal.style.display = 'flex';
+    modal.style.justifyContent = 'center';
+    modal.style.alignItems = 'center';
+    modal.style.zIndex = '1000';
+  
+    const modalContent = document.createElement('div');
+    modalContent.style.backgroundColor = '#fff';
+    modalContent.style.padding = '20px';
+    modalContent.style.borderRadius = '8px';
+    modalContent.style.boxShadow = '0 4px 8px rgba(0, 0, 0, 0.2)';
+    modalContent.style.textAlign = 'center';
+  
+    const mensagemTexto = document.createElement('p');
+    mensagemTexto.innerText = mensagem;
+    modalContent.appendChild(mensagemTexto);
+  
+    const botaoFechar = document.createElement('button');
+    botaoFechar.innerText = 'Fechar';
+    botaoFechar.style.marginTop = '10px';
+    botaoFechar.style.padding = '10px 20px';
+    botaoFechar.style.backgroundColor = '#4CAF50';
+    botaoFechar.style.color = '#fff';
+    botaoFechar.style.border = 'none';
+    botaoFechar.style.cursor = 'pointer';
+    botaoFechar.style.borderRadius = '4px';
+  
+    botaoFechar.addEventListener('click', () => {
+      document.body.removeChild(modal);
+      if(link !== "") window.location.href = link;
+    });
+  
+    modalContent.appendChild(botaoFechar);
+    modal.appendChild(modalContent);
+    document.body.appendChild(modal);
+};
+
 document.addEventListener('DOMContentLoaded', () => {
     const params = new URLSearchParams(window.location.search);
     const produtoId = params.get('id');
@@ -65,14 +110,13 @@ document.addEventListener('DOMContentLoaded', () => {
         tituloProduto.textContent = "Produto não encontrado.";
     }
 
-    function apagarProduto() {
+    const apagarProduto = () => {
         const novaLista = anuncios.filter(item => item.id !== parseInt(produtoId));
         localStorage.setItem('anuncios', JSON.stringify(novaLista));
-        alert('Anúncio apagado com sucesso!');
-        window.location.href = "../pages/catalogo.html";
+        exibirModal("Anúncio apagado com sucesso!", "../pages/catalogo.html")
     }
 
-    function editarProduto() {
+    const editarProduto = () => {
 
         if (produto.tipoProduto === "Venda") {
             document.getElementById("tipo-produto--venda").checked = true;
@@ -93,7 +137,7 @@ document.addEventListener('DOMContentLoaded', () => {
         termoContatoCheckbox.checked = produto.termoContato === "aceita";
     }
 
-    function salvarAlteracoesProduto() {
+    const salvarAlteracoesProduto = () => {
 
         produto.tipoProduto = document.querySelector('input[name="tipoProduto"]:checked').value || produto.tipoProduto;
         produto.categoriaProduto = document.getElementById("select-categoria").value || produto.categoriaProduto;
@@ -109,17 +153,15 @@ document.addEventListener('DOMContentLoaded', () => {
         const novaLista = anuncios.map(item => item.id === produto.id ? produto : item);
         localStorage.setItem('anuncios', JSON.stringify(novaLista));
     
-        alert('Alterações salvas com sucesso!');
+        exibirModal("Alterações salvas com sucesso!")
         location.reload();
     }
 
-    function comprarProduto() {
+    const comprarProduto = () => {
         const saldoAdicionado = parseFloat(inputAdicionarSaldo.value);
         const saldoUsuario = parseFloat(userLogado.saldo);
         const saldoTotal = saldoAdicionado + saldoUsuario;
         const preco = parseFloat(produto.precoProduto);
-
-        console.log(saldoTotal)
 
         if(saldoTotal >= preco) {
             userLogado.saldo = saldoTotal - preco;
@@ -156,10 +198,9 @@ document.addEventListener('DOMContentLoaded', () => {
             const novaListaAnuncios = anuncios.filter(item => item.id !== produto.id);
             localStorage.setItem('anuncios', JSON.stringify(novaListaAnuncios));
 
-            alert('Compra realizada com sucesso!');
-            window.location.href = "/pages/catalogo.html";
+            exibirModal("Compra realizada com sucesso!", "../pages/catalogo.html")
         } else {
-            alert('Saldo insuficiente para a compra!');
+            exibirModal("Saldo insuficiente para a compra!")
         }
     }
 
