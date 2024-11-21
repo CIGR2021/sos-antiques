@@ -34,14 +34,20 @@ function entrar(event) {
             userValid = {
                 nome: item.NomeCompleto,
                 user: item.Email,
-                senha: item.Senha
+                senha: item.Senha,
+                telefone: item.Telefone,
+                foto: item.foto,
+                cpf: item.CPF_CNPJ,
+                nascimento: item.DataNascimento,
+                local: item.local,
+                saldo: item.saldo
             }
         }
     })
 
     if(username.value === userValid.user && password.value === userValid.senha) {
         setTimeout(() => {
-            window.location.href = '/src/pages/home.html';
+            window.location.href = "../pages/catalogo.html";
         })
 
         const token = Math.random().toString(16).substring(2)

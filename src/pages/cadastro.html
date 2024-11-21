@@ -6,179 +6,144 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Atividade TIAW">
     <meta name="author"
-        content="Carlos Henrique Pereira Vieira, Guilherme Augusto Lopes Campos, João Victor Silva Thomazi, Kelvin">
+        content="Carlos Henrique Pereira Vieira, Guilherme Augusto Lopes Campos">
     <title>SOS Antiques - Cadastro</title>
-    <link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="../img/favicon.ico" type="image/x-icon">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Exo:wght@500&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+        rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <link rel="stylesheet" href="/src/assets/bootstrap-5.3.2-dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="/src/css/style.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/cadastro.css">
 </head>
 
-<body class="container-fluid w-100 h-100">
-    <!-- Cabeçalho -->
-    <header class="headerBgColor rounded">
-        <nav class="container w-75 fs-5 nav navbar navbar-dark d-flex text-light p-4">
-            <image class="logoHeader" />
-            <ul class="container w-75 fs-5 nav nav-tabs navbar navbar-dark d-flex text-light p-4">
-                <li class="nav-item">
-                    <a class="fs-5 nav-link text-white" aria-current="page" href="/about">
-                        Sobre Nós
-                    </a>
-                </li> |
-                <li class="nav-item">
-                    <a class="fs-5 nav-link text-white" aria-current="page" href="#">
-                        Produtos
-                    </a>
-                </li> |
-                <li class="nav-item">
-                    <a class="fs-5 nav-link text-white" aria-current="page" href="#">
-                        Doação
-                    </a>
-                </li>
-            </ul>
-        </nav>
-    </header>
+<body>
     <!-- Conteúdo -->
     <main class="container-fluid">
         <section class="pb-2 w-auto login p-auto rounded d-flex flex-column justify-content-center align-items-center">
-            <image class="logo m-3" />
-            <h1 class="fs-2 fw-bold">Cadastrar Usuário</h1>
-            <div
-                class="row container bg-white shadow p-4 rounded d-flex flex-row align-items-center border border-secondary">
-                <section class="col-lg container d-flex flex-column align-items-start">
-                    <label class="p-3 fs-5 fw-normal">Preencha os campos com seus dados</label>
-                    <form id="cadastro-form" class="w-auto p-3 text-start m-auto">
+            <a href="login.html"><figure class="logo m-3"></figure></a>
+            <div class="div-cadastro row p-4 rounded d-flex justify-content-between flex-row align-items-center">
+                <section class="col-lg-6 col-md-6 col-12 d-flex flex-column align-items-start">
+                    <div class="d-flex justify-content-center align-content-center gap-4">
+                        <a href="login.html" aria-current="true">
+                            <button title="Clique para cancelar"
+                                class="botao btn-secundario btn-menor d-flex align-items-center fs-5">
+                                <ion-icon class="fs-4 p-2 text-center" name="arrow-back"></ion-icon>
+                            </button>
+                        </a>
+                    </div>
+                    <h1 class="p-3 titulo fw-medium fs-3">Preencha os campos com seus dados</h1>
+                    <form id="cadastro-form" class="w-100 p-3 text-start m-auto">
                         <section class="mb-3">
-                            <label class="form-label fw-bold">Nome completo<span class="fw-bolder text-danger"> *</span></label>
+                            <label class="form-label fw-bold" for="inputNome"><span
+                                    class="fw-bolder text-danger">*</span>Nome completo</label>
                             <fieldset class="input-group-text d-flex justify-content-center align-items-center">
-                                <input type='text' class="bg-color bg-gradient form-control p-3" required minlength="3"
+                                <input type='text' class="bg-gradient form-control p-3" required minlength="3"
                                     placeholder="Nome completo" title="Informe o Nome Completo" id='inputNome'
                                     aria-describedby='nomeHelp' />
-                                <ion-icon class="fs-2 p-2 text-center" name="person"></ion-icon>
+                                <ion-icon class="fs-4 p-2 text-center" name="person"></ion-icon>
                             </fieldset>
                         </section>
                         <section class="mb-3">
-                            <label class="form-label fw-bold">Telefone celular:</label>
+                            <label class="form-label fw-bold" for="inputTelefone"><span
+                                    class="fw-bolder text-danger">*</span>Telefone celular:</label>
                             <fieldset class="input-group-text d-flex justify-content-center align-items-center">
-                                <input type='tel' class="bg-color form-control p-3" minlength="11" maxlength="11"
-                                    placeholder="+55" title="Informe o Telefone Celular" id='inputTelefone'
-                                    aria-describedby='telefoneHelp' />
-                                <ion-icon class="fs-2 p-2 text-center" name="call"></ion-icon>
+                                <input type='tel' class="form-control p-3" placeholder="Digite somente números"
+                                    title="Informe o Telefone Celular" id='inputTelefone'
+                                    aria-describedby='telefoneHelp' minlength="14" maxlength="15" required />
+                                <ion-icon class="fs-4 p-2 text-center" name="call"></ion-icon>
+                                <div id="telefoneErro" class="error-message"></div>
                             </fieldset>
                         </section>
                         <section class="mb-3">
-                            <label class="form-label fw-bold">CPF/CNPJ</label>
+                            <label class="form-label fw-bold" for="inputCPF_CNPJ">CPF</label>
                             <fieldset class="input-group-text d-flex justify-content-center align-items-center">
-                                <input type='text' class="bg-color form-control p-3" placeholder="CPF/CNPJ"
+                                <input type='text' class="form-control p-3" placeholder="Digite somente números"
                                     title="Informe o CPF ou CNPJ" id='inputCPF_CNPJ' minlength="11" maxlength="14"
                                     aria-describedby='cpf_cnpjHelp' />
-                                <ion-icon class="fs-2 p-2 text-center" name="card"></ion-icon>
+                                <ion-icon class="fs-4 p-2 text-center" name="card"></ion-icon>
                             </fieldset>
                         </section>
                         <section class="mb-3">
-                            <label class="form-label fw-bold">Data de Nascimento</label>
+                            <label class="form-label fw-bold" for="inputDataNascimento">Data de Nascimento</label>
                             <fieldset class="input-group-text d-flex justify-content-center align-items-center">
-                                <input type='date' class="bg-color form-control p-3" minlength="8" maxlength="8"
-                                    placeholder='Data de Nascimento' title="Informe a Data de Nascimento"
-                                    id='inputDataNascimento' aria-describedby='dataNascimentoHelp' />
-                                <ion-icon class="fs-2 p-2 text-center" name="calendar"></ion-icon>
+                                <input type='date' class="form-control p-3" placeholder='Data de Nascimento'
+                                    title="Informe a Data de Nascimento" id='inputDataNascimento'
+                                    aria-describedby='dataNascimentoHelp' />
+                                <ion-icon class="fs-4 p-2 text-center" name="calendar"></ion-icon>
                             </fieldset>
                         </section>
                         <section class="mb-3">
-                            <label class="form-label fw-bold">E-mail<span class="fw-bolder text-danger"> *</span></label>
+                            <label class="form-label fw-bold" for="inputEmail"><span
+                                    class="fw-bolder text-danger">*</span>E-mail</label>
                             <fieldset class="input-group-text d-flex justify-content-center align-items-center">
-                                <input type='email' class="bg-color form-control p-3" required minlength="3"
+                                <input type='email' class="form-control p-3" required minlength="3"
                                     placeholder='@mail.com' title="Informe o E-mail" id='inputEmail'
                                     aria-describedby='emailHelp' />
-                                <ion-icon class="fs-2 p-2 text-center" name="mail"></ion-icon>
+                                <ion-icon class="fs-4 p-2 text-center" name="mail"></ion-icon>
                             </fieldset>
                         </section>
                         <section class="mb-3">
-                            <label class="form-label fw-bold" id="labelPassword">Senha<span class="fw-bolder text-danger"> *</span></label>
+                            <label class="form-label fw-bold" id="labelPassword" for="inputPassword"><span
+                                    class="fw-bolder text-danger">*</span>Senha</label>
                             <fieldset class="input-group-text d-flex justify-content-center align-items-center">
-                                <input type='password' class="bg-color form-control p-3" required minlength="6"
+                                <input type='password' class="form-control p-3" required minlength="8"
                                     placeholder="**********" title="Informe a Senha" id='inputPassword' />
-                                <ion-icon class="fs-2 p-2 text-center" name="lock-closed-sharp"></ion-icon>
+                                <button class="botao-ver-senha" type="button" id="togglePassword">👁️</button>
+                                <ion-icon class="fs-4 p-2 text-center" name="lock-closed-sharp"></ion-icon>
                             </fieldset>
+                            <p id="senhaErro" class="error-message error-message-show"></p>
                         </section>
-                        <label class="fw-normal text-dark mb-2 badge">(*) campo obrigatório</label>
-
-                        <div class="input-group mb-3">
-                            <div class="input-group-text m-auto">
-                                <input class="text-white-50 bg-dark form-check-input fs-5" required type='checkbox'
-                                    value='' id='inputCheckBoxNews' aria-describedby='checkBoxHelp' />
-                            </div>
-                            <label class="form-control badge fw-normal text-dark pt-2" for="inputCheckBox">
-                                Quero receber novidades por e-mail, SMS, Whatsapp
-                            </label>
-                        </div>
-                        <div class="input-group mb-3">
-                            <div class="input-group-text m-auto">
-                                <input class="text-white-50 bg-dark form-check-input fs-5" required type='checkbox'
-                                    value='' id='inputCheckBoxAgree' aria-describedby='checkBoxHelp' />
-                            </div>
-                            <label class="form-control badge fw-normal text-dark pt-2" for="inputCheckBox">
-                                Declaro que li e aceito os termos e condições do site
-                            </label>
-                        </div>
-                        <fieldset class="text-center m-4">
-                            <button type="submit" class="btn btn-success border border-dark p-2">
-                                <a href="#"
-                                    class="d-flex justify-content-center list-group-item list-group-item-action active"
-                                    aria-current="true">
-                                    <label title="Clique para registrar"
-                                        class="fs-5 form-check-label btn mb-2 text-light">
-                                        Registrar
-                                    </label>
-                                    <ion-icon class="fs-2 p-2 text-center" name="save"></ion-icon>
-                                </a>
+                        <label class="fw-normal text-dark mb-4 text-wrap badge">Campos com (*) são obrigatório</label>
+                        <div class="d-flex justify-content-center align-content-center gap-4">
+                            <button title="Clique para registrar" type="submit"
+                                class="botao btn-principal btn-menor d-flex align-items-center fs-5">
+                                Cadastrar
+                                <ion-icon class="fs-4 p-2 text-center" name="save"></ion-icon>
                             </button>
-                        </fieldset>
+                        </div>
                     </form>
                 </section>
-                <section
-                    class="col-md container d-flex flex-column align-self-start text-start border border-secondary mb-4 p-5">
+                <section class="secao-orientacoes col-lg-6 col-md-6 col-12 align-self-start text-start">
                     <p class="text-justified">
                         Para Manter sua conta segura, recomendamos evitar criar senhas que
                         usam:
                     </p>
-                    <ul>
-                        <li>Palavras de dicionário em qualquer idioma</li>
-                        <li>
-                            Palavras escritas ao contrário, erros comuns de ortografia e
-                            abreviações
-                        </li>
-                        <li>
-                            Sequências ou caracteres repetidos. Exemplos: 12345678, 222222,
-                            abcdefg, ou letras adjacentes no teclado (qwerty)
-                        </li>
-                    </ul>
+                    <div class="d-flex flex-column">
+                        <ul class="w-100">
+                            <li>Palavras de dicionário em qualquer idioma</li>
+                            <li>Palavras escritas ao contrário, erros comuns de ortografia e abreviações</li>
+                            <li>Sequências ou caracteres repetidos, como 12345678, 222222, abcdefg, ou letras adjacentes
+                                (qwerty)</li>
+                        </ul>
+                    </div>
                 </section>
             </div>
         </section>
     </main>
     <!-- Rodapé -->
-    <footer class="footerBgColor w-auto h-auto fs-5 text-light rounded">
-        <main class="container-fluid navbar navbar-dark d-flex p-2">
-            <section class="col-lg align-self-start text-center p-2 align-items-center">
-                <h1 class="fs-4 text-sm">Sobre Nós</h1>
+    <footer class="footerBgColor w-auto h-auto fs-5 text-light rounded page-rodape">
+        <section class="rodape__container d-flex justify-content-center flex-wrap p-2">
+            <!-- sessão Sobre Nós -->
+            <section class="rodape__sobre-nos align-self-start text-center p-2">
+                <h3 class="fs-4">SOBRE NÓS</h3>
                 <hr />
-                <p class="fs-6 text-sm text-wrap text-break">
-                    Buscamos oferecer para amigos e clientes: objetos antigos, colecionáveis
-                    e decorativos singulares e excêntricos, para sua casa, coleção ou
-                    cenário.
+                <p>Buscamos oferecer para amigos e clientes, objetos antigos, colecionáveis e decorativos, buscando
+                    sempre itens singulares e excêntricos para sua casa, coleção ou cenário.
                 </p>
             </section>
-            <section class="col-lg m-auto align-self-start text-center p-2 bg-gradient rounded align-items-center">
-                <h1 class="fs-4 text-sm">Acompanhe a SOS Antiques</h1>
+            <!-- sessão Acompanhe a SOS Antiques -->
+            <section class="rodape__redes align-self-start text-center p-2 bg-gradient rounded">
+                <h3 class="fs-4 text-auto">Acompanhe a SOS Antiques</h3>
                 <hr class="mb-5" />
                 <image class="d-flex justify-content-center">
+                    <!-- Linkedin -->
                     <a class="m-2" href="https://www.linkedin.com/" target="_blank" title="Linkedin">
-                        <svg xmlns="http://www.w3.org/2000/svg" height="2.5em" viewBox="0 0 448 512">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="2.5em"
+                            viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
                             <style>
                                 svg {
                                     fill: #DFDACA
@@ -188,8 +153,10 @@
                                 d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z" />
                         </svg>
                     </a>
+                    <!-- Git Hub -->
                     <a href="https://www.github.com/" target="_blank" title="Git Hub">
-                        <svg xmlns="http://www.w3.org/2000/svg" height="2.5em" viewBox="0 0 496 512">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="2.5em"
+                            viewBox="0 0 496 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
                             <style>
                                 svg {
                                     fill: #DFDACA
@@ -199,8 +166,10 @@
                                 d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z" />
                         </svg>
                     </a>
+                    <!-- Instagram -->
                     <a class="m-2" href="https://www.instagram.com/" target="_blank" title="Instagram">
-                        <svg xmlns="http://www.w3.org/2000/svg" height="2.5em" viewBox="0 0 448 512">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="2.5em"
+                            viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
                             <style>
                                 svg {
                                     fill: #DFDACA
@@ -210,8 +179,10 @@
                                 d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z" />
                         </svg>
                     </a>
+                    <!-- Facebook -->
                     <a href="https://www.facebook.com/" target="_blank" title="Facebook">
-                        <svg xmlns="http://www.w3.org/2000/svg" height="2.5em" viewBox="0 0 512 512">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="2.5em"
+                            viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
                             <style>
                                 svg {
                                     fill: #DFDACA
@@ -221,8 +192,10 @@
                                 d="M504 256C504 119 393 8 256 8S8 119 8 256c0 123.78 90.69 226.38 209.25 245V327.69h-63V256h63v-54.64c0-62.15 37-96.48 93.67-96.48 27.14 0 55.52 4.84 55.52 4.84v61h-31.28c-30.8 0-40.41 19.12-40.41 38.73V256h68.78l-11 71.69h-57.78V501C413.31 482.38 504 379.78 504 256z" />
                         </svg>
                     </a>
+                    <!-- Twitter -->
                     <a href="https://twitter.com/" target="_blank" title="Twitter">
-                        <svg xmlns="http://www.w3.org/2000/svg" height="2.5em" viewBox="0 0 512 512">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="2.5em"
+                            viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
                             <style>
                                 svg {
                                     fill: #DFDACA
@@ -237,12 +210,15 @@
                 <span class="fs-6 text-sm">Todos os direitos reservados &copy;</span>
                 <hr />
             </section>
-            <section class="col-lg m-auto align-self-start text-center p-2 align-items-center">
-                <h1 class="fs-4 text-sm">Fale Conosco</h1>
+            <!-- sessão Fale Conosco -->
+            <section class="rodape__fale-conosco align-self-start text-center p-2">
+                <h3 class="fs-4 text-sm">Fale Conosco</h3>
                 <hr />
                 <image class="d-flex justify-content-center">
+                    <!-- Whatsapp -->
                     <a href="https://web.whatsapp.com/" target="_blank" title="WhatsApp">
-                        <svg xmlns="http://www.w3.org/2000/svg" height="2.5em" viewBox="0 0 448 512">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="2.5em"
+                            viewBox="0 0 448 512"><!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
                             <style>
                                 svg {
                                     fill: #DFDACA
@@ -255,8 +231,10 @@
                 </image>
                 <p class="fs-6 text-sm text-wrap text-break">(31) 9 1234-1234</p>
                 <image class="d-flex justify-content-center">
+                    <!-- Email -->
                     <a href="https://mail.google.com/" target="_blank" title="Gmail">
-                        <svg xmlns="http://www.w3.org/2000/svg" height="2.5em" viewBox="0 0 512 512">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="2.5em"
+                            viewBox="0 0 512 512"><!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
                             <style>
                                 svg {
                                     fill: #DFDACA
@@ -266,17 +244,19 @@
                                 d="M256 64C150 64 64 150 64 256s86 192 192 192c17.7 0 32 14.3 32 32s-14.3 32-32 32C114.6 512 0 397.4 0 256S114.6 0 256 0S512 114.6 512 256l0 32c0 53-43 96-96 96c-29.3 0-55.6-13.2-73.2-33.9C320 371.1 289.5 384 256 384c-70.7 0-128-57.3-128-128s57.3-128 128-128c27.9 0 53.7 8.9 74.7 24.1c5.7-5 13.1-8.1 21.3-8.1c17.7 0 32 14.3 32 32l0 80 0 32c0 17.7 14.3 32 32 32s32-14.3 32-32l0-32c0-106-86-192-192-192zm64 192a64 64 0 1 0 -128 0 64 64 0 1 0 128 0z" />
                         </svg>
                     </a>
+                    <!-- <FontAwesomeIcon class="iconsSize" color="#DFDACA" icon={faEnvelope} /> -->
                 </image>
                 <p class="fs-6 text-sm text-wrap text-break">
                     contato@sosantiques.com.br
                 </p>
             </section>
-        </main>
+        </section>
     </footer>
 
-    <script src="/src/assets/bootstrap-5.3.2-dist/js/bootstrap.bundle.min.js"></script>
-    <script src="/src/assets/bootstrap-5.3.2-dist/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-    <script src="/src/js/cadastro.js"></script>
+    <script src="../js/cadastro.js"></script>
 </body>

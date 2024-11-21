@@ -1,63 +1,104 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Trabalho TIAPN">
     <meta name="author"
-        content="Carlos Henrique Pereira Vieira, Guilherme Augusto Lopes Campos">
-    <title>SOS Antiques - Login</title>
-    <link rel="shortcut icon" href="../img/favicon.ico" type="image/x-icon">
+        content="Carlos Henrique Pereira Vieira, Guilherme Augusto Lopes Campos, João Victor Silva Thomazi, Kelvin">
+    <link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
         rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <link rel="stylesheet" href="../assets/bootstrap-5.3.2-dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="../css/login.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="/css/normalize.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/meus-pedidos.css">
+    <title>Meus Pedidos</title>
 </head>
-
-<body class="container-fluid d-flex justify-content-between flex-column min-vh-100">
-    <!-- Conteúdo -->
-    <main class="rounded align-content-center">
-        <section class="secao__login rounded d-flex flex-column align-items-center">
-            <figure class="logo m-3"></figure>
-            <label id="msgError" class="fs-5 p-2"></label>
-            <form class="d-flex flex-column align-items-center flex-wrap">
-                <section class="mb-3">
-                    <label class="form-label fw-bold" for="inputEmail" id="labelEmail">E-mail:</label>
-                    <div class="input-group-text d-flex justify-content-center align-items-center">
-                        <input type='email' class="form-control p-3" placeholder='@mail.com' title="Informe o E-mail"
-                            id='inputEmail' aria-describedby='emailHelp' />
-                        <ion-icon class="fs-2 p-2 text-center" name="person-sharp"></ion-icon>
+<body>
+    <header class="headerBgColor rounded">
+        <nav class="container w-auto fs-5 navbar navbar-dark d-flex text-light p-2 align-items-center">
+            <a href="/pages/catalogo.html"><img class="logoHeader" /></a>
+            <section class="cabecalho__botoes">
+                <a href="/pages/catalogo.html">
+                    <button class="nav-btn__anunciar">
+                        Catálogo
+                    </button>
+                </a>
+                <a href="/pages/anunciar-produto.html">
+                    <button class="nav-btn__anunciar">
+                        Anunciar
+                    </button>
+                </a>
+                <!-- Headset -->
+                <a class="align-items-center m-2" href="#" title="Contate o Suporte">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="2.5em"
+                        viewBox="0 0 512 512"><!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+                        <style>
+                            svg {
+                                fill: #DFDACA
+                            }
+                        </style>
+                        <path
+                            d="M256 48C141.1 48 48 141.1 48 256l0 40c0 13.3-10.7 24-24 24s-24-10.7-24-24l0-40C0 114.6 114.6 0 256 0S512 114.6 512 256l0 144.1c0 48.6-39.4 88-88.1 88L313.6 488c-8.3 14.3-23.8 24-41.6 24l-32 0c-26.5 0-48-21.5-48-48s21.5-48 48-48l32 0c17.8 0 33.3 9.7 41.6 24l110.4 .1c22.1 0 40-17.9 40-40L464 256c0-114.9-93.1-208-208-208zM144 208l16 0c17.7 0 32 14.3 32 32l0 112c0 17.7-14.3 32-32 32l-16 0c-35.3 0-64-28.7-64-64l0-48c0-35.3 28.7-64 64-64zm224 0c35.3 0 64 28.7 64 64l0 48c0 35.3-28.7 64-64 64l-16 0c-17.7 0-32-14.3-32-32l0-112c0-17.7 14.3-32 32-32l16 0z" />
+                    </svg>
+                </a>
+                <div class="dropdown">
+                    <a class="align-items-center m-2 w-auto dropdown-toggle" href="#" title="Acessar Perfil"
+                        role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="2.5em"
+                            viewBox="0 0 512 512"><!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+                            <style>
+                                svg {
+                                    fill: #DFDACA
+                                }
+                            </style>
+                            <path
+                                d="M399 384.2C376.9 345.8 335.4 320 288 320l-64 0c-47.4 0-88.9 25.8-111 64.2c35.2 39.2 86.2 63.8 143 63.8s107.8-24.7 143-63.8zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256zm256 16a72 72 0 1 0 0-144 72 72 0 1 0 0 144z" />
+                        </svg>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="/pages/perfil.html">Meu perfil</a></li>
+                        <li><a class="dropdown-item" href="/pages/meus-pedidos.html">Meus pedidos</a></li>
+                        <li><a class="dropdown-item" href="#" id="btn-desconectar">Sair da conta</a></li>
+                    </ul>
+                </div>
+            </section>
+        </nav>
+    </header>
+    <main class="main-content">
+        <div class="container-fluid">
+            <div class="row">
+                <!-- Menu Lateral -->
+                <aside class="menu-lateral col-12 col-md-2">
+                    <ul class="menu-lateral__lista">
+                        <li class="menu-lateral__item">
+                            <a href="#" class="ancora-item" id="desejos">Lista de desejos</a>
+                        </li>
+                        <li class="menu-lateral__item">
+                            <a href="#" class="ancora-item" id="ajuda">Minhas solicitações de ajuda</a>
+                        </li>
+                        <li class="menu-lateral__item">
+                            <a href="/pages/meus-pedidos.html" class="ancora-item" id="pedidos">Meus pedidos</a>
+                        </li>
+                    </ul>
+                </aside>
+                <section class="col-12 col-md-10">
+                    <h1 class="titulo">Meus pedidos</h1>
+                    <div id="containerProdutos"
+                        class="container-meus-anuncios row row-cols-1 row-cols-sm-2 row-cols-md-2 row-cols-lg-2 justify-content-start">
+                        <!-- Cards de anúncios -->
                     </div>
                 </section>
-                <section class="mb-3">
-                    <label class="form-label fw-bold" for="inputPassword" id="labelPassword">Senha:</label>
-                    <div class="input-group-text d-flex justify-content-center align-items-center">
-                        <input type='password' class="form-control p-3" placeholder="**********" title="Informe a Senha"
-                            id='inputPassword' />
-                        <ion-icon class="fs-2 p-2 text-center" name="lock-closed-sharp"></ion-icon>
-                    </div>
-                </section>
-                <a href="redefinir-senha.html" class="align-self-end redinir-senha mb-3"
-                    title="Clique para redefinir sua senha" aria-current="page">
-                    Esqueceu a senha?
-                </a>
-                <button id="entrar" class="botao btn-principal mb-2" title="Clique para redefinir sua senha">
-                    Entrar
-                </button>
-                <a href="cadastro.html">
-                    <button class="botao btn-secundario btn-secundario--bg" type="button">Cadastrar</button>
-                </a>
-            </form>
-        </section>
+            </div>
+        </div>
     </main>
-    <!-- Rodapé -->
     <footer class="footerBgColor w-auto h-auto fs-5 text-light rounded page-rodape">
         <section class="rodape__container d-flex justify-content-center flex-wrap p-2">
             <!-- sessão Sobre Nós -->
@@ -70,7 +111,7 @@
             </section>
             <!-- sessão Acompanhe a SOS Antiques -->
             <section class="rodape__redes align-self-start text-center p-2 bg-gradient rounded">
-                <h3 class="fs-4 text-auto">Acompanhe a SOS Antiques</h3>
+                <h3 class="fs-4 text-auto">ACOMPANHE A SOS ANTIQUES</h3>
                 <hr class="mb-5" />
                 <image class="d-flex justify-content-center">
                     <!-- Linkedin -->
@@ -145,7 +186,7 @@
             </section>
             <!-- sessão Fale Conosco -->
             <section class="rodape__fale-conosco align-self-start text-center p-2">
-                <h3 class="fs-4 text-sm">Fale Conosco</h3>
+                <h3 class="fs-4 text-sm">FALE CONOSCO</h3>
                 <hr />
                 <image class="d-flex justify-content-center">
                     <!-- Whatsapp -->
@@ -185,11 +226,8 @@
             </section>
         </section>
     </footer>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-        crossorigin="anonymous"></script>
-    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-    <script src="../js/login.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/js/meus-pedidos.js"></script>
+    <script src="/js/main.js"></script>
 </body>
+</html>

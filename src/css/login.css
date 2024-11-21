@@ -1,0 +1,39 @@
+.secao__login {
+    max-width: 50%;
+    margin: auto;
+    background-color: #ffffffa1;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+    height: 100%;
+    padding: 1.5rem;
+    margin: 1.5rem 0;
+    margin: 3rem auto;
+}
+
+.redinir-senha {
+    color: var(--color-green);
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+
+.btn-secundario--bg {
+    background-color: var(--bg-white);
+}
+
+@media screen and (max-width: 770px) {
+    .secao__login {
+        max-width: 100%;
+        margin: 1.5rem auto;
+
+    }
+}
+
+@media (max-width: 375px) {
+    .input-group-text {
+        flex-direction: column;
+        padding: 5px;
+    }
+    .secao__login {
+        padding: .3rem;
+        margin: 0 0;
+    }
+}

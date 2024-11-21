@@ -6,8 +6,8 @@
     <title>Sobre Nós</title>
     <meta name="description" content="Trabalho TIAPN">
     <meta name="author"
-        content="Carlos Henrique Pereira Vieira, Guilherme Augusto Lopes Campos, João Victor Silva Thomazi, Kelvin">
-    <link rel="shortcut icon" href="/src/img/favicon.ico" type="image/x-icon">
+        content="Carlos Henrique Pereira Vieira, Guilherme Augusto Lopes Campos">
+    <link rel="shortcut icon" href="../img/favicon.ico" type="image/x-icon">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -17,43 +17,41 @@
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="/src/css/normalize.css">
-    <link rel="stylesheet" href="/src/css/style.css">
-    <link rel="stylesheet" href="/src/css/sobre-nos.css">
+    <link rel="stylesheet" href="../css/normalize.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/sobre-nos.css">
 </head>
 <body>
     <header class="headerBgColor rounded">
         <nav class="container w-auto fs-5 navbar navbar-dark d-flex text-light p-2 align-items-center">
-            <image class="logoHeader" />
-            <form class=" accordion w-75 h-auto d-flex text-light">
-                <section class="d-flex flex-row w-50 h-auto">
-                    <input type='search' class="bg-color form-control p-3 w-100 rounded text-dark"
-                        placeholder='Busque por nome, categoria ou marca' title="Busque por nome, categoria ou marca"
-                        id='inputSearch' aria-describedby='searchHelp' />
-                </section>
-                <section class="w-auto d-flex flex-row">
-                    <button class="header__btn-anunciar fs-5 m-auto rounded btn btn-secondary w-auto me-3">
-                        <a href="/src/pages/anunciar-produto.html"
-                            class="d-flex justify-content-center list-group-item list-group-item-action active me-3">
-                            Anunciar
-                        </a>
+            <a href="catalogo.html"><img class="logoHeader" /></a>
+            <section class="cabecalho__botoes">
+                <a href="catalogo.html">
+                    <button class="nav-btn__anunciar">
+                        Catálogo
                     </button>
-                    <!-- Headset -->
-                    <a class="align-items-center m-2" href="https://www.linkedin.com/" target="_blank"
-                        title="Contate o Suporte">
-                        <svg xmlns="http://www.w3.org/2000/svg" height="2.5em"
-                            viewBox="0 0 512 512"><!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
-                            <style>
-                                svg {
-                                    fill: #DFDACA
-                                }
-                            </style>
-                            <path
-                                d="M256 48C141.1 48 48 141.1 48 256l0 40c0 13.3-10.7 24-24 24s-24-10.7-24-24l0-40C0 114.6 114.6 0 256 0S512 114.6 512 256l0 144.1c0 48.6-39.4 88-88.1 88L313.6 488c-8.3 14.3-23.8 24-41.6 24l-32 0c-26.5 0-48-21.5-48-48s21.5-48 48-48l32 0c17.8 0 33.3 9.7 41.6 24l110.4 .1c22.1 0 40-17.9 40-40L464 256c0-114.9-93.1-208-208-208zM144 208l16 0c17.7 0 32 14.3 32 32l0 112c0 17.7-14.3 32-32 32l-16 0c-35.3 0-64-28.7-64-64l0-48c0-35.3 28.7-64 64-64zm224 0c35.3 0 64 28.7 64 64l0 48c0 35.3-28.7 64-64 64l-16 0c-17.7 0-32-14.3-32-32l0-112c0-17.7 14.3-32 32-32l16 0z" />
-                        </svg>
-                    </a>
-                    <a class="align-items-center m-2 w-auto" href="https://www.linkedin.com/" target="_blank"
-                        title="Contate o Suporte">
+                </a>
+                <a href="anunciar-produto.html">
+                    <button class="nav-btn__anunciar">
+                        Anunciar
+                    </button>
+                </a>
+                <!-- Headset -->
+                <a class="align-items-center m-2" href="central-ajuda.html" title="Contate o Suporte">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="2.5em"
+                        viewBox="0 0 512 512"><!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+                        <style>
+                            svg {
+                                fill: #DFDACA
+                            }
+                        </style>
+                        <path
+                            d="M256 48C141.1 48 48 141.1 48 256l0 40c0 13.3-10.7 24-24 24s-24-10.7-24-24l0-40C0 114.6 114.6 0 256 0S512 114.6 512 256l0 144.1c0 48.6-39.4 88-88.1 88L313.6 488c-8.3 14.3-23.8 24-41.6 24l-32 0c-26.5 0-48-21.5-48-48s21.5-48 48-48l32 0c17.8 0 33.3 9.7 41.6 24l110.4 .1c22.1 0 40-17.9 40-40L464 256c0-114.9-93.1-208-208-208zM144 208l16 0c17.7 0 32 14.3 32 32l0 112c0 17.7-14.3 32-32 32l-16 0c-35.3 0-64-28.7-64-64l0-48c0-35.3 28.7-64 64-64zm224 0c35.3 0 64 28.7 64 64l0 48c0 35.3-28.7 64-64 64l-16 0c-17.7 0-32-14.3-32-32l0-112c0-17.7 14.3-32 32-32l16 0z" />
+                    </svg>
+                </a>
+                <div class="dropdown">
+                    <a class="align-items-center m-2 w-auto dropdown-toggle" href="#" title="Acessar Perfil" role="button"
+                        data-bs-toggle="dropdown" aria-expanded="false">
                         <svg xmlns="http://www.w3.org/2000/svg" height="2.5em"
                             viewBox="0 0 512 512"><!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
                             <style>
@@ -65,8 +63,13 @@
                                 d="M399 384.2C376.9 345.8 335.4 320 288 320l-64 0c-47.4 0-88.9 25.8-111 64.2c35.2 39.2 86.2 63.8 143 63.8s107.8-24.7 143-63.8zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256zm256 16a72 72 0 1 0 0-144 72 72 0 1 0 0 144z" />
                         </svg>
                     </a>
-                </section>
-            </form>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="perfil.html">Meu perfil</a></li>
+                        <li><a class="dropdown-item" href="meus-pedidos.html">Meus pedidos</a></li>
+                        <li><a class="dropdown-item" href="#" id="btn-desconectar">Sair da conta</a></li>
+                    </ul>
+                </div>
+            </section>
         </nav>
     </header>
     <main>
@@ -116,16 +119,17 @@
         </section>
     </main>
     <footer class="footerBgColor w-auto h-auto fs-5 text-light rounded page-rodape">
-        <section class="container navbar navbar-dark d-flex p-2">
+        <section class="rodape__container d-flex justify-content-center flex-wrap p-2">
             <!-- sessão Sobre Nós -->
-            <section class="w-25 align-self-start text-center p-2">
-                <h3>SOBRE NÓS</h3>
+            <section class="rodape__sobre-nos align-self-start text-center p-2">
+                <h3 class="fs-4">SOBRE NÓS</h3>
+                <hr/>
                 <p>Buscamos oferecer para amigos e clientes, objetos antigos, colecionáveis e decorativos, buscando
                     sempre itens singulares e excêntricos para sua casa, coleção ou cenário.
                 </p>
             </section>
             <!-- sessão Acompanhe a SOS Antiques -->
-            <section class="w-50 align-self-start text-center p-2 bg-gradient rounded">
+            <section class="rodape__redes align-self-start text-center p-2 bg-gradient rounded">
                 <h3 class="fs-4 text-auto">Acompanhe a SOS Antiques</h3>
                 <hr class="mb-5" />
                 <image class="d-flex justify-content-center">
@@ -200,7 +204,7 @@
                 <hr />
             </section>
             <!-- sessão Fale Conosco -->
-            <section class="w-25 align-self-start text-center p-2">
+            <section class="rodape__fale-conosco align-self-start text-center p-2">
                 <h3 class="fs-4 text-sm">Fale Conosco</h3>
                 <hr />
                 <image class="d-flex justify-content-center">
@@ -241,5 +245,10 @@
             </section>
         </section>
     </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+    <script src="../js/main.js"></script>
 </body>
 </html>
