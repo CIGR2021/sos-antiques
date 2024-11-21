@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Trabalho TIAPN">
     <meta name="author"
-        content="Carlos Henrique Pereira Vieira, Guilherme Augusto Lopes Campos, João Victor Silva Thomazi, Kelvin">
-    <link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon">
+        content="Carlos Henrique Pereira Vieira, Guilherme Augusto Lopes Campos">
+    <link rel="shortcut icon" href="../img/favicon.ico" type="image/x-icon">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -16,29 +16,29 @@
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="/css/normalize.css">
-    <link rel="stylesheet" href="/css/style.css">
-    <link rel="stylesheet" href="/css/perfil.css">
+    <link rel="stylesheet" href="../css/normalize.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/perfil.css">
     <title>Meu Perfil</title>
 </head>
 
 <body>
     <header class="headerBgColor rounded">
         <nav class="container w-auto fs-5 navbar navbar-dark d-flex text-light p-2 align-items-center">
-            <a href="/pages/catalogo.html"><img class="logoHeader" /></a>
+            <a href="catalogo.html"><img class="logoHeader" /></a>
             <section class="cabecalho__botoes">
-                <a href="/pages/catalogo.html">
+                <a href="catalogo.html">
                     <button class="nav-btn__anunciar">
                         Catálogo
                     </button>
                 </a>
-                <a href="/pages/anunciar-produto.html">
+                <a href="anunciar-produto.html">
                     <button class="nav-btn__anunciar">
                         Anunciar
                     </button>
                 </a>
                 <!-- Headset -->
-                <a class="align-items-center m-2" href="#" title="Contate o Suporte">
+                <a class="align-items-center m-2" href="central-ajuda.html" title="Contate o Suporte">
                     <svg xmlns="http://www.w3.org/2000/svg" height="2.5em"
                         viewBox="0 0 512 512"><!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
                         <style>
@@ -65,7 +65,7 @@
                         </svg>
                     </a>
                     <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="/pages/perfil.html">Meu perfil</a></li>
+                        <li><a class="dropdown-item" href="perfil.html">Meu perfil</a></li>
                         <li><a class="dropdown-item" href="#">Meus pedidos</a></li>
                         <li><a class="dropdown-item" href="#" id="btn-desconectar">Sair da conta</a></li>
                     </ul>
@@ -86,7 +86,7 @@
                             <a href="#" class="ancora-item" id="ajuda">Minhas solicitações de ajuda</a>
                         </li>
                         <li class="menu-lateral__item">
-                            <a href="/pages/meus-pedidos.html" class="ancora-item" id="pedidos">Meus pedidos</a>
+                            <a href="meus-pedidos.html" class="ancora-item" id="pedidos">Meus pedidos</a>
                         </li>
                     </ul>
                 </aside>
@@ -95,7 +95,7 @@
                 <section class="col-12 col-md-10">
                     <div class="card-container">
                         <div class="card__foto-container">
-                            <img src="/img/perfil.png" id="fotoPerfil" class="card__foto-perfil" alt="Foto de perfil">
+                            <img src="../img/perfil.png" id="fotoPerfil" class="card__foto-perfil" alt="Foto de perfil">
                             <button type="button" class="botao-simples" data-bs-toggle="modal"
                                 data-bs-target="#modalAlterarFoto">Alterar foto de perfil</button>
                             <!-- Modal -->
@@ -317,9 +317,12 @@
             </section>
         </section>
     </footer>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="/js/perfil.js"></script>
-    <script src="/js/main.js"></script>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+    <script src="../js/perfil.js"></script>
+    <script src="../js/main.js"></script>
 </body>
 
 </html>

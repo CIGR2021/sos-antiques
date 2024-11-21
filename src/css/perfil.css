@@ -4,7 +4,6 @@
     box-sizing: border-box;
 }
 
-
 .menu-lateral__item {
     list-style: none;
 }
@@ -156,6 +155,7 @@
     outline: none;
     width: 100%;
 }
+
 
 @media screen and (max-width: 768px) {
     .menu-lateral__lista {

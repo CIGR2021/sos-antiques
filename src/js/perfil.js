@@ -6,7 +6,7 @@ function renderizarPerfilUsuario(userLogado) {
     const telefoneUsuario = document.getElementById("telefoneUsuario");
     const emailUsuario = document.getElementById("emailUsuario");
 
-    fotoPerfil.src = userLogado.foto || `/img/default-avatar.jpeg`;
+    fotoPerfil.src = userLogado.foto || "../img/default-avatar.jpeg";
     nomeUsuario.textContent = userLogado.nome;
     localUsuario.textContent = userLogado.local || "Não informado";
     telefoneUsuario.textContent = userLogado.telefone;
@@ -32,7 +32,7 @@ function exibirProdutosUsuario(produtos, emailUsuario, container) {
                     <h5 class="card-titulo text-capitalize">${produto.tituloProduto}</h5>
                     <div class="d-flex justify-content-between align-content-center align-items-center">
                         <p class="card-preco">${precoDoProduto}</p>
-                        <a href="/pages/produto.html?id=${produto.id}" class="card-btn">Visualizar</a>
+                        <a href="../pages/produto.html?id=${produto.id}" class="card-btn">Visualizar</a>
                     </div>
                 </div>
             </div>
@@ -51,7 +51,7 @@ function salvarFotoDePerfil(novaFotoUrl, userLogado) {
 
         // Atualiza o usuário na lista de usuários
         const usuarios = JSON.parse(localStorage.getItem('Usuarios')) || [];
-        const index = usuarios.findIndex(usuario => usuario.Email == userLogado.user);
+        const index = usuarios.findIndex(usuario => usuario.Email === userLogado.user);
         console.log(index)
 
         if (index !== -1) {
@@ -71,7 +71,7 @@ function salvarFotoDePerfil(novaFotoUrl, userLogado) {
     }
 }
 
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', () => {
     const userLogado = JSON.parse(localStorage.getItem('userLogado'));
     const produtos = JSON.parse(localStorage.getItem('anuncios')) || [];
     const containerProdutos = document.getElementById("containerProdutos");
@@ -88,7 +88,7 @@ document.addEventListener('DOMContentLoaded', function() {
 const botaoSalvarFoto = document.getElementById("btn-salvarFoto");
 const inputUrlFoto = document.getElementById("input-fotoPerfil");
 
-botaoSalvarFoto.addEventListener('click', function() {
+botaoSalvarFoto.addEventListener('click', () => {
     const userLogado = JSON.parse(localStorage.getItem('userLogado'));
     if (userLogado) {
         salvarFotoDePerfil(inputUrlFoto.value, userLogado);

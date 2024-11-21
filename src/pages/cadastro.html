@@ -6,9 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Atividade TIAW">
     <meta name="author"
-        content="Carlos Henrique Pereira Vieira, Guilherme Augusto Lopes Campos, João Victor Silva Thomazi, Kelvin">
+        content="Carlos Henrique Pereira Vieira, Guilherme Augusto Lopes Campos">
     <title>SOS Antiques - Cadastro</title>
-    <link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="../img/favicon.ico" type="image/x-icon">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -16,17 +16,25 @@
         rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <link rel="stylesheet" href="/css/style.css">
-    <link rel="stylesheet" href="/css/cadastro.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/cadastro.css">
 </head>
 
 <body>
     <!-- Conteúdo -->
     <main class="container-fluid">
         <section class="pb-2 w-auto login p-auto rounded d-flex flex-column justify-content-center align-items-center">
-            <a href="/pages/login.html"><figure class="logo m-3"></figure></a>
+            <a href="login.html"><figure class="logo m-3"></figure></a>
             <div class="div-cadastro row p-4 rounded d-flex justify-content-between flex-row align-items-center">
                 <section class="col-lg-6 col-md-6 col-12 d-flex flex-column align-items-start">
+                    <div class="d-flex justify-content-center align-content-center gap-4">
+                        <a href="login.html" aria-current="true">
+                            <button title="Clique para cancelar"
+                                class="botao btn-secundario btn-menor d-flex align-items-center fs-5">
+                                <ion-icon class="fs-4 p-2 text-center" name="arrow-back"></ion-icon>
+                            </button>
+                        </a>
+                    </div>
                     <h1 class="p-3 titulo fw-medium fs-3">Preencha os campos com seus dados</h1>
                     <form id="cadastro-form" class="w-100 p-3 text-start m-auto">
                         <section class="mb-3">
@@ -90,11 +98,13 @@
                             <p id="senhaErro" class="error-message error-message-show"></p>
                         </section>
                         <label class="fw-normal text-dark mb-4 text-wrap badge">Campos com (*) são obrigatório</label>
-                        <button title="Clique para registrar" type="submit"
-                            class="botao btn-principal btn-menor d-flex align-items-center fs-5">
-                            Cadastrar
-                            <ion-icon class="fs-4 p-2 text-center" name="save"></ion-icon>
-                        </button>
+                        <div class="d-flex justify-content-center align-content-center gap-4">
+                            <button title="Clique para registrar" type="submit"
+                                class="botao btn-principal btn-menor d-flex align-items-center fs-5">
+                                Cadastrar
+                                <ion-icon class="fs-4 p-2 text-center" name="save"></ion-icon>
+                            </button>
+                        </div>
                     </form>
                 </section>
                 <section class="secao-orientacoes col-lg-6 col-md-6 col-12 align-self-start text-start">
@@ -243,9 +253,10 @@
         </section>
     </footer>
 
-    <script src="/assets/bootstrap-5.3.2-dist/js/bootstrap.bundle.min.js"></script>
-    <script src="/assets/bootstrap-5.3.2-dist/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-    <script src="/js/cadastro.js"></script>
+    <script src="../js/cadastro.js"></script>
 </body>

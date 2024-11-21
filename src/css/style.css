@@ -97,7 +97,7 @@ body {
     height: 160px;
     width: 160px;
     background-position: center;
-    background-image: url("/img/logo.JPG");
+    background-image: url("../img/logo.JPG");
     background-size: contain;
     border-radius: 50%;
     border: none;
@@ -116,7 +116,7 @@ body {
     height: 80px;
     width: 80px;
     background-position: center;
-    background-image: url("/img/logo.jpeg");
+    background-image: url("../img/logo.jpeg");
     background-repeat: no-repeat;
     background-size: contain;
     border-radius: 50%;
@@ -125,7 +125,7 @@ body {
 .bg-image {
     height: 100vh;
     background-position: center;
-    background-image: url("/img/bg.jpg");
+    background-image: url("../img/bg.jpg");
     background-repeat: no-repeat;
     background-size: cover;
 }

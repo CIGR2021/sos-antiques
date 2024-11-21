@@ -57,11 +57,11 @@ cadastrar.addEventListener("submit", (event) => {
   //função de validação da senha
   const validarSenha = (senha) => {
     senhaErro.classList.remove('error-message-show');
-    if (!senhaForte.test(senha)) {
-      senhaErro.textContent = 'A senha deve ter pelo menos 8 caracteres, incluindo uma letra maiúscula, uma letra minúscula, um número e um caractere especial.';
-      senhaErro.classList.add('error-message-show');
-      return false;
-    }
+    // if (!senhaForte.test(senha)) {
+    //   senhaErro.textContent = 'A senha deve ter pelo menos 8 caracteres, incluindo uma letra maiúscula, uma letra minúscula, um número e um caractere especial.';
+    //   senhaErro.classList.add('error-message-show');
+    //   return false;
+    // }
     if (regex.test(senha)) {
       senhaErro.textContent = 'Senha inválida. Contém padrões não aceitos.';
       senhaErro.classList.add('error-message-show');
@@ -86,7 +86,7 @@ cadastrar.addEventListener("submit", (event) => {
     localStorage.setItem("Usuarios", JSON.stringify(usuarios));
     alert("Cadastro realizado com sucesso!");
 
-    window.location.href = "/pages/login.html";
+    window.location.href = "../pages/produto.html";
   }
 });
 

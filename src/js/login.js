@@ -46,7 +46,7 @@ function entrar(event) {
 
     if(username.value === userValid.user && password.value === userValid.senha) {
         setTimeout(() => {
-            window.location.href = '/pages/catalogo.html';
+            window.location.href = "../pages/catalogo.html";
         })
 
         const token = Math.random().toString(16).substring(2)

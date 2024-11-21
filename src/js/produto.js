@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', () => {
     const params = new URLSearchParams(window.location.search);
     const produtoId = params.get('id');
 
@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const email = document.getElementById('email');
     const precoProduto = document.getElementById('precoProduto');
     
-    const produto = anuncios.find(item => item.id == produtoId);
+    const produto = anuncios.find(item => item.id === produtoId);
 
     if (produto) {
         fotoProduto.src = produto.fotoProduto;
@@ -28,20 +28,20 @@ document.addEventListener('DOMContentLoaded', function() {
         categoriaProduto.textContent = produto.categoriaProduto
         descricaoProduto.textContent = produto.descricaoProduto;
 
-        if(produto.termoContato == "aceita") {
+        if(produto.termoContato === "aceita") {
             telefone.href = `https://wa.me/${produto.telefone}`;
             email.textContent = `E-mail do anunciante: ${produto.email}`;
         } else { 
             email.textContent = "Este anunciante não disponibilizou informação para contato.";
             telefone.style = "display: none"
         }
-        if(produto.tipoProduto == "Venda") {
+        if(produto.tipoProduto === "Venda") {
             precoProduto.textContent = `R$ ${produto.precoProduto}`.replace('.', ',');
         } else {
             precoProduto.textContent = `Produto para: ${produto.tipoProduto}`;
         }
 
-        if(produto.email == userLogado.user) {
+        if(produto.email === userLogado.user) {
             btnComprarProduto.style = "display: none"
             btnEditarProduto.style = "display: block"
             btnApagarProduto.style = "display: block"
@@ -54,11 +54,11 @@ document.addEventListener('DOMContentLoaded', function() {
         const novaLista = anuncios.filter(item => item.id !== parseInt(produtoId));
         localStorage.setItem('anuncios', JSON.stringify(novaLista));
         alert('Anúncio apagado com sucesso!');
-        window.location.href = "/pages/catalogo.html";
+        window.location.href = "../pages/catalogo.html";
     }
 
     confirmacaoApagarProduto?.addEventListener('click', apagarProduto);
-    btnEditarProduto?.addEventListener('click', function () {
+    btnEditarProduto?.addEventListener('click', () => {
         alert('Função de edição em desenvolvimento!');
     });
 });
