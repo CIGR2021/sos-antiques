@@ -91,7 +91,6 @@ const salvarFotoDePerfil = (novaFotoUrl, userLogado) => {
 
         const usuarios = JSON.parse(localStorage.getItem('Usuarios')) || [];
         const index = usuarios.findIndex(usuario => usuario.Email === userLogado.user);
-        console.log(index)
 
         if (index !== -1) {
             usuarios[index].foto = novaFotoUrl;

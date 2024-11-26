@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const cardContainer = document.querySelector('.card-container');
     const produtos = JSON.parse(localStorage.getItem('anuncios')) || [];
 
-/*  Produtos pré-criados para entrega 1    
+    /*  Produtos pré-criados para entrega 1    
     produtos.push({
         tituloProduto: "Jaqueta Retro Masculina - Planet Hollywood",
         tipoProduto: "Troca",
@@ -26,60 +26,76 @@ document.addEventListener('DOMContentLoaded', () => {
     })
  */
 
-    const renderizarProdutos = filtrados => {
+    const renderizarProdutos = (filtrados) => {
         cardContainer.innerHTML = ''; // Limpa o container antes de renderizar os produtos filtrados
-        filtrados.map(produto => {
-            let precoDoProduto = '';
-            if (produto.tipoProduto === 'Venda') {
-                precoDoProduto = `R$ ${produto.precoProduto}`;
-            } else {
-                precoDoProduto = produto.tipoProduto;
-            }
+        filtrados.forEach(produto => {
+            let precoDoProduto = produto.tipoProduto === 'Venda' ? `R$ ${produto.precoProduto}` : produto.tipoProduto;
+            
             cardContainer.innerHTML += `
                 <div class="card d-flex flex-column justify-content-between">
                     <div class="card-imagem-container">
-                        <img src="${produto.fotoProduto}" class="card-img-top card-imagem" alt="...">
+                        <img src="${produto.fotoProduto}" class="card-img-top card-imagem" alt="${produto.tituloProduto}">
                     </div>
                     <div class="card-content">
-                        <h5 class="card-titulo text-capitalize">${produto.tituloProduto}</h5>
+                        <div class="d-flex justify-content-between align-content-center align-items-center">
+                            <h5 class="card-titulo text-capitalize">${produto.tituloProduto}</h5>
+                            <button class="card-btn btn-favoritar" data-id="${produto.id}" title="${produto.isFavorite ? "Clique para Remover da lista de favoritos" : "Clique para Adicionar a lista de favoritos"}">${produto.isFavorite ? "Desfavoritar" : "Favoritar"}</button>
+                        </div>
                         <div class="d-flex justify-content-between align-content-center align-items-center">
                             <p class="card-preco">${precoDoProduto}</p>
-                            <a href="/pages/produto.html?id=${produto.id}" class="card-btn">Visualizar</a>
+                            <a href="../pages/produto.html?id=${produto.id}">
+                                <button class="card-btn">Visualizar</button>
+                            </a>
                         </div>
                     </div>
                 </div>
             `;
         });
-    }
 
-    // carregar todos os produtos como "novidades" no primeiro carregamento
+        // Adiciona evento de favoritar para cada botão individualmente
+        document.querySelectorAll('.btn-favoritar').forEach(button => {
+            button.addEventListener('click', favoritar);
+        });
+    };
+
+    // Função para favoritar/desfavoritar produto
+    const favoritar = event => {
+        const produtoId = Number(event.target.getAttribute('data-id'));
+        const produtosAtualizados = produtos.map((produto) => {
+            if (produto.id === produtoId) {
+                return { ...produto, isFavorite: !produto.isFavorite };
+            }
+            return produto;
+        });
+
+        localStorage.setItem('anuncios', JSON.stringify(produtosAtualizados));
+        renderizarProdutos(produtosAtualizados); // Atualiza a renderização dos produtos
+        location.reload();
+    };
+
+    // Inicializa a renderização de todos os produtos
     renderizarProdutos(produtos);
 
-    const btnNovidades = document.getElementById('btn-item__novidades');
-    const btnVenda = document.getElementById('btn-item__venda');
-    const btnTroca = document.getElementById('btn-item__troca');
-    const btnDoacoes = document.getElementById('btn-item__doacoes');
+    // Funções de filtro
+    const aplicarFiltro = filtro => {
+        const produtosFiltrados = produtos.filter(filtro);
+        renderizarProdutos(produtosFiltrados);
+    };
 
-    // carregar todos produtos
-    btnNovidades.addEventListener('click', () => {
-        renderizarProdutos(produtos);
+    // Eventos de clique para filtros
+    document.getElementById('btn-item__novidades').addEventListener('click', () => {
+        aplicarFiltro(() => true); // Todos os produtos
     });
 
-    // filtro produtos de venda
-    btnVenda.addEventListener('click', () => {
-        const produtosVenda = produtos.filter(produto => produto.tipoProduto === 'Venda');
-        renderizarProdutos(produtosVenda);
+    document.getElementById('btn-item__venda').addEventListener('click', () => {
+        aplicarFiltro((produto) => produto.tipoProduto === 'Venda');
     });
 
-    // filtro produtos de troca
-    btnTroca.addEventListener('click', () => {
-        const produtosTroca = produtos.filter(produto => produto.tipoProduto === 'Troca');
-        renderizarProdutos(produtosTroca);
+    document.getElementById('btn-item__troca').addEventListener('click', () => {
+        aplicarFiltro((produto) => produto.tipoProduto === 'Troca');
     });
 
-    // filtro produtos de doação
-    btnDoacoes.addEventListener('click', () => {
-        const produtosDoacao = produtos.filter(produto => produto.tipoProduto === 'Doação');
-        renderizarProdutos(produtosDoacao);
+    document.getElementById('btn-item__doacoes').addEventListener('click', () => {
+        aplicarFiltro((produto) => produto.tipoProduto === 'Doação');
     });
 });

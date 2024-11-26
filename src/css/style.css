@@ -169,6 +169,12 @@ body {
     background-color: var(--color-green);
 }
 
+.dropdown-item:hover {
+    background-color: var(--color-green);
+    color: var(--bg-white);
+    border-radius: 5%;
+}
+
 .btn-primary {
     background-color: var(--color-green);
     border: none;
@@ -178,8 +184,7 @@ body {
     background-color: var(--color-orange);
 }
 
-.btn-primary:active, 
-.btn-primary.active {
+.btn-primary:active {
     background-color: var(--color-brown-dark); 
     border: none;
 }
