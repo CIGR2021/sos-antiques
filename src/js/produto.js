@@ -69,7 +69,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const valorDoProduto = document.getElementById("valorDoProduto");
     const inputAdicionarSaldo = document.getElementById("inputAdicionarSaldo");
     
-    const produto = anuncios.find(item => item.id === produtoId);
+    const produto = anuncios.find(item => Number(item.id) === Number(produtoId));
 
     if (produto) {
         fotoProduto.src = produto.fotoProduto;
@@ -111,7 +111,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     const apagarProduto = () => {
-        const novaLista = anuncios.filter(item => item.id !== parseInt(produtoId));
+        const novaLista = anuncios.filter(item => Number(item.id) !== Number(produtoId));
         localStorage.setItem('anuncios', JSON.stringify(novaLista));
         exibirModal("Anúncio apagado com sucesso!", "../pages/catalogo.html")
     }
@@ -207,5 +207,5 @@ document.addEventListener('DOMContentLoaded', () => {
     confirmacaoApagarProduto?.addEventListener('click', apagarProduto);
     btnEditarProduto.addEventListener('click', editarProduto);
     confirmacaoAlterarProduto.addEventListener('click', salvarAlteracoesProduto);
-    btnFinalizarCompra.addEventListener('click', comprarProduto);
+    btnFinalizarCompra.addEventListener('click', comprarProduto);    
 });
