@@ -44,9 +44,6 @@ document.addEventListener('DOMContentLoaded', () => {
             notificacao.style.display = 'block';
             return;
         }
-
-        console.log(data);
-        console.log(userLogado);
         
         const produtoId = Date.now();
         const telefoneSomenteNumeros = userLogado.telefone.replace(/\D/g, '');
@@ -65,7 +62,8 @@ document.addEventListener('DOMContentLoaded', () => {
             fotoProduto: data.fotoProduto,
             termoContato: data.termoContato,
             telefone: telefoneSomenteNumeros,
-            email: userLogado.user
+            email: userLogado.user,
+            isFavorite: false
         })
 
         localStorage.setItem('anuncios', JSON.stringify(anuncios));
