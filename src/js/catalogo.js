@@ -1,6 +1,8 @@
 document.addEventListener('DOMContentLoaded', () => {
     const cardContainer = document.querySelector('.card-container');
+    const titulo = document.querySelector('.secao-principal__titulo');
     const produtos = JSON.parse(localStorage.getItem('anuncios')) || [];
+    const userLogado = JSON.parse(localStorage.getItem('userLogado')) || [];
 
     /*  Produtos pré-criados para entrega 1    
     produtos.push({
@@ -26,7 +28,7 @@ document.addEventListener('DOMContentLoaded', () => {
     })
  */
 
-    const renderizarProdutos = (filtrados) => {
+    const renderizarProdutos = filtrados => {
         cardContainer.innerHTML = ''; // Limpa o container antes de renderizar os produtos filtrados
         filtrados.forEach(produto => {
             let precoDoProduto = produto.tipoProduto === 'Venda' ? `R$ ${produto.precoProduto}` : produto.tipoProduto;
@@ -39,7 +41,11 @@ document.addEventListener('DOMContentLoaded', () => {
                     <div class="card-content">
                         <div class="d-flex justify-content-between align-content-center align-items-center">
                             <h5 class="card-titulo text-capitalize">${produto.tituloProduto}</h5>
-                            <button class="card-btn btn-favoritar" data-id="${produto.id}" title="${produto.isFavorite ? "Clique para Remover da lista de favoritos" : "Clique para Adicionar a lista de favoritos"}">${produto.isFavorite ? "Desfavoritar" : "Favoritar"}</button>
+                            ${
+                                produto.email !== userLogado.user
+                                ? `<button class="card-btn btn-favoritar" data-id="${produto.id}" title="${produto.isFavorite ? "Clique para Remover da lista de favoritos" : "Clique para Adicionar a lista de favoritos"}">${produto.isFavorite ? "Desfavoritar" : "Favoritar"}</button>`
+                                : ''
+                            }
                         </div>
                         <div class="d-flex justify-content-between align-content-center align-items-center">
                             <p class="card-preco">${precoDoProduto}</p>
@@ -84,18 +90,27 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Eventos de clique para filtros
     document.getElementById('btn-item__novidades').addEventListener('click', () => {
+        titulo.innerHTML = "Novidades"
         aplicarFiltro(() => true); // Todos os produtos
     });
 
     document.getElementById('btn-item__venda').addEventListener('click', () => {
-        aplicarFiltro((produto) => produto.tipoProduto === 'Venda');
+        titulo.innerHTML = "Itens de Venda"
+        aplicarFiltro(produto => produto.tipoProduto === 'Venda');
     });
 
     document.getElementById('btn-item__troca').addEventListener('click', () => {
-        aplicarFiltro((produto) => produto.tipoProduto === 'Troca');
+        titulo.innerHTML = "Itens de Troca"
+        aplicarFiltro(produto => produto.tipoProduto === 'Troca');
     });
 
     document.getElementById('btn-item__doacoes').addEventListener('click', () => {
-        aplicarFiltro((produto) => produto.tipoProduto === 'Doação');
+        titulo.innerHTML = "Doações"
+        aplicarFiltro(produto => produto.tipoProduto === 'Doação');
+    });
+
+    document.getElementById('btn-item__desejos').addEventListener('click', () => {
+        titulo.innerHTML = "Lista de Desejos"
+        aplicarFiltro(produto => produto.isFavorite === true);
     });
 });

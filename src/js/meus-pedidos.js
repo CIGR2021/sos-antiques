@@ -10,7 +10,7 @@ const exibirModal = (mensagem, link) => {
     modal.style.display = 'flex';
     modal.style.justifyContent = 'center';
     modal.style.alignItems = 'center';
-    modal.style.zIndex = '1000';
+    modal.style.zIndex = '9999';
   
     const modalContent = document.createElement('div');
     modalContent.style.backgroundColor = '#fff';
@@ -35,7 +35,7 @@ const exibirModal = (mensagem, link) => {
   
     botaoFechar.addEventListener('click', () => {
       document.body.removeChild(modal);
-      if(link !== "") window.location.href = link;
+      if(link) window.location.href = link;
     });
   
     modalContent.appendChild(botaoFechar);

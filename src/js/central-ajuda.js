@@ -2,7 +2,7 @@
 const centralAjuda = document.getElementById("central-ajuda-form");
 
 // Função para exibir o modal
-const exibirModal = mensagem => {
+const exibirModal = (mensagem, link) => {
   const modal = document.createElement('div');
   modal.id = 'modalSucesso';
   modal.style.position = 'fixed';
@@ -14,7 +14,7 @@ const exibirModal = mensagem => {
   modal.style.display = 'flex';
   modal.style.justifyContent = 'center';
   modal.style.alignItems = 'center';
-  modal.style.zIndex = '1000';
+  modal.style.zIndex = '9999';
 
   const modalContent = document.createElement('div');
   modalContent.style.backgroundColor = '#fff';
@@ -39,7 +39,7 @@ const exibirModal = mensagem => {
 
   botaoFechar.addEventListener('click', () => {
     document.body.removeChild(modal);
-    window.location.href = "../pages/catalogo.html";
+    if(link) window.location.href = link;
   });
 
   modalContent.appendChild(botaoFechar);
@@ -73,17 +73,20 @@ centralAjuda.addEventListener("submit", (event) => {
   const usuarios = JSON.parse(localStorage.getItem("Usuarios")) || [];
   //verifica se já existe um usuário com o mesmo email
   const usuarioExistente = usuarios.find(usuario => usuario.Email === Email && usuario);
+  const listaPedidosAjuda = JSON.parse(localStorage.getItem("Pedido de Ajuda")) || [];
 
-  const pedido = {
+  listaPedidosAjuda.push({
     ...usuarioExistente,
+    Id: Number(listaPedidosAjuda.length + 1),
     "PedidoAjuda": {
       Assunto,
       ProblemaDuvida
-    }
-  };
+    },
+    Situacao: "pendente"
+  });
   
-  localStorage.setItem('Pedido de Ajuda', JSON.stringify(pedido));
+  localStorage.setItem('Pedido de Ajuda', JSON.stringify(listaPedidosAjuda));
 
   // Exibe o modal
-  exibirModal("A solicitação de ajuda foi realizada com sucesso, aguarde que a equipe de suporte entrará em contato!");
+  exibirModal("A solicitação de ajuda foi realizada com sucesso, aguarde que a equipe de suporte entrará em contato!", "../pages/catalogo.html");
 });
