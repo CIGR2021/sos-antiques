@@ -14,7 +14,7 @@ const exibirModal = mensagem => {
   modal.style.display = 'flex';
   modal.style.justifyContent = 'center';
   modal.style.alignItems = 'center';
-  modal.style.zIndex = '1000';
+  modal.style.zIndex = '9999';
 
   const modalContent = document.createElement('div');
   modalContent.style.backgroundColor = '#fff';

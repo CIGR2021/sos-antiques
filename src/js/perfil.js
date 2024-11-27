@@ -1,4 +1,4 @@
-const exibirModal = mensagem => {
+const exibirModal = (mensagem, ok) => {
     const modal = document.createElement('div');
     modal.id = 'modalSucesso';
     modal.style.position = 'fixed';
@@ -10,7 +10,7 @@ const exibirModal = mensagem => {
     modal.style.display = 'flex';
     modal.style.justifyContent = 'center';
     modal.style.alignItems = 'center';
-    modal.style.zIndex = '1000';
+    modal.style.zIndex = '9999';
   
     const modalContent = document.createElement('div');
     modalContent.style.backgroundColor = '#fff';
@@ -35,6 +35,7 @@ const exibirModal = mensagem => {
   
     botaoFechar.addEventListener('click', () => {
       document.body.removeChild(modal);
+      ok && location.reload();
     });
   
     modalContent.appendChild(botaoFechar);
@@ -99,9 +100,9 @@ const salvarFotoDePerfil = (novaFotoUrl, userLogado) => {
 
         localStorage.setItem('userLogado', JSON.stringify(userLogado));
 
-        exibirModal("Foto de perfil atualizada com sucesso!")
+        exibirModal("Foto de perfil atualizada com sucesso!", true)
     } else {
-        exibirModal("Por favor, insira uma URL válida para a foto.")
+        exibirModal("Por favor, insira uma URL válida para a foto.", false)
     }
 }
 
@@ -131,7 +132,6 @@ botaoSalvarFoto.addEventListener('click', () => {
     const userLogado = JSON.parse(localStorage.getItem('userLogado'));
     if (userLogado) {
         salvarFotoDePerfil(inputUrlFoto.value, userLogado);
-        location.reload();
     }
 });
 
@@ -171,9 +171,8 @@ botaoSalvarEdicao.addEventListener('click', () => {
         localStorage.setItem('userLogado', JSON.stringify(userLogado));
         localStorage.setItem('Usuarios', JSON.stringify(usuarios));
 
-        exibirModal("Dados atualizados com sucesso!")
+        exibirModal("Dados atualizados com sucesso!", true)
     } else {
-        exibirModal("Erro ao salvar as alterações. Nenhum usuário logado encontrado.")
+        exibirModal("Erro ao salvar as alterações. Nenhum usuário logado encontrado.", false)
     }
-    location.reload();
 });

@@ -1,8 +1,9 @@
 document.addEventListener('DOMContentLoaded', () => {
     const listaDesejos = document.getElementById('lista-desejos');
     const anuncios = JSON.parse(localStorage.getItem('anuncios')) || [];
+    const userLogado = JSON.parse(localStorage.getItem('userLogado')) || [];
 
-    const desejos = anuncios.filter(item => item.isFavorite !== false && item);
+    const desejos = anuncios.filter(item => item.isFavorite !== false && item.email !== userLogado.user && item);
     
     localStorage.setItem('Lista de Desejos', JSON.stringify(desejos));
 
