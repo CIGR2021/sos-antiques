@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
+    
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Trabalho TIAPN">
     <meta name="author"
-        content="Carlos Henrique Pereira Vieira, Guilherme Augusto Lopes Campos">
+        content="Carlos Henrique Pereira Vieira, Guilherme Augusto Lopes Campos, João Victor Silva Thomazi, Kelvin">
     <link rel="shortcut icon" href="../img/favicon.ico" type="image/x-icon">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -19,15 +19,19 @@
         rel="stylesheet">
     <link rel="stylesheet" href="../css/normalize.css">
     <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="../css/catalogo.css">
-    <title>Catálogo SOS Antiques</title>
+    <link rel="stylesheet" href="../css/meus-pedidos.css">
+    <title>Minhas Solicitações de Ajuda</title>
 </head>
-
 <body>
     <header class="headerBgColor rounded">
         <nav class="container w-auto fs-5 navbar navbar-dark d-flex text-light p-2 align-items-center">
-            <a href="#"><img class="logoHeader" /></a>
+            <a href="catalogo.html"><img class="logoHeader" /></a>
             <section class="cabecalho__botoes">
+                <a href="catalogo.html">
+                    <button class="nav-btn__anunciar">
+                        Catálogo
+                    </button>
+                </a>
                 <a href="anunciar-produto.html">
                     <button class="nav-btn__anunciar">
                         Anunciar
@@ -52,8 +56,8 @@
                     </svg>
                 </a>
                 <div class="dropdown">
-                    <a class="align-items-center m-2 w-auto dropdown-toggle" href="#" title="Acessar Perfil" role="button"
-                        data-bs-toggle="dropdown" aria-expanded="false">
+                    <a class="align-items-center m-2 w-auto dropdown-toggle" href="#" title="Acessar Perfil"
+                        role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         <svg xmlns="http://www.w3.org/2000/svg" height="2.5em"
                             viewBox="0 0 512 512"><!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
                             <style>
@@ -67,7 +71,7 @@
                     </a>
                     <ul class="dropdown-menu">
                         <li><a class="dropdown-item" href="perfil.html">Meu perfil</a></li>
-                        <li><a class="dropdown-item" href="meus-pedidos.html">Meus pedidos</a></li>
+                        <li><a class="dropdown-item" href="#">Meus pedidos</a></li>
                         <li><a class="dropdown-item" href="lista-desejos.html">Lista de Desejos</a></li>
                         <li><a class="dropdown-item" href="central-ajuda.html">Central de Ajuda</a></li>
                         <li><a class="dropdown-item" href="#" id="btn-desconectar">Sair da conta</a></li>
@@ -76,40 +80,31 @@
             </section>
         </nav>
     </header>
-    <main class="container-fluid main-content">
-        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 w-100">
-            <aside class="menu-lateral col col-md-2 col-lg-2">
-                <ul class="menu-lateral__lista">
-                    <li class="menu-lateral__item">
-                        <button class="btn-item" id="btn-item__novidades">Novidades</button>
-                    </li>
-                    <li class="menu-lateral__item">
-                        <button class="btn-item" id="btn-item__venda">Itens de Venda</button>
-                    </li>
-                    <li class="menu-lateral__item">
-                        <button class="btn-item" id="btn-item__troca">Itens de Troca</button>
-                    </li>
-                    <li class="menu-lateral__item">
-                        <button class="btn-item" id="btn-item__doacoes">Doações</button>
-                    </li>
-                    <li class="menu-lateral__item">
-                        <button class="btn-item" id="btn-item__desejos">Lista de Desejos</button>
-                    </li>
-                    <li class="menu-lateral__item">
-                        <a href="sobre-nos.html" class="ancora-item" id="ancora-item__novidades">Sobre
-                            Nós</a>
-                    </li>
-                </ul>
-            </aside>
-            <section class="col col-md-10 col-lg-8 container-fluid">
-                <h1 class="secao-principal__titulo titulo">Novidades</h1>
-                <div
-                    class="card-container row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 justify-content-center align-content-center">
-                </div>
-            </section>
-            <aside class="menu-propaganda col col-lg-2">
-                <h4 class="propaganda-titulo">Propaganda</h4>
-            </aside>
+    <main class="main-content">
+        <div class="container-fluid">
+            <div class="row">
+                <!-- Menu Lateral -->
+                <aside class="menu-lateral col-12 col-md-2">
+                    <ul class="menu-lateral__lista">
+                        <li class="menu-lateral__item">
+                            <a href="lista-desejos.html" class="ancora-item" id="desejos">Lista de desejos</a>
+                        </li>
+                        <li class="menu-lateral__item">
+                            <a href="central-ajuda.html" class="ancora-item" id="ajuda">Central de Ajuda</a>
+                        </li>
+                        <li class="menu-lateral__item">
+                            <a href="meus-pedidos.html" class="ancora-item" id="pedidos">Meus pedidos</a>
+                        </li>
+                    </ul>
+                </aside>
+                <section class="col-12 col-md-10">
+                    <h1 class="titulo">Minhas Solicitações de Ajuda</h1>
+                    <div id="solicitacoes-ajuda"
+                        class="container-meus-anuncios row row-cols-1 row-cols-sm-2 row-cols-md-2 row-cols-lg-2 justify-content-start">
+                        <!-- Cards de anúncios -->
+                    </div>
+                </section>
+            </div>
         </div>
     </main>
     <footer class="footerBgColor w-auto h-auto fs-5 text-light rounded page-rodape">
@@ -239,12 +234,10 @@
             </section>
         </section>
     </footer>
-    
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
-    <script src="../js/catalogo.js"></script>
+    <script src="../js/solicitacoes-ajuda.js"></script>
     <script src="../js/main.js"></script>
 </body>
-
 </html>

@@ -1,4 +1,49 @@
-function renderizarPerfilUsuario(userLogado) {
+const exibirModal = (mensagem, ok) => {
+    const modal = document.createElement('div');
+    modal.id = 'modalSucesso';
+    modal.style.position = 'fixed';
+    modal.style.top = '0';
+    modal.style.left = '0';
+    modal.style.width = '100%';
+    modal.style.height = '100%';
+    modal.style.backgroundColor = 'rgba(0, 0, 0, 0.3)';
+    modal.style.display = 'flex';
+    modal.style.justifyContent = 'center';
+    modal.style.alignItems = 'center';
+    modal.style.zIndex = '9999';
+  
+    const modalContent = document.createElement('div');
+    modalContent.style.backgroundColor = '#fff';
+    modalContent.style.padding = '20px';
+    modalContent.style.borderRadius = '8px';
+    modalContent.style.boxShadow = '0 4px 8px rgba(0, 0, 0, 0.2)';
+    modalContent.style.textAlign = 'center';
+  
+    const mensagemTexto = document.createElement('p');
+    mensagemTexto.innerText = mensagem;
+    modalContent.appendChild(mensagemTexto);
+  
+    const botaoFechar = document.createElement('button');
+    botaoFechar.innerText = 'Fechar';
+    botaoFechar.style.marginTop = '10px';
+    botaoFechar.style.padding = '10px 20px';
+    botaoFechar.style.backgroundColor = '#4CAF50';
+    botaoFechar.style.color = '#fff';
+    botaoFechar.style.border = 'none';
+    botaoFechar.style.cursor = 'pointer';
+    botaoFechar.style.borderRadius = '4px';
+  
+    botaoFechar.addEventListener('click', () => {
+      document.body.removeChild(modal);
+      ok && location.reload();
+    });
+  
+    modalContent.appendChild(botaoFechar);
+    modal.appendChild(modalContent);
+    document.body.appendChild(modal);
+};
+
+const renderizarPerfilUsuario = userLogado => {
     const fotoPerfil = document.getElementById("fotoPerfil");
     const nomeUsuario = document.getElementById("nomeUsuario");
     const localUsuario = document.getElementById("localUsuario");
@@ -12,11 +57,11 @@ function renderizarPerfilUsuario(userLogado) {
     emailUsuario.textContent = userLogado.user;
 }
 
-function exibirProdutosUsuario(produtos, emailUsuario, container) {
+const exibirProdutosUsuario = (produtos, emailUsuario, container) => {
     const meusProdutos = produtos.filter(produto => produto.email === emailUsuario);
 
     container.innerHTML = ''; // Limpa o container antes de adicionar produtos
-    meusProdutos.forEach(produto => {
+    meusProdutos.map(produto => {
         const precoDoProduto = produto.tipoProduto === 'Venda' 
             ? `R$ ${produto.precoProduto}` 
             : produto.tipoProduto;
@@ -38,7 +83,7 @@ function exibirProdutosUsuario(produtos, emailUsuario, container) {
     });
 }
 
-function salvarFotoDePerfil(novaFotoUrl, userLogado) {
+const salvarFotoDePerfil = (novaFotoUrl, userLogado) => {
     const fotoPerfil = document.getElementById("fotoPerfil");
 
     if (novaFotoUrl.trim()) {
@@ -47,7 +92,6 @@ function salvarFotoDePerfil(novaFotoUrl, userLogado) {
 
         const usuarios = JSON.parse(localStorage.getItem('Usuarios')) || [];
         const index = usuarios.findIndex(usuario => usuario.Email === userLogado.user);
-        console.log(index)
 
         if (index !== -1) {
             usuarios[index].foto = novaFotoUrl;
@@ -56,9 +100,9 @@ function salvarFotoDePerfil(novaFotoUrl, userLogado) {
 
         localStorage.setItem('userLogado', JSON.stringify(userLogado));
 
-        alert('Foto de perfil atualizada com sucesso!');
+        exibirModal("Foto de perfil atualizada com sucesso!", true)
     } else {
-        alert('Por favor, insira uma URL válida para a foto.');
+        exibirModal("Por favor, insira uma URL válida para a foto.", false)
     }
 }
 
@@ -76,7 +120,7 @@ document.addEventListener('DOMContentLoaded', () => {
         document.getElementById('cidadeUsuario').value = userLogado.local || '';
         document.getElementById('senhaUsuario').value = '';
     } else {
-        alert('Nenhum usuário logado encontrado.');
+        exibirModal("Nenhum usuário logado encontrado.")
     }
 });
 
@@ -88,21 +132,20 @@ botaoSalvarFoto.addEventListener('click', () => {
     const userLogado = JSON.parse(localStorage.getItem('userLogado'));
     if (userLogado) {
         salvarFotoDePerfil(inputUrlFoto.value, userLogado);
-        location.reload();
     }
 });
 
 const botaoSalvarEdicao = document.getElementById("btn-salvarDados");
 
-botaoSalvarEdicao.addEventListener('click', function () {
+botaoSalvarEdicao.addEventListener('click', () => {
     const nomeAtualizado = document.getElementById('nameUsuario').value;
     const cpfAtualizado = document.getElementById('cpfUsuario').value;
     const telefoneAtualizado = document.getElementById('telUsuario').value;
     const senhaAtualizada = document.getElementById('senhaUsuario').value;
     const cidadeUsuario = document.getElementById('cidadeUsuario').value;
 
-    let userLogado = JSON.parse(localStorage.getItem('userLogado'));
-    let usuarios = JSON.parse(localStorage.getItem('Usuarios')) || [];
+    const userLogado = JSON.parse(localStorage.getItem('userLogado'));
+    const usuarios = JSON.parse(localStorage.getItem('Usuarios')) || [];
 
     if (userLogado) {
         userLogado.nome = nomeAtualizado || userLogado.nome;
@@ -114,7 +157,7 @@ botaoSalvarEdicao.addEventListener('click', function () {
         }
 
         const indexUsuario = usuarios.findIndex(usuario => usuario.Email === userLogado.user);
-        console.log(indexUsuario)
+        
         if (indexUsuario !== -1) {
             usuarios[indexUsuario].NomeCompleto = userLogado.nome;
             usuarios[indexUsuario].Telefone = userLogado.telefone;
@@ -128,9 +171,8 @@ botaoSalvarEdicao.addEventListener('click', function () {
         localStorage.setItem('userLogado', JSON.stringify(userLogado));
         localStorage.setItem('Usuarios', JSON.stringify(usuarios));
 
-        alert('Dados atualizados com sucesso!');
+        exibirModal("Dados atualizados com sucesso!", true)
     } else {
-        alert('Erro ao salvar as alterações. Nenhum usuário logado encontrado.');
+        exibirModal("Erro ao salvar as alterações. Nenhum usuário logado encontrado.", false)
     }
-    location.reload();
 });

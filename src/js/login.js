@@ -1,9 +1,9 @@
 const button = document.querySelector('#entrar')
 
-button.addEventListener('click', entrar)
+button.addEventListener('click', event => entrar(event))
 
 
-function entrar(event) {
+const entrar = event => {
     event.preventDefault();
     const username = document.querySelector('#inputEmail');
     const userLabel = document.querySelector('#labelEmail');

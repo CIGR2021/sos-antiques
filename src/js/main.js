@@ -1,8 +1,9 @@
 const botaoDesconectar = document.getElementById("btn-desconectar");
 
-botaoDesconectar.addEventListener("click", desconectarConta);
-
-function desconectarConta() {
+const desconectarConta = () => {
     localStorage.removeItem('userLogado');
+    localStorage.removeItem('token');
     window.location.href = "../pages/login.html";
 }
+
+botaoDesconectar.addEventListener("click", desconectarConta);

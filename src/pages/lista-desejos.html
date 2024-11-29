@@ -20,7 +20,7 @@
     <link rel="stylesheet" href="../css/normalize.css">
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/catalogo.css">
-    <title>Catálogo SOS Antiques</title>
+    <title>Lista de Desejos SOS Antiques</title>
 </head>
 
 <body>
@@ -28,14 +28,14 @@
         <nav class="container w-auto fs-5 navbar navbar-dark d-flex text-light p-2 align-items-center">
             <a href="#"><img class="logoHeader" /></a>
             <section class="cabecalho__botoes">
+                <a href="catalogo.html">
+                    <button class="nav-btn__anunciar">
+                        Catálogo
+                    </button>
+                </a>
                 <a href="anunciar-produto.html">
                     <button class="nav-btn__anunciar">
                         Anunciar
-                    </button>
-                </a>
-                <a href="lista-desejos.html">
-                    <button class="nav-btn__anunciar">
-                        Lista de Desejos
                     </button>
                 </a>
                 <!-- Headset -->
@@ -68,7 +68,7 @@
                     <ul class="dropdown-menu">
                         <li><a class="dropdown-item" href="perfil.html">Meu perfil</a></li>
                         <li><a class="dropdown-item" href="meus-pedidos.html">Meus pedidos</a></li>
-                        <li><a class="dropdown-item" href="lista-desejos.html">Lista de Desejos</a></li>
+                        <li><a class="dropdown-item" href="#">Lista de Desejos</a></li>
                         <li><a class="dropdown-item" href="central-ajuda.html">Central de Ajuda</a></li>
                         <li><a class="dropdown-item" href="#" id="btn-desconectar">Sair da conta</a></li>
                     </ul>
@@ -102,9 +102,8 @@
                 </ul>
             </aside>
             <section class="col col-md-10 col-lg-8 container-fluid">
-                <h1 class="secao-principal__titulo titulo">Novidades</h1>
-                <div
-                    class="card-container row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 justify-content-center align-content-center">
+                <h1 class="secao-principal__titulo titulo">Lista de Desejos</h1>
+                <div id="lista-desejos" class="card-container row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 justify-content-center align-content-center">
                 </div>
             </section>
             <aside class="menu-propaganda col col-lg-2">
@@ -243,6 +242,9 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script src="../js/lista-desejos.js"></script>
     <script src="../js/catalogo.js"></script>
     <script src="../js/main.js"></script>
 </body>
